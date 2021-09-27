@@ -14,7 +14,7 @@ layout: default
           <b> Welcome to the SRC Lab. </b>
         </h1> <br>
 
-        <p> 
+        <p style="font-size:large"> 
           Led by <b>Taejune Park</b> the SRC (Secure and Reliable Computing) lab at Chonnam National University focuses on network and system security. In particular, we study a variety of topics including cloud network (e.g., software-defined networking and network virtualization) security, embedded system and IoT. We are now working on Design and Implementation of high-performance network security systems and low-latency communications.
         </p>
       </div>
@@ -36,10 +36,10 @@ layout: default
     </div>
       <br><br>
     <div class="row">
-      <div class="jumbotron" ; style="background-color:whitesmoke;">
+      <div class="jumbotron"; style="background-color:whitesmoke; font-size:large">
           <h2 class="news"> <b> News </b> </h2>
           {% for post in site.posts limit: 5 %}
-          <div class="pub row" style="padding-top:5px; line-height: 1.6;" >
+          <div class="pub row" style="padding-top:10px; line-height: 1.6;" >
             <div class="col-sm-2" style="margin-right:-50px;margin-left:10px;">
               <li> <span class="post-meta"> {{ post.date | date: "%b %-d, %Y" }} </span>
             </div>

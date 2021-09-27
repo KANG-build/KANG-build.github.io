@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Secure and Reliable Computing Lab.</title>
+    <title>SRC Lab.</title>
     <description>College of AI Convergence, School of Artificial Intelligence, Chonnam National University
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Sep 2021 17:29:13 +0900</pubDate>
-    <lastBuildDate>Mon, 27 Sep 2021 17:29:13 +0900</lastBuildDate>
+    <pubDate>Mon, 27 Sep 2021 19:57:30 +0900</pubDate>
+    <lastBuildDate>Mon, 27 Sep 2021 19:57:30 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>

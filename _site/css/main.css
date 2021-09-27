@@ -3,7 +3,9 @@ body {
 }
 
 .navbar {
-    margin-bottom: 0;
+    margin-bottom: 10pt;
+    vertical-align: middle;
+    /* background: rgb(2, 18, 149);   */
 }
 
 .jumbotron {
@@ -18,7 +20,6 @@ body {
 .container{
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .home p {
@@ -89,21 +90,6 @@ footer .social-media-list li {
 }
 .person .person-email {
     text-align: center;
-}
-
-
-.person-photo {
-    margin: 10px auto;
-    display: block;
-    height: 200px;
-    width: 200px;
-}
-
-img.pub-image {
-    float: right;
-    margin: 10px auto;
-    height: 100px;
-    width: 100px;
 }
 
 .pub {

@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Secure and Reliable Computing Lab. 
+title: SRC Lab.
 email: taejune.park@jnu.ac.kr
 description: > # this means to ignore newlines until "baseurl:"
   College of AI Convergence,
@@ -21,7 +21,6 @@ description: > # this means to ignore newlines until "baseurl:"
 
 # Build settings
 markdown: kramdown
-title: Secure and Reliable Computing Lab. 
 future: true
 
 # Pagination
