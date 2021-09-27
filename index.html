@@ -8,8 +8,8 @@ layout: default
 <div class="home">
   <div class="container">
     <br><br>
-    <div class="row">
-      <div class="col-sm-6">
+    <div class="row" style="line-height: 1.6;">
+      <div class="col-sm-6" >
         <h1>
           <b> Welcome to the SRC Lab. </b>
         </h1> <br>
@@ -39,7 +39,7 @@ layout: default
       <div class="jumbotron" ; style="background-color:whitesmoke;">
           <h2 class="news"> <b> News </b> </h2>
           {% for post in site.posts limit: 5 %}
-          <div class="pub row" style="padding-top:5px">
+          <div class="pub row" style="padding-top:5px; line-height: 1.6;" >
             <div class="col-sm-2" style="margin-right:-50px;margin-left:10px;">
               <li> <span class="post-meta"> {{ post.date | date: "%b %-d, %Y" }} </span>
             </div>
