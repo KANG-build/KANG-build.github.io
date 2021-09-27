@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<br><br>
+<div class="photo">
+      <div class="container">
+            {% for pub in site.data.photo.photo %}
+            <div class="row" style="line-height: 1.6;">
+                  <p>
+                  <h3> <b> {{ pub.title }} </b>  <em>{{ pub.date }}</em> </h3>
+                  </p>
+                  {% if pub.photo1 %} <a href="/images/photo/{{ pub.photo1 }}"> 
+                        <img src="/images/photo/{{ pub.photo1 }}" width="500px" height="375px">
+                  </a> {% endif %}
+                  {% if pub.photo2 %} <a href="/images/photo/{{ pub.photo2 }}"> 
+                        <img src="/images/photo/{{ pub.photo2 }}" width="500px" height="375px">
+                  </a> <p></p> {% endif %} 
+                  {% if pub.photo3 %} <a href="/images/photo/{{ pub.photo3 }}"> 
+                        <img src="/images/photo/{{ pub.photo3 }}" width="500px" height="375px">
+                  </a> {% endif %}
+                  {% if pub.photo4 %} <a href="/images/photo/{{ pub.photo4 }}"> 
+                        <img src="/images/photo/{{ pub.photo4 }}" width="500px" height="375px">
+                  </a> <p></p> {% endif %}
+                  {% if pub.photo5 %} <a href="/images/photo/{{ pub.photo5 }}"> 
+                        <img src="/images/photo/{{ pub.photo5 }}" width="500px" height="375px">
+                  </a> {% endif %}
+                  {% if pub.photo6 %} <a href="/images/photo/{{ pub.photo6 }}"> 
+                        <img src="/images/photo/{{ pub.photo6 }}" width="500px" height="375px">
+                  </a> <p></p> {% endif %}
+                  {% if pub.photo7 %} <a href="/images/photo/{{ pub.photo7 }}"> 
+                        <img src="/images/photo/{{ pub.photo7 }}" width="500px" height="375px">
+                  </a> {% endif %}
+                  {% if pub.photo8 %} <a href="/images/photo/{{ pub.photo8 }}"> 
+                        <img src="/images/photo/{{ pub.photo8 }}" width="500px" height="375px">
+                  </a> <p></p> {% endif %}
+            </div>
+            <br>
+            {% endfor %}
+      </div>
+</div>

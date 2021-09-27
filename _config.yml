@@ -1,0 +1,31 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Secure and Reliable Computing Lab. 
+email: taejune.park@jnu.ac.kr
+description: > # this means to ignore newlines until "baseurl:"
+  College of AI Convergence,
+  School of Artificial Intelligence,
+  Chonnam National University
+
+# baseurl: "" # the subpath of your site, e.g. /blog
+# url: "http://cubranic.github.io" # the base hostname & protocol for your site
+
+#twitter_username: 
+#github_username:  
+
+# Build settings
+markdown: kramdown
+title: Secure and Reliable Computing Lab. 
+future: true
+
+# Pagination
+paginate: 5
+paginate_path: "/news/:num/"
+
+gems: [jekyll-paginate]

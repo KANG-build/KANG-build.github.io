@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<!-- <h1 class="news">News</h1> -->
+{% for post in paginator.posts %}
+<div class="item">
+    <p>
+        {{post.title}}
+    </p>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+    <div class="content">
+        <p>
+            {{post.excerpt}}
+        </p>
+    </div>
+</div>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<!-- Pagination links -->
+<div class="pagination center-block">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous"><i class="glyphicon glyphicon-chevron-left"></i></a>
+    {% else %}
+    <span class="previous"><i class="glyphicon glyphicon-chevron-left"></i></span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+    {% else %}
+    <span class="next "><i class="glyphicon glyphicon-chevron-right"></i></span>
+    {% endif %}
+</div>
+{% endif %}

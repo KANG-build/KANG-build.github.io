@@ -1,0 +1,44 @@
+---
+
+- title: Software-Defined Networking Enabling Expeditious Forwarding Rule Management for Cyber-Physical Defense Systems (국방 사이버-물리 시스템을 위한 신속한 전송 정책 관리를 지원하는 소프트웨어 정의 네트워킹 기술)
+  author: Kilho Lee, Taejune Park, Minsu Kim, Seungwon Shin, Insik Shin
+  where: Journal of KIISE, vol. 46, no. 4, pp. 291-298 (정보과학회논문지, Vol.46 No.4) 
+  abbr: JOK, [KCI Excellent Listing]
+  date: Apr. 2019
+
+- title: Software-Defined Networking Switch Architecture Enabling Expeditious Forwarding Rule Management for Cyber-Physical Systems (사이버-물리 시스템을 위한 신속한 전송 정책 관리를 지원하는 소프트웨어 정의 네트워크 스위치 구조)
+  author: Kilho Lee, Taejune Park, Minsu Kim, Seungwon Shin, Insik Shin
+  where: Korea Computer Congress 2018, Jeju, Korea (한국정보과학회 학술발표논문집, Vol.2018 No.6)
+  abbr: KCC 
+  date: Jun. 2018
+  info: <font color=blue> * Best paper award </font>
+
+- title: An anomaly detection system via analyzing an OpenFlow flow table (오픈플로우 흐름표 (Flow Table) 분석을 통한 이상행위 탐지 시스템)
+  author: Taejune Park and Seungwon Shin
+  where: Korean Institute of Communication Sciences Conference 2018, Jeju, Korea, June 2018 (한국통신학회 학술대회논문집, Vol.2018 No.6)
+  abbr: KICS Conf.
+  date: Jun. 2018
+
+- title: A Vulnerability Evaluation of Ryu Controller in Software-Defined Networking (소프트웨어 정의 네트워킹 기술에서의 Ryu 컨트롤러에 대한 취약성 평가)
+  author: Seungwon Woo, Taejune Park, and Seungwon Shin
+  where: Korean Institute of Communication Sciences Conference 2017, Daegu, Korea (한국통신학회 학술대회논문집, Vol.2017 No.11)
+  abbr: KICS Conf.
+  date: Nov. 2017
+
+- title: An inter-device communication method using virtual network interface cards and a software switch (가상 네트워크 인터페이스 카드와 소프트웨어 스위치를 활용한 이기종간 통신)
+  author: Taejune Park, Seungwon Woo, and Seungwon Shin
+  where: Korean Institute of Communication Sciences Conference 2017, Daegu, Korea (한국통신학회 학술대회논문집, Vol.2017 No.11)
+  abbr: KICS Conf.
+  date: Nov. 2017
+
+- title: Designing Artificial Neural Networking using Software-Defined Networking technology (소프트웨어 정의 네트워킹 기술을 활용한 인공신경망 구성)
+  author: Taejune Park, Seungwon Woo, and Seungwon Shin
+  where: Korean Institute of Communication Sciences Conference 2017, Daegu, Korea (한국통신학회 학술대회논문집, Vol.2017 No.11)
+  abbr: KICS Conf.
+  date: Nov. 2017
+
+- title: A Reflectornet Based on Software Defined Network (소프트웨어 정의 네트워크 기반 리플렉터넷) 
+  author: Taejune Park, Seungsoo Lee, and Seungwon Shin  
+  where: Journal of the KICS, Vol.39 No.6, pp. 397-405 (한국통신학회논문지, Vol.39 No.6) 
+  abbr: KICS, [KCI Listing]
+  date: Jun. 2014

@@ -1,0 +1,283 @@
+---
+
+- title: >
+    Deep learning decodes the principles of differential gene expression
+  author: >
+    Shinya Tasaki, Chris Gaiteri, Sara Mostafavi, Yanling Wang. <I>Nature Machine Intelligence</I>.
+  image: ../images/decode.png
+  year: 2020
+  repo:
+    name: link
+    url: https://www.nature.com/articles/s42256-020-0201-6
+
+
+- title: >
+    Deep learning of immune cell differentiation
+  author: >
+    <u>Alexandra (Sasha) Maslova </u>, Ricardo Ramirez, ... , Christophe Benoist*, <u>Sara Mostafavi*</u>. <I>PNAS</I>.
+  image: ../images/aitac.png
+  year: 2020
+  repo:
+    name: link
+    url: https://www.pnas.org/content/early/2020/09/23/2011795117
+
+
+
+- title: >
+    Deconvolving the contributions of cell-type heterogeneity on cortical gene expression
+  author: >
+    <u>Ellis Patrick</u>, Mariko Taga, Ayla Ergun,  ... , Elizabeth Bradshaw, <u>Sara Mostafavi</u>. <I>PLOS Computational Biology</I>.
+  image: ../images/ploscb.png
+  year: 2020
+  repo:
+    name: link
+    url: https://journals.plos.org/ploscompbiol/article/comments?id=10.1371/journal.pcbi.1008120
+
+
+- title: >
+    metPropagate: network-guided propagation of metabolomic information for prioritization of metabolic disease genes.
+  author: >
+    <u>Emma Graham Linck</u>, Philip A. Richmond,  ... , <u>Mostafavi S</u>. <I>npj Genomic Medicine</I>.
+  image: ../images/Fig4.png
+  year: 2020
+  repo:
+    name: link
+    url: https://www.nature.com/articles/s41525-020-0132-5
+
+- title: >
+    Using Transcriptomic Hidden Variables to Infer Context-Specific Genotype Effects in the Brain.
+  author: >
+    <u>Bernard Ng</u>, <u>William Casazza</u>,  ... , <u>Mostafavi S</u>. <I>The American Journal of Human Genetics</I>.
+  image: ../images/Fig3B.png
+  year: 2019
+  repo:
+    name: link
+    url: https://www.cell.com/ajhg/fulltext/S0002-9297(19)30279-4
+
+- title: >
+    Somatic mosaicism of sex chromosomes in the blood and brain.
+  author: >
+    <u>Emma Graham</u>, <u>Mike Vermeulen</u>, Badri Vardarjan, ... , Tracy Young-Pearse*,<u>Mostafavi S*</u>. <I>Brain Research</I>.
+  image: ../images/sexX.png
+  year: 2019
+  repo:
+    name: PubMed
+    url: https://www.sciencedirect.com/science/article/pii/S0006899319303993?via%3Dihub
+
+- title: >
+    The cis-Regulatory Atlas of the Mouse Immune System.
+  author: >
+    Yoshida H, Lereau C, ..., <u>Mostafavi S*</u>, Buenrostro J*, Benoist C*. <I>Cell</I>.
+  image: ../images/CellAtlas.png
+  year: 2019
+  repo:
+    name: PubMed
+    url: https://www.ncbi.nlm.nih.gov/pubmed/30686579
+
+- title: >
+    A molecular network of the aging human brain provides insights into the pathology and cognitive decline of Alzheimer’s disease
+  author: >
+    <u>Mostafavi S*</u>, Gaiteri C*, ..., Bennett D*, De Jager P*. <I>Nature Neuroscience</I>.
+  image: ../images/AD.jpeg
+  year: 2018
+  repo:
+    name: PubMed
+    url: https://www.ncbi.nlm.nih.gov/pubmed/29802388
+
+
+- title: >
+    Integration of genomics and metabolomics for prioritization of rare disease variants: a 2018 literature review
+  author: >
+    <u>Graham E</u>, ...,Van Karnebeek CBD*, <u> Mostafavi S*</u>. <I>Journal of Inherited Metabolic Disease</I>.
+  image: ../images/IEMs.jpeg
+  year: 2018
+  repo:
+    name: PubMed
+    url: https://www.ncbi.nlm.nih.gov/pubmed/29721916
+
+
+
+- title: >
+    An xQTL map integrates the genetic architecture of the human brain's transcriptome and epigenome.
+  author: >
+    <u>Ng B</u>, White C, Klein HU, ...,<u> Mostafavi S*</u>, De Jager P*. <I>Nature Neuroscience</I>.
+  image: ../images/xQTL.png
+  year: 2017
+  repo:
+    name: PubMed
+    url: https://www.ncbi.nlm.nih.gov/pubmed/28869584
+
+
+
+- title: >
+    Allele-specific expression reveals interactions between genetic variation and environment
+  author: >
+    Knowles D,Davis JR, Edgington H, ...,<u> Mostafavi S</u>, Montgomery SB*, Battle AJ*. <I>Nature Methods</I>.
+  image: ../images/EAGLE.png
+  year: 2017
+  repo:
+    name: PubMed
+    url: https://www.ncbi.nlm.nih.gov/pubmed/28530654
+
+
+- title: >
+    Network pharmacology of Jak inhibitors
+  author: >
+    Moodley D, Yoshida H,<u> Mostafavi S</u>, ..., Mathis D, Benoist C. <I>PNAS</I>.
+  image: ../images/jakpaper.png
+  year: 2016
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/27516546
+
+
+- title: >
+    Genetic variants in Alzheimer disease - molecular and brain network approaches
+  author: >
+    Gaiteri C,<u> Mostafavi S</u>, Honey CJ, De Jager PL, Bennett DA. <I>Nature Review Neurology</I>.
+  image: ../images/NNR.png
+  year: 2016
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/27197214
+
+- title: >
+    Inhalation of diesel exhaust and allergen alters human bronchial epithelium DNA methylation
+  author: >
+    Clifford RL, Jones MJ, Maclsaac JL, McEwan LM, Goodman SJ,<u> Mostafavi S</u>, Kobor MS, Carlsten C. <I>Journal of Allergy & Clinical Immunology </I>.
+  image: ../images/asthma.png
+  year: 2016
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/27321436
+
+
+- title: >
+    Impact of the X Chromosome and sex on regulatory variation
+  author: >
+    Kukurba K, Parsana P, ..., <u> Mostafavi S</u>, Battle A*, Montgomery SB*.  <I>Genome Research </I>.
+  image: ../images/sexspec.png
+  year: 2016
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/27197214
+
+- title: >
+    Parsing the interferon transcriptional network and its disease associations
+  author: >
+    <u>Mostafavi S*</u>, Yoshida H*, Moodley D, ..., Mathis D, Benoist C, and the ImmGen Consortium.  <I>Cell </I>.
+  image: ../images/IFN_1.png
+  year: 2016
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/26824662
+
+- title: >
+    Sharing and Specificity of Co-expression Networks across 35 Human Tissues
+  author: >
+    Pierson E, the GTEx Consortium, Koller D, Battle A*, <u>Mostafavi S*</u>.  <I>PLOS Computational Biology </I>.
+  image: ../images/plos_comp_bio_fig.png
+  year: 2015
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/25970446
+
+- title: >
+    Polarization of the effects of autoimmune and neurodegenerative risk alleles in leukocytes
+  author: >
+    Raj T, Rothamel K, <u>Mostafavi S</u>,..., Benoist C*, Stranger BE*, De Jager PL*.  <I>Science </I>.
+  image: ../images/immvar.png
+  year: 2014
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/24786080
+
+- title: >
+    Characterizing the genetic basis of transcriptome diversity through RNA-sequencing of 922 individuals
+  author: >
+    Battle A, <u>Mostafavi S</u>, Zhu X,..., Koller D.  <I>Genome Research </I>.
+  image: ../images/GRpaper.png
+  year: 2014
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/24092820
+    
+- title: >
+    Normalizing RNA-sequencing data by modeling hidden covariates with prior knowledge
+  author: >
+    <u>Mostafavi S</u>, Battle A, Zhu X,..., Koller D.  <I>PLOS ONE </I>.
+  image: ../images/normalization.png
+  year: 2013
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/23874524
+
+- title: >
+    Type I interferon signaling genes in recurrent major depression: increased expression detected by whole-blood RNA sequencing
+  author: >
+    <u>Mostafavi S</u>, Battle A, Zhu X,..., Levinson DF. <I>Molecular Psychiatry</I>.
+  image: ../images/ifna_figure_1.png
+  year: 2013
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/242969772
+
+- title: >
+    Using prior biological knowledge when constructing gene regulatory networks
+  author: >
+    <u>Mostafavi S</u>, and Koller, D.  <I>ICML workshop on Machine Learning in Genomics and Genetics </I>.
+  image: ../images/roc_gbm_pred.png
+  year: 2012
+  repo:
+    name: PDF
+    url: http://ai.stanford.edu/~saram/MLGG2012.pdf
+    
+- title: >
+    Labeling nodes using three degrees of propagation
+  author: >
+    <u>Mostafavi S</u>, Goldenberg A, Morris Q.  <I>PLOS ONE </I>.
+  image: ../images/Figure1.png
+  year: 2012
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3532359/
+
+- title: >
+   Predicting node characteristics from molecular networks
+  author: >
+    <u>Mostafavi S</u>, Goldenberg A, Morris Q.  <I>Methods in Molecular Biology </I>.
+  image: ../images/lpa1.png
+  year: 2011
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/21877293  
+  
+- title: >
+    Fast integration of heterogeneous data sources for predicting gene function with limited annotation.
+  author: >
+    <u>Mostafavi S</u> and Morris Q.  <I>Bioinformatics </I>.
+  image: ../images/fig2.png
+  year: 2010
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/20507895
+
+- title: >
+    Using the Gene Ontology hierarchy when predicting gene function
+  author: >
+    <u>Mostafavi S</u> and Morris Q.  <I>Uncertainty in Artificial Intelligence (UAI) </I>.
+  image: ../images/hierarchy_uai.png
+  year: 2009
+  repo:
+    name: PDF
+    url: http://arxiv.org/abs/1205.2622
+
+- title: >
+    GeneMANIA: a real-time multiple association network integration algorithm for predicting gene function
+  author: >
+    <u>Mostafavi S</u>, Ray D, Warde-Farley D, Grouios C, Morris Q.  <I>Genome Biology </I>.
+  image: ../images/genemania.jpg
+  year: 2008
+  repo:
+    name: PubMed
+    url: http://www.ncbi.nlm.nih.gov/pubmed/18613948

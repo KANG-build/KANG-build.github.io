@@ -1,0 +1,29 @@
+---
+
+- name: Sara Mostafavi
+  role: Principal Investigator
+  photo: "images/saram.png"
+  
+- name: Bernard Ng
+  role: Research Associate
+  photo: "/images/Bernard.jpg"
+
+- name: German Novakovsky
+  role: PhD Student at UBC (co-supervised by Wyeth Wasserman)
+  photo: "/images/german.jpg" 
+
+- name: Sasha Maslova
+  role: PhD Student at UBC (co-supervised by Max Libbrecht)
+  photo: "/images/Sasha.jpg"
+
+- name: William Casazza
+  role: PhD Student at UBC (co-supervised by Jessica Dennis)
+  photo: "/images/WillC.png"
+
+- name: Yichen Zhang
+  role: PhD Student at UBC - Statistics
+  photo: "/images/yichens.png"
+
+- name: Ishika Luthra
+  role: MSc Student at UBC - Bioinformatics
+  photo: "/images/Ishika.png"

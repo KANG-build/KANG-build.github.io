@@ -1,0 +1,56 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<div class="home">
+  <div class="container">
+    <br><br>
+    <div class="row">
+      <div class="col-sm-6">
+        <h1>
+          <b> Welcome to the SRC Lab. </b>
+        </h1> <br>
+
+        <p> 
+          Led by <b>Taejune Park</b> the SRC (Secure and Reliable Computing) lab at Chonnam National University focuses on network and system security. In particular, we study a variety of topics including cloud network (e.g., software-defined networking and network virtualization) security, embedded system and IoT. We are now working on Design and Implementation of high-performance network security systems and low-latency communications.
+        </p>
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-4">
+        <br><br>
+        <div class="slider">
+          <!-- <div><img src= "./images/faculty/taejune_park.jpg" style="width: 300px; height: auto;"></div> -->
+          <div><img src= "./images/logo/logo_blue.png" style="width: 350px; height: auto;">      </div>
+        </div>
+        <script>
+          $(document).ready(function(){
+            $('.slider').bxSlider();
+          });
+        </script>
+
+      </div>
+    </div>
+      <br><br>
+    <div class="row">
+      <div class="jumbotron" ; style="background-color:whitesmoke;">
+          <h2 class="news"> <b> News </b> </h2>
+          {% for post in site.posts limit: 5 %}
+          <div class="pub row" style="padding-top:5px">
+            <div class="col-sm-2" style="margin-right:-50px;margin-left:10px;">
+              <li> <span class="post-meta"> {{ post.date | date: "%b %-d, %Y" }} </span>
+            </div>
+            <div class="col-sm-10">
+              <!-- <a class="post-link" href="{{ post.url }}">{{ post.title }}</a> -->
+              {{ post.title }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

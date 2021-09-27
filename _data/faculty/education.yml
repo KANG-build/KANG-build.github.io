@@ -1,0 +1,20 @@
+---
+
+- degree: Ph.D. in Computer Science
+  where: Korea Advanced Institute of Science and Technology (KAIST)
+  dissertation: >
+    Design and implementation of the data plane for provisioning high-performance security services in a dynamic network environment
+  advisor: Seungwon Shin
+  year: Feb. 2020
+
+- degree: M.S in Engineering in the Graduate School of Information Security
+  where: Korea Advanced Institute of Science and Technology (KAIST)
+  thesis: >
+    QoSE: Quality of Security (A network security framework with distributed NFV)
+  advisor: Seungwon Shin
+  year: Aug. 2015
+
+- degree: B.S in Computer Engineering
+  where: Korea Maritime and Ocean University (KMOU)
+  year: Aug. 2013
+
