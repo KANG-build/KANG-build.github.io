@@ -6,31 +6,9 @@
 </description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Sep 2021 20:09:13 +0900</pubDate>
-    <lastBuildDate>Mon, 27 Sep 2021 20:09:13 +0900</lastBuildDate>
+    <pubDate>Fri, 10 Dec 2021 06:29:14 +0900</pubDate>
+    <lastBuildDate>Fri, 10 Dec 2021 06:29:14 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
-    
-      <item>
-        <title>A paper, entitled &quot;Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI&quot;, has been accepted to the Annual Computer Security Applications Conference (ACSAC) 2021.</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Sep 2021 00:00:00 +0900</pubDate>
-        <link>/2021/09/01/02-acsac21.html</link>
-        <guid isPermaLink="true">/2021/09/01/02-acsac21.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Taejune Park was appointed as an Assistant Professor in the College of AI Convergence, School of Artificial Intelligence at Chonnam National University</title>
-        <description>
-</description>
-        <pubDate>Wed, 01 Sep 2021 00:00:00 +0900</pubDate>
-        <link>/2021/09/01/01-taejune-park.html</link>
-        <guid isPermaLink="true">/2021/09/01/01-taejune-park.html</guid>
-        
-        
-      </item>
     
   </channel>
 </rss>

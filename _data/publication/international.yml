@@ -1,10 +1,9 @@
 ---
-
 - title: Reinhardt&#58; Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI
   author: Taejune park, Jaehyun Nam, Seung Ho Na, Jaewoong Chung and Seungwon Shin 
   where: Annual Computer Security Application Conference 2021
   abbr: ACSAC
-  date: Nov. 2021 <br> (To appear)
+  date: Dec. 2021
 
 - title: Formullar&#58; An FPGA-based network testing tool for flexible and precise measurement of Ultra-Low Latency networking systems        
   author: 

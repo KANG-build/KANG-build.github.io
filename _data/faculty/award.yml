@@ -1,11 +1,23 @@
 ---
+- title: Best Paper Award 
+  host: The Korea Institute of Information Security and Cryptology (KIISC) at Honam
+  grade: 
+  prize: 
+  date: Nov. 2021
+
+- title: 2021 Cyber Security Paper Award (2021 사이어안보(보안) 논문 공모전)
+  host: The Korea Institute of Information Security and Cryptology (KIISC)
+  grade: Encourage (4nd)
+  prize: 500,000 KRW
+  date: Oct. 2021
+
 - title: 27th Samsung Humantech Paper Award
   host: Samsung Electronics Co., LTD.
   grade: Silver (2nd)
   prize: 7,000,000 KRW
   date: Feb. 2021
 
-- title: 2018 Cyber Security Papers Competition (2018 사이어안보(보안) 논문 공모전)
+- title: 2018 Cyber Security Paper Award (2018 사이어안보(보안) 논문 공모전)
   host: The Korea Institute of Information Security and Cryptology (KIISC)
   grade:  Excellence (3rd)
   prize: 1,000,000 KRW

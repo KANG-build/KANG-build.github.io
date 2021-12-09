@@ -1,4 +1,16 @@
 ---
+- title: Mitigation for SD-WAN control traffic detection (SD-WAN 제어 트래픽 탐지에 대한 방어 기법)
+  author: Minjae Seo, Jinwoo Kim, Taejune Park, Seungwon Shin
+  where: 2021 Cyber Security Conference at Honam
+  abbr: CSHONAM
+  date: Dec. 2021
+
+- title: eBPF/XDP-based high-performance packet payload inspection system for container environments (컨테이너 환경을 위한 eBPF/XDP 기반 고속 네트워크 패킷 페이로드 검사 시스템)
+  author: Myoungsung You, Jinwoo Kim, Taejune Park, Seungwon Shin
+  where: 2021 Cyber Security Conference at Honam
+  abbr: CSHONAM
+  date: Dec. 2021
+  info: <font color=blue> * Best paper award </font>
 
 - title: Software-Defined Networking Enabling Expeditious Forwarding Rule Management for Cyber-Physical Defense Systems (국방 사이버-물리 시스템을 위한 신속한 전송 정책 관리를 지원하는 소프트웨어 정의 네트워킹 기술)
   author: Kilho Lee, Taejune Park, Minsu Kim, Seungwon Shin, Insik Shin

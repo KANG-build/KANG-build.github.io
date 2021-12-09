@@ -6,9 +6,68 @@ layout: default
     <div class="container">
         <h1 class="Lecture"> People </h1>
 
+        <center>
+            <div class="container">
+                <h1 class="alumni">Doctoral student</h1>
+        
+                {% for person in site.data.people.phd %}
+                <div class="person col-md-4 col-sm-6 col-xs-12">
+                    <img src="{{ person.photo }}"
+                         alt="photo" class="person-photo img-circle" width="80%">
+                   <h3 class="person-role">{{ person.name }}</h3>
+                    <p class="person-role">{{ person.role }}
+                    <br>{{ person.email }} </p>
+                </div>
+                {% endfor %} 
+            </div>
+            <hr>
+            <div class="container">
+                <h1 class="alumni">Master's student</h1>
+        
+                {% for person in site.data.people.master %}
+                <div class="person col-md-4 col-sm-6 col-xs-12">
+                    <img src="{{ person.photo }}"
+                         alt="photo" class="person-photo img-circle" width="80%">
+                   <h3 class="person-role">{{ person.name }}</h3>
+                    <p class="person-role">{{ person.role }}
+                    <br>{{ person.email }} </p>
+                </div>
+                {% endfor %} 
+            </div>
+            <hr>
+            <div class="container">
+                <h1 class="alumni">Undergraduate student</h1>
+        
+                {% for person in site.data.people.under %}
+                <div class="person col-md-4 col-sm-6 col-xs-12">
+                    <img src="{{ person.photo }}"
+                         alt="photo" class="person-photo img-circle" width="80%">
+                   <h3 class="person-role">{{ person.name }}</h3>
+                    <p class="person-role">{{ person.role }}
+                    <br>{{ person.email }} </p>
+                </div>
+                {% endfor %} 
+            </div>
+
+            <hr>
+            <div class="container">
+                <h1 class="alumni">Alumni</h1>
+        
+                {% for person in site.data.people.alumni %}
+                <div class="person col-md-2 col-sm-4 col-xs-6">
+                    <img src="{{ person.photo }}"
+                         alt="photo" class="person-photo img-circle" width="50%">
+                   <h3 class="person-role">{{ person.name }}</h3>
+                    <br>{{ person.email }} </p>
+                </div>
+                {% endfor %} 
+            </div>
+
+        </center>
+<!-- 
         <p style="text-align: center;">
             <img src="../images/misc/underconstruction.jpg" width="50%">
-        </p>
+        </p> -->
 
         <!-- <h1 class="people">People</h1>
 
@@ -42,8 +101,8 @@ layout: default
         
         </div>
 
-        {% endfor %} -->
-    </div>
+        {% endfor %} 
+    </div>-->
 </div>
 
 
