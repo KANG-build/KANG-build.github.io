@@ -1,4 +1,7 @@
 ---
+- name: Ayoung Kim
+  photo: "/images/people/ayoungkim.png"
+  role: Research intern
 
 - name: Join us!
   photo: "/images/people/empty.png"
