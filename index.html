@@ -6,7 +6,7 @@ title: SRC Lab.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
-<div class="home">
+<div class="index">
   <div class="container">
     <br>
     <div class="row" style="line-height: 1.6;">
@@ -38,7 +38,7 @@ title: SRC Lab.
       <br><br>
     <div class="row">
       <div class="jumbotron"; style="background-color:whitesmoke; font-size:large">
-          <h2 class="news"> <b> News </b> </h2>
+          <h2 class="news"> <a href="/pages/news"><b> News >> </b> </a></h2>
           {% for news in site.data.news.news limit: 5 %}
           <div class="pub row" style="padding-top:20px; line-height: 1.6;" >
             <div class="col-sm-2" style="margin-right:-50px;margin-left:00px;">
@@ -48,11 +48,11 @@ title: SRC Lab.
                {{ news.title }} 
 
                {% if news.link %}
-               <a href="{{ news.link }}" target="_self" onclick="layerClose(this);return false;">[Link]</a>
+               <a href="{{ news.link }}" target="_self" onclick="layerClose(this); return false;">[Link]</a>
                {% endif %}
 
                {% if news.nlink %}
-               <a href="{{ news.nlink }}" target="_blank" onclick="layerClose(this);return false;">[Link]</a>
+               <a href="{{ news.nlink }}" target="_blank" onclick="layerClose(this); return false;">[Link]</a>
                {% endif %}
             </div>
           </div>
