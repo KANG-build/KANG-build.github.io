@@ -1,7 +1,9 @@
 ---
 - name: Ayoung Kim
   photo: "/images/people/ayoungkim.png"
-  role: Research intern
+  role: Undergraduate Researcher
+  email: cpjvh *at* naver.com
 
 - name: Join us!
   photo: "/images/people/empty.png"
+  
