@@ -63,11 +63,7 @@
 
         
         <div class="page-content">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-<div class="index">
+            <div class="index">
   <div class="container">
     <br>
     <div class="row" style="line-height: 1.6;">
@@ -79,27 +75,59 @@
         <p style="font-size:large; text-align:justify"> 
           Led by <b>Taejune Park</b> the SRC (Secure and Reliable Computing) laboratory at Chonnam National University focuses on network and system security. In particular, we are currently focusing on research challenges including, but not limited to: (1) cloud computing security (e.g., SDN/NFV), (2) high-performance security system, and (3) reliable 'low-latency' communication. Also, we are going to study on innovative AI-based security systems as well :)
         </p>
-        <p>
-          <a href="/pages/joinus.html"> <span class="glyphicon glyphicon-hand-right" aria-hidden="true"> </span> Are you interested in joining our laboratory? Join us! >> </a>
+        <p> 
+          <b><a href="/pages/joinus.html"> <span class="glyphicon glyphicon-hand-right" aria-hidden="true"> </span> Are you interested in joining our laboratory? Join us! >> </a></b>
         </p>
       </div>
-      <div class="col-sm-1">
+      <div class="col-sm-2">
       </div>
-      <div class="col-sm-4">
-        <br><br>
-        <div class="slider">
-          <!-- <div><img src= "./images/faculty/taejune_park.jpg" style="width: 300px; height: auto;"></div> -->
-          <div><img src= "./images/logo/logo_blue.png" style="width: 350px; height: auto;">      </div>
-        </div>
-        <script>
-          $(document).ready(function(){
-            $('.slider').bxSlider();
-          });
-        </script>
+      <div class="col-sm-6">         
+              <div class="slidebox">
+                    <input type="radio" name="slide" id="slide01" checked>
+                    <input type="radio" name="slide" id="slide02">
+                    <input type="radio" name="slide" id="slide03">
+                    <!-- <input type="radio" name="slide" id="slide04"> -->
+                    <ul class="slidelist">
+                      <li class="slideitem"> <!-- 1 -->
+                        <a>
+                          <label for="slide03" class="left"></label>
+                          <label for="slide02" class="right"></label>
+                          <img src="/images/logo/logo_blue.png">
+                        </a>
+                      </li>
+                      <li class="slideitem"> <!-- 2 -->
+                        <a>
+                          <label for="slide01" class="left"></label>
+                          <label for="slide03" class="right"></label>
+                          <img src="/images/misc/jnu_view1.jpg">
+                        </a>
+                      </li>
+                      <li class="slideitem"> <!-- 3 -->
+                        <a>
+                          <label for="slide02" class="left"></label>
+                          <label for="slide01" class="right"></label>
+                          <img src="/images/misc/jnu_view2.jpg">
+                        </a>
+                      </li>
+                      <!-- <li class="slideitem">
+                        <div>
+                          <label for="slide04" class="left"></label>
+                          <label for="slide02" class="right"></label>
+                          <a><img src="./img/slide01.jpg"></a>
+                        </div>
+                      </li> -->
+                    </ul>
+                    <!-- <ul class="paginglist">
+                      <li> <label for="slide01"></label> </li>
+                      <li> <label for="slide02"></label> </li>
+                      <li> <label for="slide03"></label> </li>
+                      <li><a href="/pages/photo.html"><label style="display:block;padding:8px 8px;border-radius:30px;background:#777;margin:0px 10px;cursor:pointer;" for="goto_photo"></label> </a></li>
+                    </ul> -->
+              </div>
 
       </div>
     </div>
-      <br><br>
+    <br>
     <div class="row">
       <div class="jumbotron"; style="background-color:whitesmoke; font-size:large">
           <h2 class="news"> <a href="/pages/news"><b> News >> </b> </a></h2>
@@ -171,12 +199,72 @@
             </div>
           </div>
           
-          
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+    /* 리셋 CSS */
+    * {margin:0;padding:0;box-sizing:border-box;}
+    ul, li {list-style:none;}
+
+    /* 슬라이드 Style */
+    .slidebox {max-width:1000px;margin:0 auto;}
+    .slidebox .slidelist {white-space:nowrap;font-size:0;overflow:hidden;}
+    .slidebox .slidelist .slideitem {position:relative;display:inline-block;vertical-align:middle;width:100%;transition:all 1s;}
+    .slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
+    .slidebox .slidelist .slideitem > a img {margin:auto; max-width: 90%; max-height: 300px; display:block }
+    .slidebox .slidelist .slideitem > a label {position:absolute;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
+    .slidebox .slidelist .slideitem > a label.left {left:20px;background:#777 url('/images/misc/left-arrow.png') center center / 50% no-repeat; opacity:0.3;}
+    .slidebox .slidelist .slideitem > a label.right {right:20px;background:#777 url('/images/misc/right-arrow.png') center center / 50% no-repeat; opacity:0.3}
+
+    [name="slide"] {display:none;}
+    #slide01:checked ~ .slidelist .slideitem {transform:translateX(0);    animation:slide01 15s ease-in-out infinite;}
+    #slide02:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 15s ease-in-out infinite;}
+    #slide03:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 15s ease-in-out infinite;}
+
+    @keyframes slide01 {
+      0% {left:0%;}
+      33% {left:0%;}
+      34% {left:-100%}
+      66% {left:-100%;}
+      67% {left:-200%;}
+      99% {left:-200%;}
+      100% {left:0%;}
+    }
+
+    @keyframes slide02 {
+      0% {left:0%;}
+      33% {left:0%;}
+      34% {left:-100%;}
+      66% {left:-100%;}
+      67% {left:100%;}
+      99% {left:100%;}
+      100% {left:0%;}
+    }
+
+    @keyframes slide03 {
+      0% {left:0%;}
+      33% {left:0%;}
+      34% {left:200%;}
+      66% {left:200%;}
+      67% {left:100%;}
+      99% {left:100%;}
+      100% {left:0%;}
+    }
+        /* 페이징 스타일 */
+    .paginglist {text-align:center;padding:0px 0;}
+    .paginglist > li {display:inline-block;vertical-align:middle;margin:0 00px;}
+    .paginglist > li > label {display:block;padding:4px 30px;border-radius:10px;background:#ccc;cursor:pointer;margin:0px 5px;}
+    .paginglist > li:hover > label {background:#777;}
+    #slide01:checked ~ .paginglist > li:nth-child(1) > label {background:#777;}
+    #slide02:checked ~ .paginglist > li:nth-child(2) > label {background:#777;}
+    #slide03:checked ~ .paginglist > li:nth-child(3) > label {background:#777;}
+
+    
+</style>
 
 
 <!--  -->
