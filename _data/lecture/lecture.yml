@@ -4,7 +4,7 @@
   code: SAI0024 
   title-kr: 소프트웨어 리버스 엔지니어링
   title-en: Software Reverse Engineering 
-  link: /lecture/sre/main.html
+  link: /lecture/sre.html
 
 - semester: 2022S
   code: CIS2001 
@@ -15,7 +15,7 @@
   code: GR17202
   title-kr: 컴퓨터와네트워크보안
   title-en: Computer and network security
-  link: /lecture/cns/main.html
+  link: /lecture/cns.html
 
 - semester: 2022S
   code: AIE0002
