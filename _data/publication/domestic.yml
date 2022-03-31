@@ -1,4 +1,10 @@
 ---
+- title: BPFast&#58; An eBPF/XDP-based high-performance packet payload inspection system for cloud environments (BPFast&#58; 클라우드 환경을 위한 eBPF/XDP 기반 고속 네트워크 패킷 페이로드 검사 시스템)
+  author: Myoungsung You, Jinwoo Kim, Taejune Park, Seungwon Shin
+  where: Korea Institute of Information Security & Cryptology (한국정보보호학회논문지)
+  abbr: JKIISC [KCI Listing]
+  date: Apr. 2022
+
 - title: Mitigation for SD-WAN control traffic detection (SD-WAN 제어 트래픽 탐지에 대한 방어 기법)
   author: Minjae Seo, Jinwoo Kim, Taejune Park, Seungwon Shin
   where: 2021 Cyber Security Conference at Honam
