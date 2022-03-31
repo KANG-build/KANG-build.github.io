@@ -1,7 +1,7 @@
 ---
 - title: BPFast&#58; An eBPF/XDP-based high-performance packet payload inspection system for cloud environments (BPFast&#58; 클라우드 환경을 위한 eBPF/XDP 기반 고속 네트워크 패킷 페이로드 검사 시스템)
   author: Myoungsung You, Jinwoo Kim, Taejune Park, Seungwon Shin
-  where: Korea Institute of Information Security & Cryptology (한국정보보호학회논문지)
+  where: Journal of The Korea Institute of Information Security and Cryptology (JKIISC, 한국정보보호학회논문지)
   abbr: JKIISC [KCI Listing]
   date: Apr. 2022
 
