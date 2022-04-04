@@ -1,0 +1,51 @@
+---
+layout: default
+title: SRC Lab.
+---
+
+<div class="publication">
+    <div class="container">
+    <h1 class="publication">Publication </h1>
+    <!-- <h4> You can find a full publication list at <a href="https://scholar.google.com/citations?user=yjrmSkAAAAAJ">Google Scholar.</a></h4> -->
+
+    <h2 class="International">International </h2>
+
+    {% for pub in site.data.publication.international %}
+    <div class="pub row">
+        <div class="col-sm-10" style="line-height: 1.3;">
+            <h4 class="pub-title">  <b> {{ pub.title }} </b></h4>
+            <p class="pub-author"> {{ pub.author }}</p>
+            <p class="pub-where"> <i>{{ pub.where }} ({{ pub.abbr }})</i></p>
+            {% if pub.info %}
+            <p class="pub-info"> {{ pub.info }}</p>
+            {% endif %}
+        </div>
+        <div class="col-sm-2" style="line-height: 2.0;">
+            <p class="pub-date"> {{ pub.date }}</p>
+        </div>
+    </div>
+    <p><p></p></p>
+
+    {% endfor %}
+    <hr>
+
+    <h2 class="Domestic">Domestic </h2>
+
+    {% for pub in site.data.publication.domestic %}
+    <div class="pub row">
+        <div class="col-sm-10" style="line-height: 1.3;">
+            <h4 class="pub-title">  <b> {{ pub.title }} </b></h4>
+            <p class="pub-author"> {{ pub.author }}</p>
+            <p class="pub-where"> <i>{{ pub.where }} ({{ pub.abbr }})</i></p>
+            {% if pub.info %}
+            <p class="pub-info"> {{ pub.info }} </p>
+            {% endif %}
+        </div>
+        <div class="col-sm-2" style="line-height: 1.0;">
+            <p class="pub-date"> {{ pub.date }}</p>
+        </div>
+    </div>
+    <p><p></p></p>
+    {% endfor %}
+    </div>
+</div>

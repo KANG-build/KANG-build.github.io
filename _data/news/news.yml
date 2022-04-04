@@ -1,22 +1,26 @@
 ---
+- title: Our paper conducted with KAIST, entitled "BPFast&#58; An eBPF/XDP-based high-performance packet payload inspection system for cloud environments", has been accepted to Journal of The Korea Institute of Information Security and Cryptology (JKIISC, 한국정보보호학회논문지).
+  date: 2022-04-01
+
+- title: Sooyeon Kim joined our lab! Welcome! 
+  date: 2022-03-23
+
+- title: Prof. Park was selected for the Young Scientist Grants/Outstanding Track of National Research Foundation (2022-2026)!
+  date: 2022-03-01
+
 - title: Ayoung Kim joined our lab! Welcome! 
   date: 2021-12-17
-  excerpt: >
 
 - title: Our paper conducted with KAIST, entitled "eBPF/XDP-based high-performance packet payload inspection system for container environments", received the Best Paper Award at the KIISC!
   date: 2021-11-05
-  excerpt: >
 
 - title: Our study conducted with KAIST won the award at the 2021 Cybersecurity Paper Contest of KIISC!  
   date: 2021-10-05
-  excerpt: >
 
 - title: A paper, entitled "Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI", has been accepted to the Annual Computer Security Applications Conference (ACSAC) 2021. 
   date: 2021-09-01
   nlink: "https://www.acsac.org/2021/"
-  excerpt: >
 
 - title: Taejune Park was appointed as an Assistant Professor in the College of AI Convergence, School of Artificial Intelligence at Chonnam National University.
   date: 2021-09-01
   nlink: "https://aisw.jnu.ac.kr/"
-  excerpt: >

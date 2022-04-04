@@ -1,0 +1,21 @@
+---
+layout: default
+title: SRC Lab.
+---
+
+<div class="lecture">
+    <div class="container"  style="line-height: 2;">
+        <h1 class="lecture"> Lecture </h1>
+        <p>
+            <ul>
+                {% for lec in site.data.lecture.lecture %}
+                <li>
+                    {% if lec.link %} <a href= {{ lec.link }} >  {% endif %}
+                        [{{lec.semester}} {{lec.code}}] {{lec.title-kr}} ({{lec.title-en}})
+                    {% if lec.link %} </a>  {% endif %}
+                </li>        
+                {% endfor %}
+            </ul>
+        </p>
+    </div>
+</div>

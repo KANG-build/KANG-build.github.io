@@ -1,0 +1,35 @@
+---
+layout: default
+title: SRC Lab.
+---
+<div class="news">
+    <div class="container" style="line-height: 1.6;">
+        <h1 class="lecture"> News </h1>
+        <ul>
+        {% for news in site.data.news.news %}
+        
+        <div class="pub row" style="padding-top:20px; line-height: 1.6;" >
+        
+        <div class="col-sm-2" style="margin-right:-50px;margin-left:00px;">
+        <li> 
+        <span class="post-meta"> {{ news.date }} </span>
+            </div>
+            <div class="col-sm-10" style="line-height: 1.6;">
+             {{ news.title }} 
+
+             {% if news.link %}
+             <a href="{{ news.link }}" target="_self">[Link]</a>
+             {% endif %}
+
+             {% if news.nlink %}
+             <a href="{{ news.nlink }}" target="_blank">[Link]</a>
+             {% endif %}
+            </li>
+        </div>
+        </div>
+        {% endfor %}
+        
+      </div>
+      </ul>
+    </div>
+</div>

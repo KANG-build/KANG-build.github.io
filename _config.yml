@@ -28,9 +28,3 @@ paginate: 5
 paginate_path: "/news/:num/"
 
 gems: [jekyll-paginate]
-
-# Analytics
-analytics:
-  provider               : "google-universal" # false (default), "google", "google-universal", "google-gtag", "custom"
-  google:
-    tracking_id          : "G-XME0NR2709"
