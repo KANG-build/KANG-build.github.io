@@ -1,7 +1,7 @@
 ---
 - title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
   author: Taejune park and Kilho Lee
-  where: Elsevier Journal of Networking and Computer Applications
+  where: Journal of Networking and Computer Applications
   abbr: JNCA
   date: Apr. 2022
 
@@ -13,19 +13,19 @@
 
 - title: Formullar&#58; An FPGA-based network testing tool for flexible and precise measurement of Ultra-Low Latency networking systems        
   author: Taejune Park, Seungwon Shin, Insik Shin and Kilho Lee
-  where: Elsevier International Journal of Computer and Telecommunications Networking, 185 (2021)&#58; 107689. 
+  where: Computer Networks 185, 107689	
   abbr: COMNET
   date: Feb. 2021
 
 - title: Mobius&#58; Packet re-processing hardware architecture for rich policy handling on a network processor
   author: Taejune Park and Seungwon Shin
-  where: Springer Journal of Network and Systems Management 29.1 (2021)&#58; 1-26.
+  where: Journal of Network and Systems Management 29 (1), 1-26	
   abbr: JONS
   date: Jan. 2021
 
 - title: SODA&#58; A Software-defined Security Framework for IoT Environments
   author: Yeonkeun Kim, Jaehyun Nam, Taejune Park, Sandra Scott-Hayward, and Seungwon Shin
-  where: Elsevier International Journal of Computer and Telecommunications Networking, 163 (2019)&#58; 106889.
+  where: Computer Networks 163, 106889	
   abbr: COMNET
   date: Nov. 2019
 
@@ -37,7 +37,7 @@
 
 - title: MC-SDN&#58; Supporting Mixed-Criticality Real-Time Communication Using Software-Defined Networking
   author: Kilho Lee, Minsu Kim, Taejune Park, Hoon Sung Chwa, Jinkyu Lee, Seungwon Shin, and Insik Shin
-  where: IEEE Internet of Things Journal 6.4 (2019)&#58; 6325-6344.
+  where: IEEE Internet of Things Journal 6 (4), 6325-6344	
   abbr: IoT
   date: May. 2019
 
@@ -55,7 +55,7 @@
 
 - title: Flow Wars&#58; Systemizing the Attack Surface and Defenses in Software-Deﬁned Networks
   author: Changhoon Yoon, Seungsoo Lee, Heedo Kang, Taejune Park, Seungwon Shin, Vinod Yegneswaran, Phillip Porras, and Guofei Gu
-  where: IEEE/ACM Transactions on Networking 25.6 (2017)&#58; 3514-3530.
+  where: IEEE/ACM Transactions on Networking 25 (6), 3514-3530	
   abbr: ToN
   date: Sep. 2017
 
@@ -79,7 +79,7 @@
 
 - title: Enabling Security Functions with SDN&#58; A Feasibility Study
   author: Changhoon Yoon, Taejune Park, Seungsoo Lee, Heedo Kang, Seungwon Shin, and Zonghua Zhang
-  where: Elsevier International Journal of Computer and Telecommunications Networking, 85 (2015)&#58; 19-35.
+  where: Computer Networks 85, 19-35	
   abbr: COMNET
   date: May. 2015
   
