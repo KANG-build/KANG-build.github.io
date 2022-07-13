@@ -7,44 +7,53 @@ title: SRC Lab.
         <h1 class="project"> Research </h1>
         <hr>
         <p>
-            <h2 style="color:#04128E; font-weight:bolder;  line-height:0.7em"> We study security and reliability</h2>
-            <h4 style="color:#04128E; font-weight:bolder"> on computing system, network, Internet of things and data security for cloud and edge computing systems </h4>
+            <h2 style="color:#04128E; font-weight:bolder;  line-height:0.5em"> We study security and reliability on </h2>
+            <h2 style="color:#04128E; font-weight:bolder"> computing system, network, Internet of things and data security for cloud and edge computing systems </h4>
         </p> 
-        <p></p><p></p>
-        <h4 style="font-weight:bolder"> Representative projects  </h4>
-        <p>
-            <ul>
-                <li> Detecting and mitigating DDoS attacks on Edge-computing environment; Selendis </li>
-                <li> Enabling Stable Ultra Reliable Low Latency Communication in Multi-access Edge Computing; MECaNIC </li>
-                <li> High-performance and real-time programmable regular expression processor for Deep Packet Inspection; Reinhardt </li>
-                <li> Mixed-Criticality Scheduling on Switched-Ethernet Using Software-Defined Networking; MC-SDN </li>
-                <li> SDN Security service instantiation on a data plane; DPX  </li>
-                <li> Comprehensive study on SDN security </li>
-            </ul>
-        </p>
+        <p></p><br><p></p>
 
-        <hr>
+        <h3 style="font-weight:bolder"> Representative study  </h4>
+        {% for pub in site.data.research.study %}
+        <div class="row">
+            <div class="col-sm-10" style="line-height: 1.3;">
+                <p>
+                    <ul> 
+                        <li> {{ pub.topic }}; {{ pub.nickname }} </li>
+                    </ul>
+                </p>
+            </div> 
+        </div>
+        {% endfor %}
+
+        <p></p><hr><p></p>
+
+        <h3 style="font-weight:bolder"> Research project  </h4>
+        {% for pub in site.data.research.project %}
+        <div class="pub row">
+            <div class="col-sm-10" style="line-height: 1.3;">
+                <h4 class="pub-title">  <b> {{ pub.title }} </b></h4>
+                <p class="pub-author"> {{ pub.order }}</p>
+            </div>
+            <div class="col-sm-2" style="line-height: 1.0;">
+                <p class="pub-date"> {{ pub.date }}</p>
+            </div>
+        </div>
+        <p><p></p></p>
+        {% endfor %}
+
+        <p></p><hr><p></p>
+        
         <h3> The SRC Lab. conducts joint researches with various institutions  </h3><br><br>
-        <div class="person col-md-3 col-sm-6 col-xs-12">
-            <p> <img src="/image/institution/kaist.png" alt="photo" class="person-photo" width="200px"><br><br> </p>
+        {% for pub in site.data.research.joint %}
+        <div class="row">
+            <div class="col-sm-10" style="line-height: 1.0;">
+                <p>
+                    <div class="person col-md-3 col-sm-6 col-xs-12">
+                        <p> <img src="{{ pub.img }}" alt="photo" class="person-photo" width="200px"><br><br> </p>
+                    </div>
+                </p>
+            </div> 
         </div>
-        <div class="person col-md-3 col-sm-6 col-xs-12">
-            <p>  <img src="/image/institution/inu.png" alt="photo" class="person-photo" width="200px"><br><br></p>
-        </div>
-        <div class="person col-md-3 col-sm-6 col-xs-12"> 
-            <p> <img src="/image/institution/kwu.jpg" alt="photo" class="person-photo" width="200px"><br><br></p>
-        </div>
-        <div class="person col-md-3 col-sm-6 col-xs-12">
-            <p>   <img src="/image/institution/soongsil.png" alt="photo" class="person-photo" width="200px"><br><br></p>
-        </div>
-        <div class="person col-md-3 col-sm-6 col-xs-12">
-            <p>    <img src="/image/institution/kloudmax.png" alt="photo" class="person-photo" width="200px"><br><br></p>
-        </div>
-        <div class="person col-md-3 col-sm-6 col-xs-12">
-            <p>    <img src="/image/institution/accuknox.png" alt="photo" class="person-photo" width="200px"><br><br></p>
-        </div>
-        <div class="person col-md-3 col-sm-6 col-xs-12">
-            <p>     <img src="/image/institution/alpinelab.png" alt="photo" class="person-photo" width="200px"><br><br></p>
-        </div>
+        {% endfor %}
     </div>
 </div>

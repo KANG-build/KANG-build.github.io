@@ -28,3 +28,6 @@ paginate: 5
 paginate_path: "/news/:num/"
 
 gems: [jekyll-paginate]
+
+host: 192.168.0.3
+port: 4000

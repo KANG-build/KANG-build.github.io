@@ -1,0 +1,33 @@
+---
+
+- name: kaist
+  img: /image/institution/kaist.png
+  link: 
+
+- name: inu
+  img: /image/institution/inu.png
+  link: 
+
+- name: kwu
+  img: /image/institution/kwu.jpg
+  link: 
+
+- name: soongsil
+  img: /image/institution/soongsil.png
+  link: 
+
+- name: dku
+  img: /image/institution/dku.png
+  link: 
+
+- name: kloudmax
+  img: /image/institution/kloudmax.png
+  link: 
+
+- name: accuknox
+  img: /image/institution/accuknox.png
+  link: 
+
+- name: alpinelab
+  img: /image/institution/alpinelab.png
+  link: 

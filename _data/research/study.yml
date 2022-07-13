@@ -1,0 +1,19 @@
+---
+
+- topic: Detecting and mitigating DDoS attacks on Edge-computing environment
+  nickname : Selendis
+
+- topic: Enabling Stable Ultra Reliable Low Latency Communication in Multi-access Edge Computing
+  nickname : MECaNIC
+
+- topic: High-performance and real-time programmable regular expression processor for Deep Packet Inspection
+  nickname : Reinhardt
+
+- topic: Mixed-Criticality Scheduling on Switched-Ethernet Using Software-Defined Networking
+  nickname : MC-SDN
+  
+- topic: SDN Security service instantiation on a data plane
+  nickname : DPX
+
+- topic: Comprehensive study on SDN security
+  nickname :  
