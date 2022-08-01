@@ -1,4 +1,11 @@
 ---
+- title: MECaNIC&#58; SmartNIC to Assist URLLC Processing in Multi-Access Edge Computing Platforms
+  author: Taejune Park, Myoungsung You, Jian Cui, Youngjin Jin, Kilho Lee and Seungwon Shin 
+  where: The 30th IEEE International Conference on Network Protocols 
+  abbr: ICNP
+  date: Oct. 2022
+
+
 - title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
   author: Taejune park and Kilho Lee
   where: Journal of Networking and Computer Applications
