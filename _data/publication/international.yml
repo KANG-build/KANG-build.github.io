@@ -1,4 +1,11 @@
 ---
+- title: Reconfigurable Regular Expression Matching Architecture for Real-time Pattern Update and Payload Inspection Journal of Network and Computer Applications
+  author: Jaehyun Nam, Seung Ho Na, Seungwon Shin and Taejune Park
+  where: Journal of Networking and Computer Applications
+  abbr: JNCA
+  date: Aug. 2022
+
+
 - title: MECaNIC&#58; SmartNIC to Assist URLLC Processing in Multi-Access Edge Computing Platforms
   author: Taejune Park, Myoungsung You, Jian Cui, Youngjin Jin, Kilho Lee and Seungwon Shin 
   where: The 30th IEEE International Conference on Network Protocols 
