@@ -1,4 +1,10 @@
 ---
+- title: Heimdallr&#58; Fingerprinting SD-WAN Control-Plane Architecture via Encrypted Control Traffic
+  author: Minjae Seo, Jaehan Kim, Eduard Marin, Myeongsung You, Taejune Park, Seungsoo Lee, Seungwon Shin and Jinwoo Kim
+  where: The Annual Computer Security Applications Conference
+  abbr: ACSAC
+  date: Dec. 2022
+
 - title: Reconfigurable Regular Expression Matching Architecture for Real-time Pattern Update and Payload Inspection Journal of Network and Computer Applications
   author: Jaehyun Nam, Seung Ho Na, Seungwon Shin and Taejune Park
   where: Journal of Networking and Computer Applications
