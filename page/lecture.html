@@ -8,7 +8,7 @@ title: SRC Lab.
         <h1 class="lecture"> Lecture </h1>
         <p>
             <ul>
-                {% for lec in site.data.lecture.lecture %}
+                {% for lec in site.data.lecture %}
                 <li>
                     {% if lec.link %} <a href= {{ lec.link }} >  {% endif %}
                         [{{lec.semester}} {{lec.code}}] {{lec.title-kr}} ({{lec.title-en}})

@@ -31,21 +31,21 @@ title: SRC Lab.
                         <a>
                           <label for="slide03" class="left"></label>
                           <label for="slide02" class="right"></label>
-                          <img src="/image/logo/logo_blue.png">
+                          <img src="/image/src/logo_blue.png">
                         </a>
                       </li>
                       <li class="slideitem"> <!-- 2 -->
                         <a>
                           <label for="slide01" class="left"></label>
                           <label for="slide03" class="right"></label>
-                          <img src="/image/slideimg/jnu_view2.jpg">
+                          <img src="/image/src/group-wisa2022.jpg">
                         </a>
                       </li>
                       <li class="slideitem"> <!-- 3 -->
                         <a>
                           <label for="slide02" class="left"></label>
                           <label for="slide01" class="right"></label>
-                          <img src="/image/slideimg/jnu_view1.jpg">
+                          <img src="/image/slideimg/jnu_view2.jpg">
                         </a>
                       </li>
                     </ul>
@@ -57,7 +57,7 @@ title: SRC Lab.
     <div class="row">
       <div class="jumbotron"; style="background-color:whitesmoke; font-size:large">
           <h2 class="news"> <a href="/page/news"> <b> News >> </b> </a> </h2>
-          {% for news in site.data.news.news limit: 5 %}
+          {% for news in site.data.news limit: 5 %}
           <div class="pub row" style="padding-top:20px; line-height: 1.6;" >
             <div class="col-sm-2" style="margin-right:-50px;margin-left:00px;">
               <span class="post-meta"> {{ news.date }} </span>
