@@ -25,11 +25,13 @@ title: SRC Lab.
                     <input type="radio" name="slide" id="slide01" checked>
                     <input type="radio" name="slide" id="slide02">
                     <input type="radio" name="slide" id="slide03">
+                    <input type="radio" name="slide" id="slide04">
+
                     <!-- <input type="radio" name="slide" id="slide04"> -->
                     <ul class="slidelist">
                       <li class="slideitem"> <!-- 1 -->
                         <a>
-                          <label for="slide03" class="left"></label>
+                          <label for="slide04" class="left"></label>  
                           <label for="slide02" class="right"></label>
                           <img src="/image/src/logo_blue.png">
                         </a>
@@ -44,6 +46,13 @@ title: SRC Lab.
                       <li class="slideitem"> <!-- 3 -->
                         <a>
                           <label for="slide02" class="left"></label>
+                          <label for="slide04" class="right"></label>
+                          <img src="/image/src/group-aicon2022.jpg">
+                        </a>
+                      </li>
+                      <li class="slideitem"> <!-- 4 -->
+                        <a>
+                          <label for="slide03" class="left"></label>
                           <label for="slide01" class="right"></label>
                           <img src="/image/slideimg/jnu_view2.jpg">
                         </a>
@@ -97,9 +106,10 @@ title: SRC Lab.
     .slidebox .slidelist .slideitem > a label.right {right:20px;background:#777 url('/image/slideimg/right-arrow.png') center center / 50% no-repeat; opacity:0.3}
 
     [name="slide"] {display:none;}
-    #slide01:checked ~ .slidelist .slideitem {transform:translateX(0);    animation:slide01 15s ease-in-out infinite;}
-    #slide02:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 15s ease-in-out infinite;}
-    #slide03:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 15s ease-in-out infinite;}
+    #slide01:checked ~ .slidelist .slideitem {transform:translateX(0);    animation:slide01 5s ease-in-out infinite;}
+    #slide02:checked ~ .slidelist .slideitem {transform:translateX(-100%);animation:slide02 5s ease-in-out infinite;}
+    #slide03:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 5s ease-in-out infinite;}
+    #slide04:checked ~ .slidelist .slideitem {transform:translateX(-300%);animation:slide04 5s ease-in-out infinite;}
 
     @keyframes slide01 {
       0% {left:0%;}
@@ -124,12 +134,23 @@ title: SRC Lab.
     @keyframes slide03 {
       0% {left:0%;}
       33% {left:0%;}
+      34% {left:-100%;}
+      66% {left:-100%;}
+      67% {left:100%;}
+      99% {left:100%;}
+      100% {left:0%;}
+    }
+
+    @keyframes slide04 {
+      0% {left:0%;}
+      33% {left:0%;}
       34% {left:200%;}
       66% {left:200%;}
       67% {left:100%;}
       99% {left:100%;}
       100% {left:0%;}
     }
+  
         /* 페이징 스타일 */
     .paginglist {text-align:center;padding:0px 0;}
     .paginglist > li {display:inline-block;vertical-align:middle;margin:0 00px;}
@@ -138,4 +159,5 @@ title: SRC Lab.
     #slide01:checked ~ .paginglist > li:nth-child(1) > label {background:#777;}
     #slide02:checked ~ .paginglist > li:nth-child(2) > label {background:#777;}
     #slide03:checked ~ .paginglist > li:nth-child(3) > label {background:#777;}
+    #slide04:checked ~ .paginglist > li:nth-child(4) > label {background:#777;}
 </style>
