@@ -111,7 +111,7 @@ title: SRC Lab.
     #slide03:checked ~ .slidelist .slideitem {transform:translateX(-200%);animation:slide03 30s ease-in-out infinite;}
     #slide04:checked ~ .slidelist .slideitem {transform:translateX(-300%);animation:slide04 30s ease-in-out infinite;}
 
-    @keyframes slide01 {
+    /* @keyframes slide01 {
       0% {left:0%;}
       33% {left:0%;}
       34% {left:-100%}
@@ -119,7 +119,7 @@ title: SRC Lab.
       67% {left:-200%;}
       99% {left:-200%;}
       100% {left:0%;}
-    }
+    } 
 
     @keyframes slide02 {
       0% {left:0%;}
@@ -149,7 +149,57 @@ title: SRC Lab.
       67% {left:100%;}
       99% {left:100%;}
       100% {left:0%;}
+    }*/
+
+    @keyframes slide01 {
+      0% {left:0%;}
+      24% {left:0%;}
+      25% {left:-100%}
+      49% {left:-100%;}
+      50% {left:-200%;}
+      74% {left:-200%;}
+      75% {left:-300%;}
+      99% {left:-300%;}
+      100% {left:0%;}
     }
+
+    @keyframes slide02 {
+      0% {left:0%;}
+      24% {left:0%;}
+      25% {left:-100%}
+      49% {left:-100%;}
+      50% {left:100%;}
+      74% {left:100%;}
+      75% {left:200%;}
+      99% {left:200%;}
+      100% {left:0%;}
+    }
+
+  
+    @keyframes slide03 {
+      0% {left:0%;}
+      24% {left:0%;}
+      25% {left:-200%}
+      49% {left:-200%;}
+      50% {left:-100%;}
+      74% {left:-100%;}
+      75% {left:100%;}
+      99% {left:100%;}
+      100% {left:0%;}
+    }
+
+    @keyframes slide04 {
+      0% {left:0%;}
+      24% {left:0%;}
+      25% {left:300%}
+      49% {left:300%;}
+      50% {left:200%;}
+      74% {left:200%;}
+      75% {left:100%;}
+      99% {left:100%;}
+      100% {left:0%;}
+    }
+
   
         /* 페이징 스타일 */
     .paginglist {text-align:center;padding:0px 0;}
