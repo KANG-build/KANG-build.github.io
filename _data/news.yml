@@ -1,5 +1,8 @@
 ---
-- title: Our paper conducted with KAIST, entitled "Heimdallr&#58; Fingerprinting SD-WAN Control-Plane Architecture via Encrypted Control Traffic", has been accepted to the Annual Computer Security Applications Conference 2022 (ACSAC'22, CS top conference). 
+- title: Our paper, entitled "Extended SDN Data Plane Architecture for In-Network Security Services", has been accepted to Computers & Security (COMSEC, IF 5.105, JCR, JCR 25%). 
+  date: 2022-10-20
+
+- title: Our paper, entitled "Heimdallr&#58; Fingerprinting SD-WAN Control-Plane Architecture via Encrypted Control Traffic", has been accepted to the Annual Computer Security Applications Conference 2022 (ACSAC'22, CS top conference). 
   date: 2022-09-03
  
 - title: Our paper, entitled "Reconfigurable Regular Expression Matching Architecture for Real-time Pattern Update and Payload Inspection Journal of Network and Computer Applications", has been accepted to Journal of Networking and Computer Applications (JNCA, IF 7.574, JCR 8%).
@@ -29,7 +32,7 @@
 - title: Ayoung Kim joined our lab! Welcome! 
   date: 2021-12-17
 
-- title: Our paper conducted with KAIST, entitled "eBPF/XDP-based high-performance packet payload inspection system for container environments", received the Best Paper Award at the KIISC!
+- title: Our paper, entitled "eBPF/XDP-based high-performance packet payload inspection system for container environments", received the Best Paper Award at the KIISC!
   date: 2021-11-05
 
 - title: Our study conducted with KAIST won the award at the 2021 Cybersecurity Paper Contest of KIISC!  

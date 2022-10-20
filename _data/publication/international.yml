@@ -1,4 +1,10 @@
 ---
+- title: Extended SDN Data Plane Architecture for In-Network Security Services
+  author: Jinwoo Kim, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Seungwon Shin and Taejune Park
+  where: Computers & Security
+  abbr: COMSEC
+  date: Dec. 2022
+
 - title: Heimdallr&#58; Fingerprinting SD-WAN Control-Plane Architecture via Encrypted Control Traffic
   author: Minjae Seo, Jaehan Kim, Eduard Marin, Myeongsung You, Taejune Park, Seungsoo Lee, Seungwon Shin and Jinwoo Kim
   where: The Annual Computer Security Applications Conference
@@ -11,13 +17,11 @@
   abbr: JNCA
   date: Aug. 2022
 
-
 - title: MECaNIC&#58; SmartNIC to Assist URLLC Processing in Multi-Access Edge Computing Platforms
   author: Taejune Park, Myoungsung You, Jian Cui, Youngjin Jin, Kilho Lee and Seungwon Shin 
   where: The 30th IEEE International Conference on Network Protocols 
   abbr: ICNP
   date: Oct. 2022
-
 
 - title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
   author: Taejune park and Kilho Lee
