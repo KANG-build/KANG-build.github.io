@@ -1,4 +1,10 @@
 ---
+- name: Taejune Park
+  photo: "/image/people/taejune_park.jpg"
+  role: Assistant Professor
+  link: "/page/faculty.html"
+  email: taejune.park *at* jnu.ac.kr
+
 - name: Hyunyoung Lee
   photo: "/image/people/hyunyounglee.jpg"
   role: Master degree candidate
