@@ -1,4 +1,9 @@
 ---
+- name: Hyunyoung Lee
+  photo: "/image/people/hyunyounglee.png"
+  role: Master degree candidate
+  email: brasd9806 *at* jnu.ac.kr
+
 - name: Ayoung Kim
   photo: "/image/people/ayoungkim.png"
   role: Undergraduate Researcher
