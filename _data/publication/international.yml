@@ -1,0 +1,109 @@
+---
+- title: Extended SDN Data Plane Architecture for In-Network Security Services
+  author: Jinwoo Kim, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Seungwon Shin and Taejune Park
+  where: Computers and Security
+  abbr: COMSEC
+  date: Jan. 2023
+
+- title: Heimdallr&#58; Fingerprinting SD-WAN Control-Plane Architecture via Encrypted Control Traffic
+  author: Minjae Seo, Jaehan Kim, Eduard Marin, Myeongsung You, Taejune Park, Seungsoo Lee, Seungwon Shin and Jinwoo Kim
+  where: The Annual Computer Security Applications Conference
+  abbr: ACSAC
+  date: Dec. 2022
+
+- title: Reconfigurable Regular Expression Matching Architecture for Real-time Pattern Update and Payload Inspection Journal of Network and Computer Applications
+  author: Jaehyun Nam, Seung Ho Na, Seungwon Shin and Taejune Park
+  where: Journal of Networking and Computer Applications
+  abbr: JNCA
+  date: Dec. 2022
+
+- title: MECaNIC&#58; SmartNIC to Assist URLLC Processing in Multi-Access Edge Computing Platforms
+  author: Taejune Park, Myoungsung You, Jian Cui, Youngjin Jin, Kilho Lee and Seungwon Shin 
+  where: The 30th IEEE International Conference on Network Protocols 
+  abbr: ICNP
+  date: Oct. 2022
+
+- title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
+  author: Taejune park and Kilho Lee
+  where: Journal of Networking and Computer Applications
+  abbr: JNCA
+  date: Aug. 2022
+
+- title: Reinhardt&#58; Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI
+  author: Taejune park, Jaehyun Nam, Seung Ho Na, Jaewoong Chung and Seungwon Shin 
+  where: Annual Computer Security Application Conference 2021
+  abbr: ACSAC
+  date: Dec. 2021
+
+- title: Formullar&#58; An FPGA-based network testing tool for flexible and precise measurement of Ultra-Low Latency networking systems        
+  author: Taejune Park, Seungwon Shin, Insik Shin and Kilho Lee
+  where: Computer Networks 185, 107689	
+  abbr: COMNET
+  date: Feb. 2021
+
+- title: Mobius&#58; Packet re-processing hardware architecture for rich policy handling on a network processor
+  author: Taejune Park and Seungwon Shin
+  where: Journal of Network and Systems Management 29 (1), 1-26	
+  abbr: JONS
+  date: Jan. 2021
+
+- title: SODA&#58; A Software-defined Security Framework for IoT Environments
+  author: Yeonkeun Kim, Jaehyun Nam, Taejune Park, Sandra Scott-Hayward, and Seungwon Shin
+  where: Computer Networks 163, 106889	
+  abbr: COMNET
+  date: Nov. 2019
+
+- title: DPX&#58; Data-Plane eXtensions for SDN Security Service Instantiation
+  author: Taejune Park, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Zhaoyan Xu, Kyungsoo Park, and Seungwon Shin
+  where: The 16th Conference on Detection of Intrusions and Malware & Vulnerability Assessment, Gothenburg, Sweden
+  abbr: DIMVA
+  date: Jun. 2019
+
+- title: MC-SDN&#58; Supporting Mixed-Criticality Real-Time Communication Using Software-Defined Networking
+  author: Kilho Lee, Minsu Kim, Taejune Park, Hoon Sung Chwa, Jinkyu Lee, Seungwon Shin, and Insik Shin
+  where: IEEE Internet of Things Journal 6 (4), 6325-6344	
+  abbr: IoT
+  date: May. 2019
+
+- title: MC-SDN&#58; Supporting Mixed-Criticality Scheduling on Switched-Ethernet Using Software-Defined Networking
+  author: Kilho Lee, Taejune Park, Minsu Kim, Hoon Sung Chwa, Jinkyu Lee, Seungwon Shin, and Insik Shin
+  where: The 39th IEEE Real-Time Systems Symposium, Nashville, TN, USA
+  abbr: RTSS
+  date: Dec. 2018
+
+- title: HEX Switch&#58; Hardware-assisted security extensions of OpenFlow
+  author: Taejune Park, Zhaoyan Xu, and Seungwon Shin
+  where: ACM SIGCOMM 2018 Workshop on Security in Softwarized Networks&#58; Prospects and Challenges, Budapest, Hungary 
+  abbr: SIGCOMM-SecSoN
+  date: Aug. 2018
+
+- title: Flow Wars&#58; Systemizing the Attack Surface and Defenses in Software-Deﬁned Networks
+  author: Changhoon Yoon, Seungsoo Lee, Heedo Kang, Taejune Park, Seungwon Shin, Vinod Yegneswaran, Phillip Porras, and Guofei Gu
+  where: IEEE/ACM Transactions on Networking 25 (6), 3514-3530	
+  abbr: ToN
+  date: Sep. 2017
+
+- title: QoSE&#58; Quality of SEcurity (A network security module using a distributed NFV)
+  author: Taejune Park, Yeonkeun Kim, Jaehyun Park, Hyunmin Suh, Byeongdo Hong, and Seungwon Shin
+  where: IEEE International Conference on Communications 2016, Kuala Lumpur, Malaysia
+  abbr: ICC
+  date: May. 2016
+
+- title: UNISAFE&#58; A union of security actions for software switches
+  author: Taejune Park, Yeonkeun Kim, and Seungwon Shin
+  where: ACM International Workshop on Security in Software Defined Networks & Network Function Virtualization 2016, New Orleans, LA, USA
+  abbr: SDN-NFV Security
+  date: Mar. 2016
+
+- title: A Playground for Software-defined Networking Security (Poster)
+  author: Seunghyeon Lee, Chanhee Lee, Hyeonseong Jo, Jinwoo Kim, Seungsoo Lee, Jaehyun Nam, Taejune Park, Changhoon Yoon, Yeonkeun Kim, Heedo Kang, and Seungwon Shin
+  where: ACM SIGCOMM Symposium On SDN Research 2015, Santa Clara, CA, USA
+  abbr: SOSR
+  date: Jun. 2015
+
+- title: Enabling Security Functions with SDN&#58; A Feasibility Study
+  author: Changhoon Yoon, Taejune Park, Seungsoo Lee, Heedo Kang, Seungwon Shin, and Zonghua Zhang
+  where: Computer Networks 85, 19-35	
+  abbr: COMNET
+  date: May. 2015
+  
