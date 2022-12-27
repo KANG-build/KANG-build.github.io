@@ -5,58 +5,99 @@
   abbr: JKIISC [KCI Listing]
   date: Apr. 2022
 
-- title: Mitigation for SD-WAN control traffic detection (SD-WAN 제어 트래픽 탐지에 대한 방어 기법)
-  author: Minjae Seo, Jinwoo Kim, Taejune Park, Seungwon Shin
-  where: 2021 Cyber Security Conference at Honam
-  abbr: CSHONAM
+- title: Reconfigurable Regular Expression Matching Architecture for Real-time Pattern Update and Payload Inspection Journal of Network and Computer Applications
+  author: Jaehyun Nam, Seung Ho Na, Seungwon Shin and Taejune Park
+  where: Journal of Networking and Computer Applications
+  abbr: JNCA
+  date: Dec. 2022
+
+- title: MECaNIC&#58; SmartNIC to Assist URLLC Processing in Multi-Access Edge Computing Platforms
+  author: Taejune Park, Myoungsung You, Jian Cui, Youngjin Jin, Kilho Lee and Seungwon Shin 
+  where: The 30th IEEE International Conference on Network Protocols 
+  abbr: ICNP
+  date: Oct. 2022
+
+- title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
+  author: Taejune park and Kilho Lee
+  where: Journal of Networking and Computer Applications
+  abbr: JNCA
+  date: Aug. 2022
+
+- title: Reinhardt&#58; Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI
+  author: Taejune park, Jaehyun Nam, Seung Ho Na, Jaewoong Chung and Seungwon Shin 
+  where: Annual Computer Security Application Conference 2021
+  abbr: ACSAC
   date: Dec. 2021
 
-- title: eBPF/XDP-based high-performance packet payload inspection system for container environments (컨테이너 환경을 위한 eBPF/XDP 기반 고속 네트워크 패킷 페이로드 검사 시스템)
-  author: Myoungsung You, Jinwoo Kim, Taejune Park, Seungwon Shin
-  where: 2021 Cyber Security Conference at Honam
-  abbr: CSHONAM
-  date: Dec. 2021
-  info: <font color=blue> * Best paper award </font>
+- title: Formullar&#58; An FPGA-based network testing tool for flexible and precise measurement of Ultra-Low Latency networking systems        
+  author: Taejune Park, Seungwon Shin, Insik Shin and Kilho Lee
+  where: Computer Networks 185, 107689	
+  abbr: COMNET
+  date: Feb. 2021
 
-- title: Software-Defined Networking Enabling Expeditious Forwarding Rule Management for Cyber-Physical Defense Systems (국방 사이버-물리 시스템을 위한 신속한 전송 정책 관리를 지원하는 소프트웨어 정의 네트워킹 기술)
-  author: Kilho Lee, Taejune Park, Minsu Kim, Seungwon Shin, Insik Shin
-  where: Journal of KIISE, vol. 46, no. 4, pp. 291-298 (정보과학회논문지, Vol.46 No.4) 
-  abbr: JOK, [KCI Excellent Listing]
-  date: Apr. 2019
-
-- title: Software-Defined Networking Switch Architecture Enabling Expeditious Forwarding Rule Management for Cyber-Physical Systems (사이버-물리 시스템을 위한 신속한 전송 정책 관리를 지원하는 소프트웨어 정의 네트워크 스위치 구조)
-  author: Kilho Lee, Taejune Park, Minsu Kim, Seungwon Shin, Insik Shin
-  where: Korea Computer Congress 2018, Jeju, Korea (한국정보과학회 학술발표논문집, Vol.2018 No.6)
-  abbr: KCC 
-  date: Jun. 2018
-  info: <font color=blue> * Best paper award </font>
-
-- title: An anomaly detection system via analyzing an OpenFlow flow table (오픈플로우 흐름표 (Flow Table) 분석을 통한 이상행위 탐지 시스템)
+- title: Mobius&#58; Packet re-processing hardware architecture for rich policy handling on a network processor
   author: Taejune Park and Seungwon Shin
-  where: Korean Institute of Communication Sciences Conference 2018, Jeju, Korea, June 2018 (한국통신학회 학술대회논문집, Vol.2018 No.6)
-  abbr: KICS Conf.
-  date: Jun. 2018
+  where: Journal of Network and Systems Management 29 (1), 1-26	
+  abbr: JONS
+  date: Jan. 2021
 
-- title: A Vulnerability Evaluation of Ryu Controller in Software-Defined Networking (소프트웨어 정의 네트워킹 기술에서의 Ryu 컨트롤러에 대한 취약성 평가)
-  author: Seungwon Woo, Taejune Park, and Seungwon Shin
-  where: Korean Institute of Communication Sciences Conference 2017, Daegu, Korea (한국통신학회 학술대회논문집, Vol.2017 No.11)
-  abbr: KICS Conf.
-  date: Nov. 2017
+- title: SODA&#58; A Software-defined Security Framework for IoT Environments
+  author: Yeonkeun Kim, Jaehyun Nam, Taejune Park, Sandra Scott-Hayward, and Seungwon Shin
+  where: Computer Networks 163, 106889	
+  abbr: COMNET
+  date: Nov. 2019
 
-- title: An inter-device communication method using virtual network interface cards and a software switch (가상 네트워크 인터페이스 카드와 소프트웨어 스위치를 활용한 이기종간 통신)
-  author: Taejune Park, Seungwon Woo, and Seungwon Shin
-  where: Korean Institute of Communication Sciences Conference 2017, Daegu, Korea (한국통신학회 학술대회논문집, Vol.2017 No.11)
-  abbr: KICS Conf.
-  date: Nov. 2017
+- title: DPX&#58; Data-Plane eXtensions for SDN Security Service Instantiation
+  author: Taejune Park, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Zhaoyan Xu, Kyungsoo Park, and Seungwon Shin
+  where: The 16th Conference on Detection of Intrusions and Malware & Vulnerability Assessment, Gothenburg, Sweden
+  abbr: DIMVA
+  date: Jun. 2019
 
-- title: Designing Artificial Neural Networking using Software-Defined Networking technology (소프트웨어 정의 네트워킹 기술을 활용한 인공신경망 구성)
-  author: Taejune Park, Seungwon Woo, and Seungwon Shin
-  where: Korean Institute of Communication Sciences Conference 2017, Daegu, Korea (한국통신학회 학술대회논문집, Vol.2017 No.11)
-  abbr: KICS Conf.
-  date: Nov. 2017
+- title: MC-SDN&#58; Supporting Mixed-Criticality Real-Time Communication Using Software-Defined Networking
+  author: Kilho Lee, Minsu Kim, Taejune Park, Hoon Sung Chwa, Jinkyu Lee, Seungwon Shin, and Insik Shin
+  where: IEEE Internet of Things Journal 6 (4), 6325-6344	
+  abbr: IoT
+  date: May. 2019
 
-- title: A Reflectornet Based on Software Defined Network (소프트웨어 정의 네트워크 기반 리플렉터넷) 
-  author: Taejune Park, Seungsoo Lee, and Seungwon Shin  
-  where: Journal of the KICS, Vol.39 No.6, pp. 397-405 (한국통신학회논문지, Vol.39 No.6) 
-  abbr: KICS, [KCI Listing]
-  date: Jun. 2014
+- title: MC-SDN&#58; Supporting Mixed-Criticality Scheduling on Switched-Ethernet Using Software-Defined Networking
+  author: Kilho Lee, Taejune Park, Minsu Kim, Hoon Sung Chwa, Jinkyu Lee, Seungwon Shin, and Insik Shin
+  where: The 39th IEEE Real-Time Systems Symposium, Nashville, TN, USA
+  abbr: RTSS
+  date: Dec. 2018
+
+- title: HEX Switch&#58; Hardware-assisted security extensions of OpenFlow
+  author: Taejune Park, Zhaoyan Xu, and Seungwon Shin
+  where: ACM SIGCOMM 2018 Workshop on Security in Softwarized Networks&#58; Prospects and Challenges, Budapest, Hungary 
+  abbr: SIGCOMM-SecSoN
+  date: Aug. 2018
+
+- title: Flow Wars&#58; Systemizing the Attack Surface and Defenses in Software-Deﬁned Networks
+  author: Changhoon Yoon, Seungsoo Lee, Heedo Kang, Taejune Park, Seungwon Shin, Vinod Yegneswaran, Phillip Porras, and Guofei Gu
+  where: IEEE/ACM Transactions on Networking 25 (6), 3514-3530	
+  abbr: ToN
+  date: Sep. 2017
+
+- title: QoSE&#58; Quality of SEcurity (A network security module using a distributed NFV)
+  author: Taejune Park, Yeonkeun Kim, Jaehyun Park, Hyunmin Suh, Byeongdo Hong, and Seungwon Shin
+  where: IEEE International Conference on Communications 2016, Kuala Lumpur, Malaysia
+  abbr: ICC
+  date: May. 2016
+
+- title: UNISAFE&#58; A union of security actions for software switches
+  author: Taejune Park, Yeonkeun Kim, and Seungwon Shin
+  where: ACM International Workshop on Security in Software Defined Networks & Network Function Virtualization 2016, New Orleans, LA, USA
+  abbr: SDN-NFV Security
+  date: Mar. 2016
+
+- title: A Playground for Software-defined Networking Security (Poster)
+  author: Seunghyeon Lee, Chanhee Lee, Hyeonseong Jo, Jinwoo Kim, Seungsoo Lee, Jaehyun Nam, Taejune Park, Changhoon Yoon, Yeonkeun Kim, Heedo Kang, and Seungwon Shin
+  where: ACM SIGCOMM Symposium On SDN Research 2015, Santa Clara, CA, USA
+  abbr: SOSR
+  date: Jun. 2015
+
+- title: Enabling Security Functions with SDN&#58; A Feasibility Study
+  author: Changhoon Yoon, Taejune Park, Seungsoo Lee, Heedo Kang, Seungwon Shin, and Zonghua Zhang
+  where: Computer Networks 85, 19-35	
+  abbr: COMNET
+  date: May. 2015
+  
