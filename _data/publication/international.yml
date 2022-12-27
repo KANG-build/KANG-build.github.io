@@ -1,22 +1,4 @@
 ---
-- title: BPFast&#58; An eBPF/XDP-based high-performance packet payload inspection system for cloud environments (BPFast&#58; 클라우드 환경을 위한 eBPF/XDP 기반 고속 네트워크 패킷 페이로드 검사 시스템)
-  author: Myoungsung You, Jinwoo Kim, Seungwon Shin, Taejune Park
-  where: Journal of The Korea Institute of Information Security and Cryptology (JKIISC, 한국정보보호학회논문지)
-  abbr: JKIISC [KCI Listing]
-  date: Apr. 2022
-
-- title: MECaNIC&#58; SmartNIC to Assist URLLC Processing in Multi-Access Edge Computing Platforms
-  author: Taejune Park, Myoungsung You, Jian Cui, Youngjin Jin, Kilho Lee and Seungwon Shin 
-  where: The 30th IEEE International Conference on Network Protocols 
-  abbr: ICNP
-  date: Oct. 2022
-
-- title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
-  author: Taejune park and Kilho Lee
-  where: Journal of Networking and Computer Applications
-  abbr: JNCA
-  date: Aug. 2022
-
 - title: Reinhardt&#58; Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI
   author: Taejune park, Jaehyun Nam, Seung Ho Na, Jaewoong Chung and Seungwon Shin 
   where: Annual Computer Security Application Conference 2021
