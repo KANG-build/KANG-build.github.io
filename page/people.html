@@ -12,12 +12,12 @@ title: SRC Lab.
                     <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
                     
                     {% if person.link %}
-                    <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3>
+                    <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
                     {% else %}
-                    <h3 class="person-name"> <b>{{ person.name }}</b></h3>
+                    <h3 class="person-name"> <b>{{ person.name }}</b> </h3>
                     {% endif %}
                     
-                    <b> {{ person.role }} </b> 
+                    <br> <b> {{ person.role }} </b> <br>
 
                     {{ person.email }}
                 </div>
