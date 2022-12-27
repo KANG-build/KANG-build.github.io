@@ -23,12 +23,6 @@
   abbr: ICNP
   date: Oct. 2022
 
-# - title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
-#   author: Taejune park and Kilho Lee
-#   where: Journal of Networking and Computer Applications
-#   abbr: JNCA
-#   date: Aug. 2022
-
 - title: Reinhardt&#58; Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI
   author: Taejune park, Jaehyun Nam, Seung Ho Na, Jaewoong Chung and Seungwon Shin 
   where: Annual Computer Security Application Conference 2021
