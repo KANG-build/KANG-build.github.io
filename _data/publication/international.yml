@@ -1,9 +1,9 @@
 ---
-# - title: Extended SDN Data Plane Architecture for In-Network Security Services
-#   author: Jinwoo Kim, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Seungwon Shin and Taejune Park
-#   where: Computers and Security
-#   abbr: COMSEC
-#   date: Jan. 2023
+- title: Extended SDN Data Plane Architecture for In-Network Security Services
+  author: Jinwoo Kim, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Seungwon Shin and Taejune Park
+  where: Computers and Security
+  abbr: COMSEC
+  date: Jan. 2023
 
 - title: Heimdallr&#58; Fingerprinting SD-WAN Control-Plane Architecture via Encrypted Control Traffic
   author: Minjae Seo, Jaehan Kim, Eduard Marin, Myeongsung You, Taejune Park, Seungsoo Lee, Seungwon Shin and Jinwoo Kim
