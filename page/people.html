@@ -23,6 +23,22 @@ title: SRC Lab.
                 {% endfor %} 
             </div>
 
+            <hr>
+
+            <h2 class="Lecture"> Alumni </h2> <br>
+            <div class="container">
+                {% for person in site.data.people.alumni %}
+                <div class="person col-md-4 col-sm-8 col-xs-16">
+                    <br><br><img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
+                    
+                    {% if person.link %}
+                    <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
+                    {% else %}
+                    <h3 class="person-name"> <b>{{ person.name }}</b> </h3>
+                    {% endif %}
+                </div>
+                {% endfor %} 
+            </div>
         </center>
 
 </div>
