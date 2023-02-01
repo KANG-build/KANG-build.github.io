@@ -8,6 +8,7 @@ title: SRC Lab.
         <center>
             <div class="container">
                 <div class="person col-md-4 col-sm-8 col-xs-16">
+                    
                     {% for person in site.data.people.member %}
                     <br><br><img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
                     
@@ -19,6 +20,7 @@ title: SRC Lab.
                     
                     <b> {{ person.role }} </b> 
                     {{ person.email }}
+
                     {% endfor %} 
                 </div>
             </div>
