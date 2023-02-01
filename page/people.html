@@ -9,7 +9,7 @@ title: SRC Lab.
             <div class="container">
                 {% for person in site.data.people.member %}
                 <div class="person col-sm-2 col-md-3 col-xs-4">
-                    <br><br><img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
+                    <br><br><img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" height="400px" width="auto">
                     
                     {% if person.link %}
                     <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
