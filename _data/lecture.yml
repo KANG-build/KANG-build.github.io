@@ -1,4 +1,15 @@
 ---
+- semester: 2023S
+  code: SAI0024 
+  title-kr: 소프트웨어 리버스 엔지니어링
+  title-en: Software Reverse Engineering 
+  link: /lecture/sre.html
+
+- semester: 2023S
+  code: CIS2001
+  title-kr: 운영체제
+  title-en: Operating systems
+
 - semester: 2022F
   code: CIS9017
   title-kr: C 프로그래밍 및 실습
@@ -18,7 +29,6 @@
   code: SAI0024 
   title-kr: 소프트웨어 리버스 엔지니어링
   title-en: Software Reverse Engineering 
-  link: /lecture/sre.html
 
 - semester: 2022S
   code: CIS2001 
