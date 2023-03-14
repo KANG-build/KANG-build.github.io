@@ -1,4 +1,10 @@
 ---
+- semester: 2022S
+  code: GR25300
+  title-kr: 최신정보보안동향
+  title-en: Recent Information Security Trends
+  link: /lecture/cns.html
+
 - semester: 2023S
   code: SAI0024 
   title-kr: 소프트웨어 리버스 엔지니어링
@@ -39,7 +45,6 @@
   code: GR17202
   title-kr: 컴퓨터와 네트워크보안
   title-en: Computer and network security
-  link: /lecture/cns.html
 
 - semester: 2022S
   code: AIE0002
