@@ -1,4 +1,28 @@
 ---
+- title: Variable Hash Function Generator Using DNN (심층신경망을 이용한 가변 해시 함수 생성기)
+  author: Seongsu Moon and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2023 
+  abbr: KICS Conf.
+  date: Feb. 2023
+
+- title: Performance analysis of WebAssembly and JavaScript by code unit (코드 단위별 웹 어셈블리와 자바스크립트의 성능 분석)
+  author: Ayoung Kim and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2023 
+  abbr: KICS Conf.
+  date: Feb. 2023
+
+- title: A survey on Programmable Data Plane (프로그래밍 가능한 데이터 평면의 연구 동향)
+  author: Sooyeon Kim and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2023 
+  abbr: KICS Conf.
+  date: Feb. 2023
+
+- title: Review of CSET application plan for introduction of domestic industrial control system evaluation tool (국내 산업제어시스템 평가 도구 도입을 위한 CSET 적용 방안 검토)
+  author: Hyunyoung Lee, Myungjine Shin and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2023 
+  abbr: KICS Conf.
+  date: Feb. 2023
+
 - title: BPFast&#58; An eBPF/XDP-based high-performance packet payload inspection system for cloud environments (BPFast&#58; 클라우드 환경을 위한 eBPF/XDP 기반 고속 네트워크 패킷 페이로드 검사 시스템)
   author: Myoungsung You, Jinwoo Kim, Seungwon Shin, Taejune Park
   where: Journal of The Korea Institute of Information Security and Cryptology (JKIISC, 한국정보보호학회논문지)
