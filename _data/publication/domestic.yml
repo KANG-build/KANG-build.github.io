@@ -4,6 +4,8 @@
   where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2023 
   abbr: KICS Conf.
   date: Feb. 2023
+  info: <font color=blue> * Best paper award </font>
+
 
 - title: Performance analysis of WebAssembly and JavaScript by code unit (코드 단위별 웹 어셈블리와 자바스크립트의 성능 분석)
   author: Ayoung Kim and Taejune Park
