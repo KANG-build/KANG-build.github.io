@@ -1,4 +1,10 @@
 ---
+- title: Poster&#58; Towards a Secure and Practical System to Obfuscate Tor Network Traffic
+  author: Minjae Seo, Myoungsung You, Taejune Park, Seungwon Shin, and Jinwoo Kim
+  where: 8th IEEE European Symposium on Security and Privacy
+  abbr: EuroS&P
+  date: May. 2023
+
 - title: Extended SDN Data Plane Architecture for In-Network Security Services
   author: Jinwoo Kim, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Seungwon Shin and Taejune Park
   where: Computers and Security
