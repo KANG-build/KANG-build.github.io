@@ -5,11 +5,6 @@
   link: "/page/faculty.html"
   email: taejune.park *at* jnu.ac.kr
 
-- name: Joohyun Park
-  photo: "/image/people/joohyunpark.jpg"
-  role: Master degree candidate
-  email: turtle990130 *at* gmail.com
-
 - name: Sooyeon Kim
   photo: "/image/people/sooyeonkim.jpg"
   role: BS-MS Integrated student
@@ -29,6 +24,16 @@
   photo: "/image/people/myungjineshin.jpg"
   role: Undergraduate Researcher
   email: 195533 *at* jnu.ac.kr
+
+- name: Suhueon Lee
+  photo: "/image/people/suhueonlee.jpg"
+  role: Undergraduate Researcher
+  email: leesuhueon20020711 *at* jnu.ac.kr
+
+- name: Sebin Jo
+  photo: "/image/people/sebinjo.jpg"
+  role: Undergraduate Researcher
+  email:  030331c *at* jnu.ac.kr
 
 - name: Join us!
   photo: "/image/people/empty.png"
