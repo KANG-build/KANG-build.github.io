@@ -1,5 +1,40 @@
 ---
-- semester: 2022S
+- semester: 2024S
+  code: GR25300
+  title-kr: 최신정보보안동향
+  title-en: Recent Information Security Trends
+
+- semester: 2024S
+  code: SAI0024 
+  title-kr: 소프트웨어 리버스 엔지니어링
+  title-en: Software Reverse Engineering 
+
+- semester: 2024S
+  code: CIS2001
+  title-kr: 운영체제
+  title-en: Operating systems
+
+- semester: 2024S
+  code: SAI0034
+  title-kr: 네트워크 보안
+  title-en: Network security
+
+- semester: 2023F
+  code: CIS9017
+  title-kr: C 프로그래밍 및 실습
+  title-en: C Programming and practice
+
+- semester: 2023F
+  code: STT2008
+  title-kr: C++ 프로그래밍 및 실습
+  title-en: C++ Programming and practice
+
+- semester: 2023F
+  code: GR17202
+  title-kr: 컴퓨터와 네트워크보안
+  title-en: Computer and network security
+
+- semester: 2023S
   code: GR25300
   title-kr: 최신정보보안동향
   title-en: Recent Information Security Trends

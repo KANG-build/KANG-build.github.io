@@ -1,11 +1,34 @@
 ---
+- title: A study on Firewall using P4 (P4 기반 방화벽에 대한 연구)
+  author: Sooyeon Kim and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2024
+  abbr: KICS Conf.
+  date: Feb. 2024
+
+- title: The method for Python code analysis using bytecode and SBERT (바이트 코드와 SBERT를 활용한 파이썬 코드 유사도 분석)
+  author: Seongsu Moon and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2024
+  abbr: KICS Conf.
+  date: Feb. 2024
+
+- title: Performance Analysis of eBPF according to System Call Tracing (eBPF의 system call 트레이싱에 따른 성능 분석)
+  author: Suhyeon Lee and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2024
+  abbr: KICS Conf.
+  date: Feb. 2024
+
+- title: A survey of Hardware-based programmable data plane (하드웨어 기반 프로그래밍 가능 데이터 평면의 연구 동향)
+  author: Sebin jo and Taejune Park
+  where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2024
+  abbr: KICS Conf.
+  date: Feb. 2024
+
 - title: Variable Hash Function Generator Using DNN (심층신경망을 이용한 가변 해시 함수 생성기)
   author: Seongsu Moon and Taejune Park
   where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2023 
   abbr: KICS Conf.
   date: Feb. 2023
   info: <font color=blue> * Best paper award </font>
-
 
 - title: Performance analysis of WebAssembly and JavaScript by code unit (코드 단위별 웹 어셈블리와 자바스크립트의 성능 분석)
   author: Ayoung Kim and Taejune Park
