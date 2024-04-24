@@ -51,6 +51,11 @@
   role: BS-MS Integrated student
   email: cpjvh *at* jnu.ac.kr
 
+- name: Suhyeon Lee
+  photo: "/image/people/suhyeonlee.png"
+  role: BS-MS Integrated student
+  email: leesuhueon20020711 *at* jnu.ac.kr
+
 - name: Seongsu Moon
   photo: "/image/people/seongsumoon.jpg"
   role: Undergraduate Researcher
@@ -60,11 +65,6 @@
   photo: "/image/people/myungjineshin.jpg"
   role: Undergraduate Researcher
   email: 195533 *at* jnu.ac.kr
-
-- name: Suhyeon Lee
-  photo: "/image/people/suhyeonlee.png"
-  role: Undergraduate Researcher
-  email: leesuhueon20020711 *at* jnu.ac.kr
 
 - name: Sebin Jo
   photo: "/image/people/sebinjo.jpg"
