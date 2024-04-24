@@ -1,0 +1,20 @@
+---
+
+- degree: Ph.D. in AI Graduate School
+  where: Gwangju Institute of Science and Technology (GIST)
+  dissertation: >
+    A Study on Evolutionary Reinforcement Learning: From Single to Multi-Objective
+  advisor: Chang Wook Ahn
+  year: Feb. 2023
+
+- degree: M.S in School of Electrical Engineering and Computer Science
+  where: Gwangju Institute of Science and Technology (GIST)
+  thesis: >
+    State Grouping based Genetic-MCTS Hybrid Approach for Deep Reinforcement Learning
+  advisor: Chang Wook Ahn
+  year: Feb. 2019
+
+- degree: B.S in Computer Engineering
+  where: Sejong University
+  year: Feb. 2017
+

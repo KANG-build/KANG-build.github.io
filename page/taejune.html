@@ -90,41 +90,6 @@ title: SRC Lab.
         </div>
         {% endfor %}
 
-        <!-- <h3> Honors & awards </h3>
-        {% for pub in site.data.faculty.award %}
-        <div class="row" style="padding-top:0px">
-            <div class="col-sm-9" >
-                <p>
-                    <ul> 
-                        <li> <b> {{ pub.title }} </b> </li>
-                        <ul>
-                        <li> <i> {{ pub.host }} </i> </li>
-
-                        {% if pub.grade %}
-                        <li> {{ pub.grade }} {% if pub.prize %} ~ Prize: {{ pub.prize }} {% endif %} </li>
-                        {% endif %}
-                        </ul>
-                    </ul>
-                </p>
-            </div> 
-            <div class="col-sm-3">
-                <p> {{pub.date}} </p>
-            </div>
-        </div>
-        {% endfor %} -->
-
-        <h3> Academic services </h3>
-        {% for pub in site.data.faculty.service %}
-        <div class="row">
-            <div class="col-sm-10" style="line-height: 1.0;">
-                <p>
-                    <ul> 
-                        <li> {{ pub.title }} of <i> {{ pub.affiliation }}</i>: {{ pub.date }} </li>
-                    </ul>
-                </p>
-            </div> 
-        </div>
-        {% endfor %}
         <br>
     </div>
 </div>
