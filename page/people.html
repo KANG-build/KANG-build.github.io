@@ -5,43 +5,40 @@ title: SRC Lab.
 <div class="people">
     <div class="container">
         <h1 class="Lecture"> People </h1> <br>
-        <center>
-            <div class="container">
-                {% for person in site.data.people.member %}
-                <div class="person col-sm-3 col-md-3 col-xs-4">
-                    <br><br><img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" height="300px" width="auto">
-                    
-                    {% if person.link %}
-                    <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
-                    {% else %}
-                    <h3 class="person-name"> <b>{{ person.name }}</b> </h3>
-                    {% endif %}
-                    
-                    <b> {{ person.role }} </b> <br>
-                    {{ person.email }}
-                </div>
-                {% endfor %} 
+        <div class="row justify-content-center">
+            {% for person in site.data.people.member %}
+            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-4">
+                <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" height="300px" width="auto">
+                
+                {% if person.link %}
+                <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
+                {% else %}
+                <h3 class="person-name"> <b>{{ person.name }}</b> </h3>
+                {% endif %}
+                
+                <b> {{ person.role }} </b> <br>
+                {{ person.email }}
             </div>
+            {% endfor %} 
+        </div>
 
-            <br>
-            <hr>
-            <br>
+        <br>
+        <hr>
+        <br>
 
-            <h2 class="Lecture"> Alumni </h2> <br>
-            <div class="container">
-                {% for person in site.data.people.alumni %}
-                <div class="person col-sm-3 col-md-3 col-xs-4">
-                    <br><br><img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
-                    
-                    {% if person.link %}
-                    <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
-                    {% else %}
-                    <h3 class="person-name"> <b>{{ person.name }}</b> </h3>
-                    {% endif %}
-                </div>
-                {% endfor %} 
+        <h2 class="Lecture"> Alumni </h2> <br>
+        <div class="row justify-content-center">
+            {% for person in site.data.people.alumni %}
+            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-4">
+                <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
+                
+                {% if person.link %}
+                <h3 class="person-name"> <a href="{{ person.link }}"> <b> {{ person.name }} </b> </a> </h3> 
+                {% else %}
+                <h3 class="person-name"> <b>{{ person.name }}</b> </h3>
+                {% endif %}
             </div>
-        </center>
-
+            {% endfor %} 
+        </div>
+    </div>
 </div>
-
