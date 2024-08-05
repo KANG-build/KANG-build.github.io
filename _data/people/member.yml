@@ -5,66 +5,35 @@
   link: "/page/taejune.html"
   email: taejune.park *at* jnu.ac.kr
 
-- name: Manje Kim
-  photo: "/image/people/manje_kim.jpg"
-  role: Assistant Professor
-  link: "/page/manje.html"
-  email: jaykim0104 *at* jnu.ac.kr
-
-- name: Seobin Hwang
-  photo: "/image/people/seobinhwang.png"
-  role: PhD-MS Integrated student
-  email: cnu.cvl.hsb *at* gmail.com
-
 - name: Daehee Kang
   photo: "/image/people/daeheekang.png"
   role: Master degree candidate
   email: meohee *at* jnu.ac.kr
-
-- name: Hyegeun Kim
-  photo: "/image/people/hyegeunkim.png"
-  role: Master degree candidate
-  email: hyegeunkim *at* jnu.ac.kr
-
-- name: Kyungyoon Yoon
-  photo: "/image/people/kyungyoonyoon.png"
-  role: Master degree candidate
-  email: kyungji123 *at* naver.com
 
 - name: Sooyeon Kim
   photo: "/image/people/sooyeonkim.jpg"
   role: BS-MS Integrated student
   email: rlatndus6205 *at* jnu.ac.kr
 
-- name: Hayoung Jo
-  photo: "/image/people/hayoungjo.jpg"
-  role: BS-MS Integrated student
-  email: rlatndus6205 *at* jnu.ac.kr
-
-- name: Subin Ahn
-  photo: "/image/people/subinahn.jpg"
-  role: BS-MS Integrated student
-  email: rlatndus6205 *at* jnu.ac.kr
-
 - name: Ayoung Kim
   photo: "/image/people/ayoungkim.png"
-  role: BS-MS Integrated student
+  role: Undergraduate Researcher
   email: cpjvh *at* jnu.ac.kr
-
-- name: Suhyeon Lee
-  photo: "/image/people/suhyeonlee.png"
-  role: BS-MS Integrated student
-  email: leesuhueon20020711 *at* jnu.ac.kr
 
 - name: Seongsu Moon
   photo: "/image/people/seongsumoon.jpg"
   role: Undergraduate Researcher
-  email: 211483 *at* jnu.ac.kr
+  email: dalcw *at* jnu.ac.kr
 
 - name: Myungjine Shin
   photo: "/image/people/myungjineshin.jpg"
   role: Undergraduate Researcher
   email: 195533 *at* jnu.ac.kr
+
+- name: Suhyeon Lee
+  photo: "/image/people/suhyeonlee.png"
+  role: Undergraduate Researcher
+  email: leesuhueon20020711 *at* jnu.ac.kr
 
 - name: Sebin Jo
   photo: "/image/people/sebinjo.jpg"

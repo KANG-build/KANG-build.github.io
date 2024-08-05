@@ -1,16 +1,4 @@
 ---
-- title: Surrogate-assisted Monte Carlo Tree Search for real-time video games
-  author: Manje Kim, D Lee, JS Kim, CW Ahn
-  where: Engineering Applications of Artificial Intelligence
-  abbr: EAAI
-  date: July. 2024
-
-- title: Evolving Population Method for Real-time Reinforcement Learning
-  author: Manje Kim, JS Kim, CW Ahn
-  where: Expert Systems with Applications
-  abbr: ESWA
-  date: Nov. 2023
-
 - title: Poster&#58; Towards a Secure and Practical System to Obfuscate Tor Network Traffic
   author: Minjae Seo, Myoungsung You, Taejune Park, Seungwon Shin, and Jinwoo Kim
   where: 8th IEEE European Symposium on Security and Privacy
@@ -41,29 +29,12 @@
   abbr: ICNP
   date: Oct. 2022
 
+
 - title: Supporting Ultra-Low Latency Mixed-Criticality Communication Using Hardware-Based Data Plane Architecture
   author: Taejune Park and Kilho Lee
   where: Journal of Networking and Computer Applications
   abbr: JNCA
   date: Aug. 2022
-
-- title: Personalized EV Driving Sound Design Based on the Drivier’s Total Emotion Recognition
-  author: K.-J. Chang, G. Cho, W. Song, Manje Kim, C. Ahn, M. Song
-  where: The 12th International Styrian Noise, Vibration & Harshness Congress&#58; The European Automotive Noise Conference
-  abbr: ISNVH
-  date: Jun. 2022
-
-- title: Nondominated Policy-guided Learning in Multi-objective Reinforcement Learning
-  author: Manje Kim, H. Park, CW Ahn
-  where: Electronics
-  abbr: Electronics
-  date: Mar. 2022
-
-- title: Predicting combat outcomes and optimizing armies in StarCraft II by deep learning
-  author: D.H. Lee, Manje Kim, CW Ahn
-  where: Expert Systems with Applications
-  abbr: ESWA
-  date: Dec. 2021
 
 - title: Reinhardt&#58; Real-time Reconfigurable Hardware Architecture for Regular Expression Matching in DPI
   author: Taejune park, Jaehyun Nam, Seung Ho Na, Jaewoong Chung and Seungwon Shin 
@@ -83,47 +54,11 @@
   abbr: JONS
   date: Jan. 2021
 
-- title: Genetic State-Grouping Algorithm for Deep Reinforcement Learning
-  author: Manje Kim, JS Kim, S.J. Kim, M. Kim, CW Ahn
-  where: Expert Systems with Applications
-  abbr: ESWA
-  date: Dec. 2020
-
-- title: Genetic Optimizing Method for Real-time Monte Carlo Tree Search Problem
-  author: Manje Kim, J.-H. Lee, C. Ahn
-  where: The 9th International Conference on Smart Media and Applications
-  abbr: SMA 2020
-  date: Sep. 2020
-
-- title: A Genetic Algorithm (GA) Approach to the Portfolio Design Based on Market Movements and Asset Valuations
-  author: S. Lim, Manje Kim, CW Ahn
-  where: IEEE Access
-  abbr: IEEE Access
-  date: Jul. 2020
-
-- title: BattleNet&#58; Capturing Advantageous Battlefield in RTS Games
-  author: D. Lee, Manje Kim, C. Ahn
-  where: The Thirty-Fourth AAAI Conference on Artificial Intelligence
-  abbr: AAAI 2020
-  date: Feb. 2020
-
-- title: Genetic Action Sequence for Integration of Agent Actions
-  author: Manje Kim, J. Kim, D. Lee, CW. Ahn
-  where: The 14th International Conference on Bio-inspired Computing&#58; Theories and Applications
-  abbr: BIC-TA 2019
-  date: Nov. 2019
-
 - title: SODA&#58; A Software-defined Security Framework for IoT Environments
   author: Yeonkeun Kim, Jaehyun Nam, Taejune Park, Sandra Scott-Hayward, and Seungwon Shin
   where: Computer Networks 163, 106889	
   abbr: COMNET
   date: Nov. 2019
-
-- title: Integrating agent actions with genetic action sequence method
-  author: Manje Kim, J. Kim, D. Lee, S. Kim, M. Kim, CW. Ahn
-  where: ACM Genetic and Evolutionary Computation Conference Companion
-  abbr: GECCO 2019
-  date: July. 2019
 
 - title: DPX&#58; Data-Plane eXtensions for SDN Security Service Instantiation
   author: Taejune Park, Yeonkeun Kim, Vinod Yegneswaran, Phillip Porras, Zhaoyan Xu, Kyungsoo Park, and Seungwon Shin
@@ -137,12 +72,6 @@
   abbr: IoT
   date: May. 2019
 
-- title: Performance Evaluation Gaps in a Real-Time Strategy Game between Human and Artificial Intelligence Players
-  author: Manje Kim, K.-J. Kim, S.-J. Kim, A. K. Dey
-  where: IEEE Access
-  abbr: IEEE Access
-  date: Jan. 2018
-
 - title: MC-SDN&#58; Supporting Mixed-Criticality Scheduling on Switched-Ethernet Using Software-Defined Networking
   author: Kilho Lee, Taejune Park, Minsu Kim, Hoon Sung Chwa, Jinkyu Lee, Seungwon Shin, and Insik Shin
   where: The 39th IEEE Real-Time Systems Symposium, Nashville, TN, USA
@@ -155,40 +84,16 @@
   abbr: SIGCOMM-SecSoN
   date: Aug. 2018
 
-- title: Hybrid fighting game AI using a genetic algorithm and Monte Carlo tree search
-  author: Manje Kim, C. W. Ahn
-  where: ACM Genetic and Evolutionary Computation Conference Companion
-  abbr: GECCO 2018
-  date: July. 2018
-
 - title: Flow Wars&#58; Systemizing the Attack Surface and Defenses in Software-Deﬁned Networks
   author: Changhoon Yoon, Seungsoo Lee, Heedo Kang, Taejune Park, Seungwon Shin, Vinod Yegneswaran, Phillip Porras, and Guofei Gu
   where: IEEE/ACM Transactions on Networking 25 (6), 3514-3530	
   abbr: ToN
   date: Sep. 2017
 
-- title: Opponent Modeling based on Action Table for MCTS-based Fighting Game AI
-  author: Manje Kim, K.-J. Kim
-  where: IEEE Conference on Computational Intelligence and Games
-  abbr: CIG 2017
-  date: Aug. 2017
-
-- title: StarCraft AI Competition&#58; A Step Toward Human-Level AI for Real-Time Strategy Games
-  author: S. Farooq, I.-S. Oh, Manje Kim, K.-J. Kim
-  where: AI Magazine
-  abbr: AI Magazine
-  date: Summer 2016
-
 - title: QoSE&#58; Quality of SEcurity (A network security module using a distributed NFV)
   author: Taejune Park, Yeonkeun Kim, Jaehyun Park, Hyunmin Suh, Byeongdo Hong, and Seungwon Shin
   where: IEEE International Conference on Communications 2016, Kuala Lumpur, Malaysia
   abbr: ICC
-  date: May. 2016
-
-- title: Evaluation of StarCraft Artificial Intelligence Competition Bots by Experienced Human Players
-  author: Manje Kim, K.-J. Kim, S.-J. Kim, A. K. Dey
-  where: ACM CHI Conference Extended Abstracts on Human Factors in Computing Systems
-  abbr: CHI 2016
   date: May. 2016
 
 - title: UNISAFE&#58; A union of security actions for software switches
