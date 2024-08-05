@@ -7,7 +7,7 @@ title: SRC Lab.
         <h1 class="Lecture"> People </h1> <br>
         <div class="row justify-content-center">
             {% for person in site.data.people.member %}
-            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-4">
+            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5">
                 <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" height="300px" width="auto">
                 
                 {% if person.link %}
@@ -29,7 +29,7 @@ title: SRC Lab.
         <h2 class="Lecture"> Alumni </h2> <br>
         <div class="row justify-content-center">
             {% for person in site.data.people.alumni %}
-            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-4">
+            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5">
                 <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
                 
                 {% if person.link %}
