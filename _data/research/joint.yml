@@ -31,3 +31,11 @@
 - name: alpinelab
   img: /image/institution/alpinelab.png
   link: 
+
+- name: Enki Whitehat
+  img: /image/institution/enki.jpg
+  link: 
+
+- name: S2W
+  img: /image/institution/s2w.jpg
+  link: 
