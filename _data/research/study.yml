@@ -1,6 +1,6 @@
 ---
-
-
+- topic: Fault-Tolerant MEC Architecture
+  nickname : Fatriot
 
 - topic: Detecting and mitigating DDoS attacks on Edge-computing environment
   nickname : Selendis
