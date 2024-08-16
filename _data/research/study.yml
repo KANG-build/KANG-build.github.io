@@ -2,9 +2,6 @@
 - topic: Fault-Tolerant MEC Architecture
   nickname : Fatriot
 
-- topic: Detecting and mitigating DDoS attacks on Edge-computing environment
-  nickname : Selendis
-
 - topic: Enabling Stable Ultra Reliable Low Latency Communication in Multi-access Edge Computing
   nickname : MECaNIC
 
