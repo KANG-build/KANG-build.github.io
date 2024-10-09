@@ -1,6 +1,12 @@
 ---
 - title: Best Paper Award 
-  host: (The Korean Institute of Communications and Information Science (KICS)
+  host: Cyber Security Conference at HONAM 2024
+  grade: 
+#  owner: 문성수
+  date: Oct. 2024
+
+- title: Best Paper Award 
+  host: The Korean Institute of Communications and Information Science (KICS)
   grade: 
 #  owner: 문성수
   date: Jun. 2023
