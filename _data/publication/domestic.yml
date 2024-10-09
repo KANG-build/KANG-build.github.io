@@ -1,4 +1,29 @@
 ---
+- title: HPC 환경에서 RDMA 암호화 및 인증 프로토콜 보안 연구 동향
+  author: Daehee Kang and Taejune Park
+  where: Cyber Security Conference at HONAM 2024
+  abbr: CSHONAM
+  date: Oct. 2024
+
+- title: DPI를 위한 정규표현식 매칭 프로세서의 100Gbps 처리 능력 달성 설계 방법
+  author: Daehee Kang and Taejune Park
+  where: Cyber Security Conference at HONAM 2024
+  abbr: CSHONAM
+  date: Oct. 2024
+
+- title: Verification of OCPP protocol-based electric vehicle charger implementation using fuzzing technique (퍼징 기법을 활용한 OCPP 프로토콜 기반 전기차 충전기 구현 검증)
+  author: Chaeeul Hyun, Myungjine Shin, Changyeol Choi, Jebin Hwang and Taejune Park
+  where: Cyber Security Conference at HONAM 2024
+  abbr: CSHONAM
+  date: Oct. 2024
+  info: <font color=blue> * Best paper award </font>
+
+- title: Web 기반 DID메소드 동향 분석
+  author: 임도현, 김건민, 조세빈, 진현석, 박태준, 김경백
+  where: Cyber Security Conference at HONAM 2024
+  abbr: CSHONAM
+  date: Oct. 2024
+
 - title: A study on Firewall using P4 (P4 기반 방화벽에 대한 연구)
   author: Sooyeon Kim and Taejune Park
   where: Korean Institute of Communication Sciences Conference 2023, Pyeongchang, Korea, Feb 2024
