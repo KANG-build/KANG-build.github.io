@@ -1,4 +1,9 @@
 ---
+- title: HashCraft&#58; The on-demand hash function generator using ANN and its verifier
+  author: Seongsu Moon and Taejune Park
+  where: 2024 Annual Computer Security Applications Conference
+  abbr: ACSAC
+  date: Dec. 2024
 
 - title: Fatriot&#58; Fault-Tolerant MEC Architecture for Mission-Critical Systems using a SmartNIC
   author: Taejune Park, Myoungsung You, Jinwoo Kim, and Seungsoo Lee
