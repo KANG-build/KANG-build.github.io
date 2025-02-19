@@ -2,7 +2,7 @@
 - name: Taejune Park
   photo: "/image/people/taejune_park.jpg"
   role: Assistant Professor
-  link: "/_data/faculty/taejune.html"
+  link: "/pages/taejune.html"
   email: taejune.park *at* jnu.ac.kr
 
 - name: Daehee Kang
