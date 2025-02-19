@@ -5,7 +5,7 @@ title: SRC Lab.
 <div class="people">
     <div class="container">
         <h1 class="Lecture"> People </h1> <br>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-stretch">
             {% for person in site.data.people.member %}
             <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5">
                 <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" height="300px" width="auto">
@@ -20,6 +20,9 @@ title: SRC Lab.
                 {{ person.email }}
             </div>
             {% endfor %} 
+
+            <!-- clearfix 적용 -->
+            <div class="w-100"></div>
         </div>
 
         <br>
@@ -27,7 +30,7 @@ title: SRC Lab.
         <br>
 
         <h2 class="Lecture"> Alumni </h2> <br>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center align-items-stretch">
             {% for person in site.data.people.alumni %}
             <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5">
                 <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
@@ -39,6 +42,9 @@ title: SRC Lab.
                 {% endif %}
             </div>
             {% endfor %} 
+
+            <!-- clearfix 적용 -->
+            <div class="w-100"></div>
         </div>
     </div>
 </div>

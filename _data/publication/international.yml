@@ -1,4 +1,10 @@
 ---
+- title: MUFFLER&#58; Secure Tor Traffic Obfuscation with Dynamic Connection Shuffling and Distributing
+  author: Minjae Seo, Myoungsung You, Jaehan Kim, Taejune Park, Seungwon Shin†, and Jinwoo Kim
+  where: IEEE INFOCOM 2025.
+  abbr: INFOCOM
+  date: May. 2025
+
 - title: HashCraft&#58; The on-demand hash function generator using ANN and its verifier
   author: Seongsu Moon and Taejune Park
   where: 2024 Annual Computer Security Applications Conference
