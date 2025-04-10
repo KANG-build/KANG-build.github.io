@@ -11,6 +11,12 @@
   abbr: ACSAC
   date: Dec. 2024
 
+- title: KUBEROSY&#58; A Dynamic System Call Filtering Framework for Containers
+  author: Jin Her, Chi Hyeon Jo, Taejune Park, and Seungsoo Lee
+  where: IEEE Access
+  abbr: IEEE Access
+  date: Oct. 2024
+
 - title: Fatriot&#58; Fault-Tolerant MEC Architecture for Mission-Critical Systems using a SmartNIC
   author: Taejune Park, Myoungsung You, Jinwoo Kim, and Seungsoo Lee
   where: Journal of Networking and Computer Applications
