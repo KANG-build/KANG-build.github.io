@@ -1,4 +1,10 @@
 ---
+- title: OCPP 프로토콜 기반의 전기차 충전기 퍼저 분석 및 설계
+  author: Chae-eul Hyun, Myeongjin Shin, Chang-yeol Choi, Jebin Hwang and TaejunePark
+  where: Journal of the Korea Institute of Information Security & Cryptology 
+  abbr: 한국정보보호학회논문지 [KCI Excellent Listing]
+  date: Jun. 2025
+
 - title: FlexMAC&#58; 인공 신경망을 활용한 고유 해시 함수 생성 기반 보안성 강화 메시지 인증 코드 (MAC)
   author: Seongsu Moon and Taejune Park
   where: The Journal of Korean Institute of Communications and Information Sciences
