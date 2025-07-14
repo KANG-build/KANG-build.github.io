@@ -1,11 +1,15 @@
 ---
+- title: Crypto-agility
+  order: 한국인터넷진흥원
+  date: 2025.07. - 2025.12.  
+
 - title: (대학ICT연구센터(ITRC)) 초광역 연합의료 AI연구센터
   order: 과학기술정보통신부
   date: 2024.07. - 2032.12.
 
-- title: [Confidential]
+- title: SmartNIC Security
   order: 국가보안연구소
-  date: 2024.06. - 2024.11.  
+  date: 2024.06. - 2025.11.  
 
 - title: (창의도전연구) 다중-최적 진화강화학습 기반 인간친화 엔터테인먼트 인공지능
   order: 한국연구재단(교육부)

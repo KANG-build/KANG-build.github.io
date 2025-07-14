@@ -15,11 +15,6 @@
   role: Master degree candidate
   email: rlatndus6205 *at* jnu.ac.kr
 
-- name: Suhyeon Lee
-  photo: "/image/people/suhyeonlee.png"
-  role: Master degree candidate
-  email: leesuhueon20020711 *at* jnu.ac.kr
-
 - name: Sebin Jo
   photo: "/image/people/sebinjo.jpg"
   role: BS-MS Integrated student
@@ -39,6 +34,11 @@
   photo: "/image/people/juyeonjeong.jpg"
   role: Undergraduate Researcher
   email:  siddl1020 *at* jnu.ac.kr
+
+- name: Sieun Yang
+  photo: "/image/people/sieunyang.jpg"
+  role: Undergraduate Researcher
+  email: didtldms2525 *at* jnu.ac.kr
 
 - name: Join us!
   photo: "/image/people/empty.png"
