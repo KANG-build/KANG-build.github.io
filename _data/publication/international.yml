@@ -1,4 +1,11 @@
 ---
+- title: HardMesh&#58;  Enabling High-performance Service Mesh Ingress Processing with SmartNICs (Shorts)
+  author: Myoungsung You, Jaehyun Nam, Minjae Seo, Taejune Park, and Seungwon Shin
+  where: ACM SIGCOMM 2025
+  abbr: SIGCOMM
+  date: Sep. 2025
+
+
 - title: MUFFLER&#58; Secure Tor Traffic Obfuscation with Dynamic Connection Shuffling and Distributing
   author: Minjae Seo, Myoungsung You, Jaehan Kim, Taejune Park, Seungwon Shin†, and Jinwoo Kim
   where: IEEE INFOCOM 2025.
