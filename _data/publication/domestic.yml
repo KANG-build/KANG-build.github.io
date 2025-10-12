@@ -1,4 +1,37 @@
 ---
+- title: 암호 알고리즘 생성 시스템
+  author: Juyeon Jeong, Sungsoo Moon and Taejune Park
+  where: Cyber Security Conference at HONAM 2025
+  abbr: CSHONAM
+  date: Sept. 2025
+  info: <font color=blue> * Best paper award </font>
+
+- title: GRIFFIN&#58; IR 그래프 구성 및 의미 기반 표현 학습을 통한 흐름 인식 정밀 취약점 탐지 기법
+  author: Juyeon Jeong, Sungsoo Moon, Myungjine Shin and Taejune Park
+  where: Cyber Security Conference at HONAM 2025
+  abbr: CSHONAM
+  date: Sept. 2025
+
+- title: DPI&#58; 의미 기반 프롬프트 치환 및 응답 정렬을 통한 LLM 민감정보 보호 시스템
+  author: Juyeon Jeong, Sungsoo Moon, Sooyeon Kim and Taejune Park
+  where: Cyber Security Conference at HONAM 2025
+  abbr: CSHONAM
+  date: Sept. 2025
+  info: <font color=blue> * Best paper award </font>
+
+- title: P4 기반의 무작위 라우팅을 통한 난독화 및 자원 고갈 공격 완화 알고리즘
+  author: Sooyeon Kim and Taejune Park
+  where: Cyber Security Conference at HONAM 2025
+  abbr: CSHONAM
+  date: Sept. 2025
+  info: <font color=blue> * Best paper award </font>
+
+- title: 공공 네트워크 환경에서의 RDMA 인프라 설계 방향
+  author: Daehee kang and Taejune Park
+  where: Cyber Security Conference at HONAM 2025
+  abbr: CSHONAM
+  date: Sept. 2025
+
 - title: OCPP 프로토콜 기반의 전기차 충전기 퍼저 분석 및 설계
   author: Chae-eul Hyun, Myeongjin Shin, Chang-yeol Choi, Jebin Hwang and TaejunePark
   where: Journal of the Korea Institute of Information Security & Cryptology 
