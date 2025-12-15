@@ -2,12 +2,12 @@
 - title: HybridMesh&#58; A Hardware-software Hybrid Approach for Accelerating Service Mesh Ingress
   author: Myoungsung You, Jaehyun Nam, Minjae Seo, Taejune Park, and Seungwon Shin
   where: The 23rd USENIX Symposium on Network Systems Design and Implementation
-  abbr: NSDI
+  abbr: NSDI'26
   date: May. 2026.
 
 - title: Comprehensive Performance Analysis of Security Applications on the BlueField-3 SmartNIC
   author: Suhyeon Lee, Myoungsung You, Sooyeon Kim, and Taejune Park 
-  where: Computer Networks(2025): 111830.
+  where: Computer Networks(2025), 111830.
   abbr: COMNET
   date: Feb. 2026.
 
