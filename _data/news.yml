@@ -1,4 +1,13 @@
 ---
+- title: Ahyoung Jo and Seungyong Cho joined our lab! Welcome! 
+  date: 2025-12-15
+
+- title: Our paper, entitled "HybridMesh&#58; A Hardware-software Hybrid Approach for Accelerating Service Mesh Ingress", has been accepted to NSDI 2026!
+  date: 2025-12-10
+
+- title: Our paper, entitled "Comprehensive Performance Analysis of Security Applications on the BlueField-3 SmartNIC", has been accepted to Computer Networks!
+  date: 2025-11-09
+
 - title: Our research project "ZERATUL&#58; Cryptographic Algorithm Generation System" was exhibited at AI FESTA 2025, held at COEX Seoul. We sincerely thank all the visitors who stopped by our booth!
   date: 2025-09-29
   nlink: "https://aifesta.kr/"
