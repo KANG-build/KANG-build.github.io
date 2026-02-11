@@ -1,0 +1,16 @@
+# Blog Categories
+- name: Research
+  icon: "glyphicon-education"
+  description: "논문 리뷰 및 연구 기록"
+
+- name: Dev Log
+  icon: "glyphicon-cog"
+  description: "개발 일지 및 기술 노트"
+
+- name: Tutorial
+  icon: "glyphicon-pencil"
+  description: "튜토리얼 및 실습 가이드"
+
+- name: News
+  icon: "glyphicon-bell"
+  description: "보안/기술 뉴스 및 트렌드"

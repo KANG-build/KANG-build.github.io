@@ -16,10 +16,47 @@
                 <li><a href="/pages/people.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Member </a></li>
                 <li><a href="/pages/research.html"><span class="glyphicon glyphicon-apple" aria-hidden="true"></span> Research </a></li>
                 <li><a href="/pages/publication.html"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Publication </a></li>    
+                <li><a href="/pages/blog.html"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Blog </a></li>
                 <li><a href="/pages/photo.html"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Photo </a></li> 
                 <li><a href="/pages/joinus.html"><span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span> Join Us </a></li> 
+                <!-- Auth: Login/Logout -->
+                <li id="nav-auth-login"><a href="/pages/login.html" class="nav-auth-btn"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login </a></li>
+                <li id="nav-auth-user" style="display:none;" class="dropdown">
+                    <a href="#" class="dropdown-toggle nav-auth-user-btn" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img id="nav-auth-photo" src="/image/people/empty.png" class="nav-auth-avatar img-circle" alt="">
+                        <span id="nav-auth-name"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/mypage.html"><span class="glyphicon glyphicon-cog"></span> 마이페이지</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" onclick="navLogout(); return false;"><span class="glyphicon glyphicon-log-out"></span> 로그아웃</a></li>
+                    </ul>
+                </li>
                 <!-- <li><a href="/page/lecture.html"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Lecture </a></li> -->
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<script>
+(function() {
+    var origin = window.location.origin;
+    fetch(origin + '/api/auth/me', { credentials: 'same-origin' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.logged_in && data.user) {
+            document.getElementById('nav-auth-login').style.display = 'none';
+            document.getElementById('nav-auth-user').style.display = '';
+            document.getElementById('nav-auth-name').textContent = data.user.name;
+            if (data.user.photo) {
+                document.getElementById('nav-auth-photo').src = data.user.photo;
+            }
+        }
+    }).catch(function() {});
+})();
+function navLogout() {
+    fetch(window.location.origin + '/api/auth/logout', { method: 'POST', credentials: 'same-origin' })
+    .then(function() { window.location.reload(); })
+    .catch(function() { window.location.reload(); });
+}
+</script>

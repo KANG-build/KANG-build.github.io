@@ -1,0 +1,710 @@
+---
+layout: default
+title: SRC Lab. Blog
+---
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<div class="blog-page">
+ <div class="container">
+  <h1 class="blog-main-title"><span class="glyphicon glyphicon-list-alt"></span> SRC Lab. Blog</h1>
+  <p class="blog-subtitle">연구실 멤버들의 연구 노트, 기술 블로그, 튜토리얼을 공유하는 공간입니다.</p>
+
+  <!-- Top bar: View Toggle + Write -->
+  <div class="blog-top-bar">
+   <div class="blog-view-toggle">
+    <button class="view-toggle-btn active" id="btnViewList" onclick="switchView('list')">
+     <span class="glyphicon glyphicon-th-list"></span> 게시판
+    </button>
+    <button class="view-toggle-btn" id="btnViewCal" onclick="switchView('calendar')">
+     <span class="glyphicon glyphicon-calendar"></span> 달력
+    </button>
+   </div>
+   <a href="/pages/blog-write.html" class="btn-blog-write" id="btnWritePost" style="display:none;">
+    <span class="glyphicon glyphicon-pencil"></span> 새 글 작성
+   </a>
+  </div>
+
+  <!-- ============ LIST VIEW ============ -->
+  <div id="listView">
+   <!-- Filters -->
+   <div class="blog-filters">
+    <button class="blog-filter-btn active" data-filter="all"><span class="glyphicon glyphicon-th-list"></span> 전체</button>
+    {% for cat in site.data.blog.categories %}
+    <button class="blog-filter-btn" data-filter="{{ cat.name }}"><span class="glyphicon {{ cat.icon }}"></span> {{ cat.name }}</button>
+    {% endfor %}
+   </div>
+   <div class="blog-search-bar">
+    <span class="glyphicon glyphicon-search blog-search-icon"></span>
+    <input type="text" id="blogSearch" class="blog-search-input" placeholder="제목, 작성자, 태그로 검색...">
+   </div>
+
+   <!-- Table -->
+   <div class="blog-table-wrapper">
+    <table class="blog-table">
+     <thead>
+      <tr>
+       <th class="col-num">#</th>
+       <th class="col-category">카테고리</th>
+       <th class="col-title">제목</th>
+       <th class="col-author">작성자</th>
+       <th class="col-date">날짜</th>
+       <th class="col-reactions">반응</th>
+      </tr>
+     </thead>
+     <tbody id="blogTableBody">
+      {% assign sorted_posts = site.data.blog.posts | sort: "date" | reverse %}
+      {% assign idx = sorted_posts | size %}
+      {% for post in sorted_posts %}
+      <tr class="blog-row"
+          data-category="{{ post.category }}"
+          data-author="{{ post.author_id }}"
+          data-title="{{ post.title }}"
+          data-tags="{{ post.tags | join: ',' }}"
+          data-id="{{ post.id }}"
+          data-date="{{ post.date }}"
+          onclick="openPost('{{ post.id }}')">
+       <td class="col-num">{{ idx }}</td>
+       <td class="col-category"><span class="blog-category-badge cat-{{ post.category | slugify }}">{{ post.category }}</span></td>
+       <td class="col-title">
+        <div class="blog-title-row">
+         <span class="blog-post-title">{{ post.title }}</span>
+        </div>
+        <div class="blog-post-tags">{% for tag in post.tags %}<span class="blog-tag">#{{ tag }}</span>{% endfor %}</div>
+       </td>
+       <td class="col-author"><a href="/pages/blog-member.html?member={{ post.author_id }}" class="blog-author-link" onclick="event.stopPropagation();">{{ post.author }}</a></td>
+       <td class="col-date">{{ post.date | slice: 5, 5 }}</td>
+       <td class="col-reactions"><span class="reaction-summary" id="reaction-summary-{{ post.id }}"><span class="reaction-mini">&#10084;&#65039; <span class="cnt" data-type="heart">0</span></span></span></td>
+      </tr>
+      {% assign idx = idx | minus: 1 %}
+      {% endfor %}
+     </tbody>
+    </table>
+   </div>
+
+   <!-- Pagination -->
+   <div class="blog-pagination" id="blogPagination"></div>
+  </div>
+
+  <!-- ============ CALENDAR VIEW ============ -->
+  <div id="calendarView" style="display:none;">
+   <div class="cal-header">
+    <button class="cal-nav-btn" onclick="calNav(-1)"><span class="glyphicon glyphicon-chevron-left"></span></button>
+    <h2 class="cal-month-title" id="calTitle"></h2>
+    <button class="cal-nav-btn" onclick="calNav(1)"><span class="glyphicon glyphicon-chevron-right"></span></button>
+    <button class="cal-today-btn" onclick="calToday()">오늘</button>
+   </div>
+   <div class="cal-legend" id="calLegend"></div>
+   <div class="cal-grid" id="calGrid"></div>
+  </div>
+
+ </div>
+</div>
+
+<!-- Post Detail Modal -->
+<div class="blog-modal-overlay" id="postModal">
+ <div class="blog-modal">
+  <div class="blog-modal-header">
+   <button class="blog-modal-close" onclick="closePost()"><span class="glyphicon glyphicon-remove"></span></button>
+  </div>
+  <div class="blog-modal-body" id="postModalBody"></div>
+ </div>
+</div>
+
+<!-- Hidden post data -->
+<div id="postData" style="display:none;">
+{% for post in site.data.blog.posts %}
+<div class="post-content-data"
+     data-id="{{ post.id }}"
+     data-title="{{ post.title }}"
+     data-author="{{ post.author }}"
+     data-author-id="{{ post.author_id }}"
+     data-date="{{ post.date }}"
+     data-category="{{ post.category }}"
+     data-tags="{{ post.tags | join: ',' }}"
+     data-summary="{{ post.summary }}">
+{{ post.content | markdownify }}
+</div>
+{% endfor %}
+</div>
+
+<!-- Hidden member data for calendar colors -->
+<div id="memberColorData" style="display:none;">
+{% for person in site.data.people.member %}
+{% if person.name != "Join us!" %}
+<span data-id="{{ person.name | remove: ' ' | downcase }}" data-name="{{ person.name }}" data-photo="{{ person.photo }}"></span>
+{% endif %}
+{% endfor %}
+</div>
+
+<script>
+var API_BASE = window.location.origin;
+var __currentUser = null; // filled by auth check
+
+// ==================== Auth Check ====================
+(function() {
+    fetch(API_BASE + '/api/auth/me', { credentials: 'same-origin' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.logged_in) {
+            __currentUser = data.user;
+            if (data.user.role === 'member') {
+                document.getElementById('btnWritePost').style.display = '';
+            }
+        }
+    }).catch(function() {});
+})();
+
+function escapeAttr(str) {
+    if (!str) return '';
+    return str.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ==================== Member Colors ====================
+var MEMBER_COLORS = [
+  '#e74c3c','#3498db','#2ecc71','#f39c12','#9b59b6',
+  '#1abc9c','#e67e22','#e84393','#0984e3','#6c5ce7',
+  '#00b894','#fdcb6e'
+];
+var memberColorMap = {};
+var memberPhotoMap = {};
+(function() {
+    var spans = document.querySelectorAll('#memberColorData span');
+    var i = 0;
+    spans.forEach(function(s) {
+        var id = s.getAttribute('data-id');
+        var name = s.getAttribute('data-name');
+        var photo = s.getAttribute('data-photo');
+        memberColorMap[id] = { name: name, color: MEMBER_COLORS[i % MEMBER_COLORS.length] };
+        memberPhotoMap[id] = photo || '/image/people/empty.png';
+        i++;
+    });
+})();
+
+function getAuthorColor(authorId) {
+    return (memberColorMap[authorId] && memberColorMap[authorId].color) || '#95a5a6';
+}
+
+// ==================== Thumbnail Extraction ====================
+function extractThumbnail(postId) {
+    var el = document.querySelector('.post-content-data[data-id="'+postId+'"]');
+    if (!el) return null;
+    var img = el.querySelector('img');
+    if (img) return img.getAttribute('src');
+    var html = el.innerHTML;
+    var m = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+    return m ? m[1] : null;
+}
+
+// Inject thumbnails into table rows
+(function() {
+    document.querySelectorAll('.blog-row').forEach(function(row) {
+        var postId = row.getAttribute('data-id');
+        var thumb = extractThumbnail(postId);
+        if (thumb) {
+            var titleCell = row.querySelector('.blog-title-row');
+            if (titleCell) {
+                var imgEl = document.createElement('img');
+                imgEl.src = thumb;
+                imgEl.className = 'blog-thumb';
+                imgEl.alt = '';
+                titleCell.insertBefore(imgEl, titleCell.firstChild);
+            }
+        }
+    });
+})();
+
+// ==================== View Toggle ====================
+function switchView(view) {
+    document.getElementById('listView').style.display = view === 'list' ? '' : 'none';
+    document.getElementById('calendarView').style.display = view === 'calendar' ? '' : 'none';
+    document.getElementById('btnViewList').classList.toggle('active', view === 'list');
+    document.getElementById('btnViewCal').classList.toggle('active', view === 'calendar');
+    if (view === 'calendar') renderCalendar();
+}
+
+// ==================== Reactions ====================
+function getReactions(postId) {
+    var d = localStorage.getItem('srclab_reactions_' + postId);
+    return d ? JSON.parse(d) : {heart:0,like:0,dislike:0};
+}
+function getUserReaction(postId) { return localStorage.getItem('srclab_user_reaction_' + postId) || null; }
+function setReaction(postId, type) {
+    var cur = getUserReaction(postId), r = getReactions(postId);
+    if (cur === type) { r[type] = Math.max(0,r[type]-1); localStorage.removeItem('srclab_user_reaction_'+postId); }
+    else { if(cur) r[cur]=Math.max(0,r[cur]-1); r[type]=(r[type]||0)+1; localStorage.setItem('srclab_user_reaction_'+postId,type); }
+    localStorage.setItem('srclab_reactions_'+postId, JSON.stringify(r));
+    updateReactionUI(postId); updateTableReaction(postId);
+}
+function updateReactionUI(postId) {
+    var r = getReactions(postId), ur = getUserReaction(postId);
+    var c = document.getElementById('modal-reactions-'+postId); if(!c) return;
+    c.querySelectorAll('.reaction-btn').forEach(function(b){
+        var t=b.getAttribute('data-type'); b.querySelector('.reaction-count').textContent=r[t]||0;
+        b.classList.toggle('active',ur===t);
+    });
+}
+function updateTableReaction(postId) {
+    var r=getReactions(postId), el=document.getElementById('reaction-summary-'+postId);
+    if(el){ var c=el.querySelector('.cnt[data-type="heart"]'); if(c) c.textContent=(r.heart||0)+(r.like||0); }
+}
+
+// ==================== Comments with Replies ====================
+function loadComments(postId) {
+    var container = document.getElementById('comments-section-' + postId);
+    if (!container) return;
+    var list = container.querySelector('.comment-list');
+    var countEl = container.querySelector('.comment-count');
+    list.innerHTML = '<div style="text-align:center; padding:10px; color:#aaa;">댓글 불러오는 중...</div>';
+
+    fetch(API_BASE + '/api/posts/' + postId + '/comments')
+    .then(function(r) { return r.json(); })
+    .then(function(comments) {
+        // Separate root comments and replies
+        var roots = [];
+        var repliesMap = {};
+        comments.forEach(function(c) {
+            if (c.parent_id) {
+                if (!repliesMap[c.parent_id]) repliesMap[c.parent_id] = [];
+                repliesMap[c.parent_id].push(c);
+            } else {
+                roots.push(c);
+            }
+        });
+        countEl.textContent = comments.length;
+        if (comments.length === 0) {
+            list.innerHTML = '<div class="comment-empty">아직 댓글이 없습니다. 첫 번째 댓글을 남겨보세요!</div>';
+            return;
+        }
+        var h = '';
+        roots.forEach(function(c) {
+            h += renderComment(c, postId);
+            // Render replies
+            var replies = repliesMap[c.id] || [];
+            if (replies.length > 0) {
+                h += '<div class="comment-replies">';
+                replies.forEach(function(r) {
+                    h += renderComment(r, postId, true);
+                });
+                h += '</div>';
+            }
+        });
+        list.innerHTML = h;
+    })
+    .catch(function() {
+        list.innerHTML = '<div class="comment-empty">댓글을 불러올 수 없습니다.</div>';
+    });
+}
+
+function renderComment(c, postId, isReply) {
+    var photo = memberPhotoMap[c.author_id] || '/image/people/empty.png';
+    var dateStr = c.created_at ? c.created_at.substring(0, 16).replace('T', ' ') : '';
+    var cls = isReply ? 'comment-item comment-reply-item' : 'comment-item';
+    var replyIcon = isReply ? '<span class="reply-arrow">&#8627;</span> ' : '';
+    // Badge: member vs logged-in vs anonymous
+    var badge = '';
+    if (c.is_member) {
+        badge = '<span class="comment-badge comment-badge-member">멤버</span>';
+    } else if (c.is_logged_in) {
+        badge = '<span class="comment-badge comment-badge-user">회원</span>';
+    }
+    var h = '<div class="' + cls + '" data-comment-id="' + c.id + '">' +
+         '<div class="comment-header">' +
+         replyIcon +
+         '<img src="' + photo + '" class="comment-avatar img-circle" alt="">' +
+         '<div class="comment-meta">' +
+         '<span class="comment-author">' + escapeHtml(c.author) + '</span>' + badge +
+         '<span class="comment-date">' + dateStr + '</span>' +
+         '</div>' +
+         '<div class="comment-actions-right">';
+    if (!isReply) {
+        h += '<button class="comment-reply-btn" onclick="toggleReplyForm(\'' + c.id + '\',\'' + postId + '\')" title="답글">' +
+             '<span class="glyphicon glyphicon-share-alt"></span> 답글</button>';
+    }
+    // Show delete only for member or comment owner
+    var canDelete = false;
+    if (__currentUser) {
+        if (__currentUser.role === 'member') canDelete = true;
+        else if (__currentUser.id === c.author_id || __currentUser.member_id === c.author_id) canDelete = true;
+    }
+    if (canDelete) {
+        h += '<button class="comment-delete-btn" onclick="deleteComment(\'' + c.id + '\',\'' + postId + '\')" title="삭제">' +
+             '<span class="glyphicon glyphicon-trash"></span></button>';
+    }
+    h += '</div></div>' +
+         '<div class="comment-body">' + escapeHtml(c.content) + '</div>';
+    if (!isReply) {
+        var replyNameVal = __currentUser ? escapeAttr(__currentUser.name) : escapeAttr(localStorage.getItem('srclab_comment_name') || '');
+        h += '<div class="comment-reply-form-wrap" id="reply-form-' + c.id + '" style="display:none;">' +
+             '<div class="comment-reply-form">';
+        if (!__currentUser) {
+            h += '<input type="text" class="comment-name-input reply-name-input" id="reply-name-' + c.id + '" placeholder="이름" maxlength="30" value="' + replyNameVal + '">';
+        } else {
+            h += '<input type="hidden" id="reply-name-' + c.id + '" value="' + replyNameVal + '">';
+            h += '<div class="comment-logged-user"><img src="' + (__currentUser.photo || '/image/people/empty.png') + '" class="comment-avatar-sm img-circle" alt=""> ' + escapeHtml(__currentUser.name) + '</div>';
+        }
+        h += '<textarea class="comment-textarea reply-textarea" id="reply-content-' + c.id + '" placeholder="답글을 입력하세요..." rows="2" maxlength="500"></textarea>' +
+             '<div class="comment-reply-form-actions">' +
+             '<button class="comment-cancel-btn" onclick="toggleReplyForm(\'' + c.id + '\',\'' + postId + '\')">취소</button>' +
+             '<button class="comment-submit-btn reply-submit-btn" onclick="submitReply(\'' + c.id + '\',\'' + postId + '\')">답글 등록</button>' +
+             '</div></div></div>';
+    }
+    h += '</div>';
+    return h;
+}
+
+function toggleReplyForm(commentId, postId) {
+    var form = document.getElementById('reply-form-' + commentId);
+    if (!form) return;
+    var isShown = form.style.display !== 'none';
+    form.style.display = isShown ? 'none' : 'block';
+    if (!isShown) {
+        var ta = document.getElementById('reply-content-' + commentId);
+        if (ta) ta.focus();
+    }
+}
+
+function submitReply(parentId, postId) {
+    var nameInput = document.getElementById('reply-name-' + parentId);
+    var contentInput = document.getElementById('reply-content-' + parentId);
+    var author = nameInput.value.trim();
+    var content = contentInput.value.trim();
+    if (!author) { alert('이름을 입력해주세요.'); nameInput.focus(); return; }
+    if (!content) { alert('답글 내용을 입력해주세요.'); contentInput.focus(); return; }
+
+    var body = { content: content, parent_id: parentId };
+    if (!__currentUser) {
+        body.author = author;
+        body.author_id = author.replace(/\s+/g,'').toLowerCase();
+    }
+
+    fetch(API_BASE + '/api/posts/' + postId + '/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify(body)
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) {
+            if (!__currentUser) localStorage.setItem('srclab_comment_name', author);
+            loadComments(postId);
+        } else {
+            alert('답글 등록 실패: ' + (data.error || ''));
+        }
+    })
+    .catch(function(e) { alert('오류: ' + e.message); });
+}
+
+function submitComment(postId) {
+    var nameInput = document.getElementById('comment-name-' + postId);
+    var contentInput = document.getElementById('comment-content-' + postId);
+    var author = nameInput ? nameInput.value.trim() : (__currentUser ? __currentUser.name : '');
+    var content = contentInput.value.trim();
+    if (!author) { alert('이름을 입력해주세요.'); if(nameInput) nameInput.focus(); return; }
+    if (!content) { alert('댓글 내용을 입력해주세요.'); contentInput.focus(); return; }
+
+    var btn = document.getElementById('comment-submit-' + postId);
+    btn.disabled = true; btn.textContent = '등록 중...';
+
+    var body = { content: content };
+    if (!__currentUser) {
+        body.author = author;
+        body.author_id = author.replace(/\s+/g,'').toLowerCase();
+    }
+
+    fetch(API_BASE + '/api/posts/' + postId + '/comments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify(body)
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        btn.disabled = false; btn.textContent = '등록';
+        if (data.success) {
+            contentInput.value = '';
+            if (!__currentUser) localStorage.setItem('srclab_comment_name', author);
+            loadComments(postId);
+        } else {
+            alert('댓글 등록 실패: ' + (data.error || ''));
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false; btn.textContent = '등록';
+        alert('오류: ' + e.message);
+    });
+}
+
+function deleteComment(commentId, postId) {
+    if (!confirm('이 댓글을 삭제하시겠습니까?')) return;
+    fetch(API_BASE + '/api/comments/' + commentId, { method: 'DELETE', credentials: 'same-origin' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.success) loadComments(postId);
+        else alert('삭제 실패: ' + (data.error || ''));
+    });
+}
+
+function escapeHtml(text) {
+    var map = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'};
+    return text.replace(/[&<>"']/g, function(m){return map[m];}).replace(/\n/g, '<br>');
+}
+
+// ==================== Post Modal ====================
+function openPost(postId) {
+    var el = document.querySelector('.post-content-data[data-id="'+postId+'"]');
+    if(!el) return;
+    var t=el.getAttribute('data-title'), a=el.getAttribute('data-author'), ai=el.getAttribute('data-author-id'),
+        d=el.getAttribute('data-date'), cat=el.getAttribute('data-category'), tags=el.getAttribute('data-tags').split(','),
+        sum=el.getAttribute('data-summary'), content=el.innerHTML;
+    var r=getReactions(postId), ur=getUserReaction(postId);
+    var tagsH=tags.map(function(x){return '<span class="blog-detail-tag">#'+x.trim()+'</span>';}).join(' ');
+    var catSlug=cat.toLowerCase().replace(/\s+/g,'-');
+    var savedName = localStorage.getItem('srclab_comment_name') || '';
+
+    // Only show edit/delete for members
+    var actionsHtml = '';
+    if (__currentUser && __currentUser.role === 'member') {
+        actionsHtml = '<div class="blog-detail-actions">'+
+            '<a href="/pages/blog-write.html?edit='+postId+'" class="btn-post-edit"><span class="glyphicon glyphicon-edit"></span> 수정</a>'+
+            '<button class="btn-post-delete" onclick="deletePost(\''+postId+'\')"><span class="glyphicon glyphicon-trash"></span> 삭제</button>'+
+            '</div>';
+    }
+
+    // Comment form: different for logged-in vs anonymous
+    var commentFormHtml = '';
+    if (__currentUser) {
+        commentFormHtml = '<div class="comment-form">'+
+            '<div class="comment-logged-user" style="margin-bottom:10px;"><img src="'+(__currentUser.photo||'/image/people/empty.png')+'" class="comment-avatar-sm img-circle" alt=""> '+escapeHtml(__currentUser.name)+
+            (__currentUser.role==='member'?' <span class="comment-badge comment-badge-member">멤버</span>':'')+'</div>'+
+            '<div class="comment-form-row">'+
+                '<textarea class="comment-textarea" id="comment-content-'+postId+'" placeholder="댓글을 입력하세요..." rows="3" maxlength="1000"></textarea>'+
+            '</div>'+
+            '<div class="comment-form-actions">'+
+                '<button class="comment-submit-btn" id="comment-submit-'+postId+'" onclick="submitComment(\''+postId+'\')">등록</button>'+
+            '</div>'+
+        '</div>';
+    } else {
+        commentFormHtml = '<div class="comment-form">'+
+            '<div class="comment-form-row">'+
+                '<input type="text" class="comment-name-input" id="comment-name-'+postId+'" placeholder="이름" value="'+escapeAttr(savedName)+'" maxlength="30">'+
+            '</div>'+
+            '<div class="comment-form-row">'+
+                '<textarea class="comment-textarea" id="comment-content-'+postId+'" placeholder="댓글을 입력하세요..." rows="3" maxlength="1000"></textarea>'+
+            '</div>'+
+            '<div class="comment-form-actions">'+
+                '<button class="comment-submit-btn" id="comment-submit-'+postId+'" onclick="submitComment(\''+postId+'\')">등록</button>'+
+            '</div>'+
+        '</div>';
+    }
+
+    var h='<div class="blog-detail">'+
+      '<span class="blog-category-badge cat-'+catSlug+'">'+cat+'</span>'+
+      '<h1 class="blog-detail-title">'+t+'</h1>'+
+      '<div class="blog-detail-meta">'+
+        '<span class="blog-detail-author"><span class="glyphicon glyphicon-user"></span> <a href="/pages/blog-member.html?member='+ai+'">'+a+'</a></span>'+
+        '<span class="blog-detail-date"><span class="glyphicon glyphicon-time"></span> '+d+'</span>'+
+      '</div>'+
+      '<div class="blog-detail-tags">'+tagsH+'</div>'+
+      '<div class="blog-detail-summary"><span class="glyphicon glyphicon-info-sign"></span> '+sum+'</div><hr>'+
+      '<div class="blog-detail-content">'+content+'</div><hr>'+
+      actionsHtml+
+      '<div class="blog-reactions" id="modal-reactions-'+postId+'">'+
+        '<span class="reactions-label">이 글이 도움이 되었나요?</span><div class="reaction-buttons">'+
+        '<button class="reaction-btn'+(ur==='heart'?' active':'')+'" data-type="heart" onclick="setReaction(\''+postId+'\',\'heart\')"><span class="reaction-emoji">&#10084;&#65039;</span><span class="reaction-text">좋아요</span><span class="reaction-count">'+(r.heart||0)+'</span></button>'+
+        '<button class="reaction-btn'+(ur==='like'?' active':'')+'" data-type="like" onclick="setReaction(\''+postId+'\',\'like\')"><span class="reaction-emoji">&#128077;</span><span class="reaction-text">추천</span><span class="reaction-count">'+(r.like||0)+'</span></button>'+
+        '<button class="reaction-btn'+(ur==='dislike'?' active':'')+'" data-type="dislike" onclick="setReaction(\''+postId+'\',\'dislike\')"><span class="reaction-emoji">&#128078;</span><span class="reaction-text">비추천</span><span class="reaction-count">'+(r.dislike||0)+'</span></button>'+
+      '</div></div>'+
+      // ===== COMMENTS SECTION =====
+      '<div class="comments-section" id="comments-section-'+postId+'">'+
+        '<h3 class="comments-title"><span class="glyphicon glyphicon-comment"></span> 댓글 <span class="comment-count">0</span></h3>'+
+        '<div class="comment-list"></div>'+
+        commentFormHtml+
+      '</div>'+
+    '</div>';
+
+    document.getElementById('postModalBody').innerHTML = h;
+    document.getElementById('postModal').classList.add('active');
+    document.body.style.overflow='hidden';
+    loadComments(postId);
+}
+function closePost(){ document.getElementById('postModal').classList.remove('active'); document.body.style.overflow=''; }
+document.getElementById('postModal').addEventListener('click',function(e){if(e.target===this)closePost();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePost();});
+
+function deletePost(postId) {
+    if(!confirm('정말 이 글을 삭제하시겠습니까?')) return;
+    fetch(API_BASE+'/api/posts/'+postId,{method:'DELETE',credentials:'same-origin'})
+    .then(function(r){return r.json();}).then(function(d){
+        if(d.success){alert('삭제되었습니다.');window.location.reload();}else alert('실패: '+(d.error||''));
+    });
+}
+
+// ==================== Pagination (30 per page) ====================
+var PAGE_SIZE = 30;
+var currentPage = 1;
+var currentFilter = 'all';
+var currentSearch = '';
+
+function getFilteredRows() {
+    var all = Array.from(document.querySelectorAll('.blog-row'));
+    return all.filter(function(row) {
+        var cat = row.getAttribute('data-category');
+        var title = row.getAttribute('data-title').toLowerCase();
+        var author = row.getAttribute('data-author').toLowerCase();
+        var tags = row.getAttribute('data-tags').toLowerCase();
+        var catOk = (currentFilter==='all' || cat===currentFilter);
+        var searchOk = (currentSearch==='' || title.indexOf(currentSearch)!==-1 || author.indexOf(currentSearch)!==-1 || tags.indexOf(currentSearch)!==-1);
+        return catOk && searchOk;
+    });
+}
+
+function renderPage() {
+    var allRows = Array.from(document.querySelectorAll('.blog-row'));
+    var filtered = getFilteredRows();
+    var totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    var start = (currentPage-1)*PAGE_SIZE;
+    var pageRows = filtered.slice(start, start+PAGE_SIZE);
+
+    allRows.forEach(function(r){ r.style.display='none'; });
+    var totalFiltered = filtered.length;
+    pageRows.forEach(function(r, i){
+        r.style.display = '';
+        r.querySelector('.col-num').textContent = totalFiltered - start - i;
+    });
+
+    var pg = document.getElementById('blogPagination');
+    if (totalPages <= 1) { pg.innerHTML=''; return; }
+    var h = '';
+    h += '<button class="pg-btn pg-prev'+(currentPage<=1?' disabled':'')+'" onclick="goPage('+(currentPage-1)+')"><span class="glyphicon glyphicon-chevron-left"></span> 이전</button>';
+    var startP = Math.max(1, currentPage-2), endP = Math.min(totalPages, currentPage+2);
+    if (startP > 1) h += '<button class="pg-btn" onclick="goPage(1)">1</button>';
+    if (startP > 2) h += '<span class="pg-dots">...</span>';
+    for (var p = startP; p <= endP; p++) {
+        h += '<button class="pg-btn'+(p===currentPage?' pg-active':'')+'" onclick="goPage('+p+')">'+p+'</button>';
+    }
+    if (endP < totalPages-1) h += '<span class="pg-dots">...</span>';
+    if (endP < totalPages) h += '<button class="pg-btn" onclick="goPage('+totalPages+')">'+totalPages+'</button>';
+    h += '<button class="pg-btn pg-next'+(currentPage>=totalPages?' disabled':'')+'" onclick="goPage('+(currentPage+1)+')">다음 <span class="glyphicon glyphicon-chevron-right"></span></button>';
+    pg.innerHTML = h;
+}
+
+function goPage(p) {
+    var totalPages = Math.max(1, Math.ceil(getFilteredRows().length / PAGE_SIZE));
+    if (p<1||p>totalPages) return;
+    currentPage = p;
+    renderPage();
+    document.querySelector('.blog-table-wrapper').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Filters
+document.querySelectorAll('.blog-filter-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+        document.querySelectorAll('.blog-filter-btn').forEach(function(b){b.classList.remove('active');});
+        this.classList.add('active');
+        currentFilter = this.getAttribute('data-filter');
+        currentPage = 1;
+        renderPage();
+    });
+});
+document.getElementById('blogSearch').addEventListener('input',function(){
+    currentSearch = this.value.toLowerCase().trim();
+    currentPage = 1;
+    renderPage();
+});
+
+// ==================== Calendar View ====================
+var calYear, calMonth;
+(function(){ var now=new Date(); calYear=now.getFullYear(); calMonth=now.getMonth(); })();
+
+function calNav(dir){ calMonth+=dir; if(calMonth<0){calMonth=11;calYear--;}if(calMonth>11){calMonth=0;calYear++;} renderCalendar(); }
+function calToday(){ var n=new Date();calYear=n.getFullYear();calMonth=n.getMonth();renderCalendar(); }
+
+function getAllPostData() {
+    var rows = document.querySelectorAll('.blog-row');
+    var posts = [];
+    rows.forEach(function(r){
+        posts.push({
+            id: r.getAttribute('data-id'),
+            title: r.getAttribute('data-title'),
+            author_id: r.getAttribute('data-author'),
+            date: r.getAttribute('data-date'),
+            category: r.getAttribute('data-category')
+        });
+    });
+    return posts;
+}
+
+function renderCalendar() {
+    var months = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+    document.getElementById('calTitle').textContent = calYear + '년 ' + months[calMonth];
+
+    var legend = document.getElementById('calLegend');
+    var lh = '';
+    for (var mid in memberColorMap) {
+        lh += '<span class="cal-legend-item"><span class="cal-dot" style="background:'+memberColorMap[mid].color+'"></span>'+memberColorMap[mid].name+'</span>';
+    }
+    legend.innerHTML = lh;
+
+    var posts = getAllPostData();
+    var monthStr = calYear + '-' + String(calMonth+1).padStart(2,'0');
+    var postsByDay = {};
+    posts.forEach(function(p){
+        if(p.date && p.date.startsWith(monthStr)){
+            var day = parseInt(p.date.split('-')[2]);
+            if(!postsByDay[day]) postsByDay[day]=[];
+            postsByDay[day].push(p);
+        }
+    });
+
+    var firstDay = new Date(calYear, calMonth, 1).getDay();
+    var daysInMonth = new Date(calYear, calMonth+1, 0).getDate();
+    var today = new Date();
+    var isThisMonth = (today.getFullYear()===calYear && today.getMonth()===calMonth);
+
+    var h = '<div class="cal-row cal-head">';
+    ['일','월','화','수','목','금','토'].forEach(function(d,i){
+        h += '<div class="cal-cell cal-day-name'+(i===0?' cal-sun':'')+(i===6?' cal-sat':'')+'">'+d+'</div>';
+    });
+    h += '</div>';
+
+    var dayNum = 1;
+    for (var week = 0; week < 6; week++) {
+        if (dayNum > daysInMonth) break;
+        h += '<div class="cal-row">';
+        for (var dow = 0; dow < 7; dow++) {
+            if ((week === 0 && dow < firstDay) || dayNum > daysInMonth) {
+                h += '<div class="cal-cell cal-empty"></div>';
+            } else {
+                var isToday = isThisMonth && dayNum === today.getDate();
+                var dayPosts = postsByDay[dayNum] || [];
+                h += '<div class="cal-cell cal-day'+(isToday?' cal-today':'')+'">';
+                h += '<div class="cal-day-num'+(dow===0?' cal-sun':'')+(dow===6?' cal-sat':'')+'">'+dayNum+'</div>';
+                if (dayPosts.length > 0) {
+                    h += '<div class="cal-posts">';
+                    dayPosts.forEach(function(p){
+                        var color = getAuthorColor(p.author_id);
+                        var authorName = (memberColorMap[p.author_id] && memberColorMap[p.author_id].name) || p.author_id;
+                        var shortTitle = p.title.length > 12 ? p.title.substring(0,12)+'...' : p.title;
+                        h += '<div class="cal-post-dot" onclick="openPost(\''+p.id+'\')" title="'+p.title+' ('+authorName+')">';
+                        h += '<span class="cal-dot" style="background:'+color+'"></span>';
+                        h += '<span class="cal-post-title-sm">'+shortTitle+'</span>';
+                        h += '</div>';
+                    });
+                    h += '</div>';
+                }
+                h += '</div>';
+                dayNum++;
+            }
+        }
+        h += '</div>';
+    }
+
+    document.getElementById('calGrid').innerHTML = h;
+}
+
+// ==================== Init ====================
+document.querySelectorAll('.blog-row').forEach(function(r){ updateTableReaction(r.getAttribute('data-id')); });
+renderPage();
+</script>

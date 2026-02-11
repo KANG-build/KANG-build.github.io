@@ -27,7 +27,7 @@ future: true
 paginate: 5
 paginate_path: "/news/:num/"
 
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
-host: 192.168.0.3
+host: 0.0.0.0
 port: 4000

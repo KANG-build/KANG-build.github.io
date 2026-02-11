@@ -2,3 +2,5 @@ _site/*
 .jekyll-cache
 .DS*
 */.DS*
+node_modules/
+package-lock.json
