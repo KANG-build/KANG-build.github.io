@@ -1,0 +1,304 @@
+---
+layout: default
+title: SRC Lab. My Page
+---
+<link rel="stylesheet" href="/pages/blog.css">
+<div class="blog-page">
+ <div class="container">
+
+  <!-- Not logged in -->
+  <div id="mypageNotLoggedIn" style="display:none; text-align:center; padding:80px 0;">
+   <span class="glyphicon glyphicon-lock" style="font-size:48px; color:#ccc;"></span>
+   <h3 style="color:#888; margin-top:16px;">로그인이 필요합니다</h3>
+   <a href="/pages/login.html?redirect=/pages/mypage.html" class="login-btn" style="display:inline-block; width:auto; padding:10px 30px; margin-top:16px; text-decoration:none;">
+    <span class="glyphicon glyphicon-log-in"></span> 로그인하기
+   </a>
+  </div>
+
+  <!-- Logged in -->
+  <div id="mypageContent" style="display:none;">
+   <div class="mypage-wrap">
+
+    <!-- Profile Card -->
+    <div class="mypage-profile-card">
+     <img id="mpPhoto" src="/image/people/empty.png" class="mypage-photo img-circle" alt="">
+     <h2 class="mypage-name" id="mpDisplayName"></h2>
+     <span class="mypage-role-badge" id="mpRoleBadge"></span>
+     <div class="mypage-provider" id="mpProvider"></div>
+    </div>
+
+    <!-- Account Info -->
+    <div class="mypage-section">
+     <h3 class="mypage-section-title"><span class="glyphicon glyphicon-info-sign"></span> 계정 정보</h3>
+     <div class="mypage-info-row">
+      <span class="mypage-info-label">아이디</span>
+      <span class="mypage-info-value" id="mpUsername"></span>
+     </div>
+     <div class="mypage-info-row">
+      <span class="mypage-info-label">가입 유형</span>
+      <span class="mypage-info-value" id="mpAuthType"></span>
+     </div>
+     <div class="mypage-info-row">
+      <span class="mypage-info-label">연동 멤버</span>
+      <span class="mypage-info-value" id="mpMemberName"></span>
+     </div>
+     <div class="mypage-info-row">
+      <span class="mypage-info-label">권한</span>
+      <span class="mypage-info-value" id="mpRole"></span>
+     </div>
+     <div class="mypage-info-row">
+      <span class="mypage-info-label">가입일</span>
+      <span class="mypage-info-value" id="mpCreatedAt"></span>
+     </div>
+    </div>
+
+    <!-- Change Username -->
+    <div class="mypage-section" id="sectionChangeUsername">
+     <h3 class="mypage-section-title"><span class="glyphicon glyphicon-user"></span> 아이디 변경</h3>
+     <div class="mypage-alert" id="usernameAlert"></div>
+     <div class="mypage-field">
+      <label class="mypage-label">현재 아이디</label>
+      <div class="mypage-current-val" id="currentUsername"></div>
+     </div>
+     <div class="mypage-field">
+      <label class="mypage-label">새 아이디 <small>영문, 숫자, 밑줄 3~30자</small></label>
+      <input type="text" id="newUsername" class="mypage-input" placeholder="새 아이디를 입력하세요" maxlength="30">
+     </div>
+     <button class="mypage-btn mypage-btn-primary" id="btnChangeUsername" onclick="changeUsername()">
+      <span class="glyphicon glyphicon-pencil"></span> 아이디 변경
+     </button>
+    </div>
+
+    <!-- Change Display Name -->
+    <div class="mypage-section">
+     <h3 class="mypage-section-title"><span class="glyphicon glyphicon-tag"></span> 표시 이름 변경</h3>
+     <div class="mypage-alert" id="displayNameAlert"></div>
+     <div class="mypage-field">
+      <label class="mypage-label">현재 표시 이름</label>
+      <div class="mypage-current-val" id="currentDisplayName"></div>
+     </div>
+     <div class="mypage-field">
+      <label class="mypage-label">새 표시 이름 <small>댓글 등에 표시됩니다</small></label>
+      <input type="text" id="newDisplayName" class="mypage-input" placeholder="새 표시 이름을 입력하세요" maxlength="50">
+     </div>
+     <button class="mypage-btn mypage-btn-primary" id="btnChangeDisplayName" onclick="changeDisplayName()">
+      <span class="glyphicon glyphicon-pencil"></span> 표시 이름 변경
+     </button>
+    </div>
+
+    <!-- Change Password -->
+    <div class="mypage-section">
+     <h3 class="mypage-section-title"><span class="glyphicon glyphicon-lock"></span> 비밀번호 변경</h3>
+     <div class="mypage-alert" id="passwordAlert"></div>
+     <div class="mypage-field" id="currentPwField">
+      <label class="mypage-label">현재 비밀번호</label>
+      <input type="password" id="currentPassword" class="mypage-input" placeholder="현재 비밀번호를 입력하세요" autocomplete="current-password" maxlength="100">
+     </div>
+     <div class="mypage-field">
+      <label class="mypage-label">새 비밀번호 <small>6자 이상</small></label>
+      <input type="password" id="newPassword" class="mypage-input" placeholder="새 비밀번호를 입력하세요" autocomplete="new-password" maxlength="100">
+     </div>
+     <div class="mypage-field">
+      <label class="mypage-label">새 비밀번호 확인</label>
+      <input type="password" id="newPasswordConfirm" class="mypage-input" placeholder="새 비밀번호를 다시 입력하세요" autocomplete="new-password" maxlength="100">
+     </div>
+     <button class="mypage-btn mypage-btn-green" id="btnChangePassword" onclick="changePassword()">
+      <span class="glyphicon glyphicon-lock"></span> 비밀번호 변경
+     </button>
+     <p id="pwKakaoHint" style="display:none; font-size:12px; color:#888; margin-top:8px;">
+      카카오로 가입한 계정입니다. 비밀번호를 설정하면 아이디/비밀번호로도 로그인할 수 있습니다.
+     </p>
+    </div>
+
+   </div>
+  </div>
+
+ </div>
+</div>
+
+<script>
+var API_BASE = window.location.origin;
+var __profile = null;
+
+(function() {
+    fetch(API_BASE + '/api/auth/profile', { credentials: 'same-origin' })
+    .then(function(r) {
+        if (r.status === 401) {
+            document.getElementById('mypageNotLoggedIn').style.display = '';
+            return null;
+        }
+        return r.json();
+    })
+    .then(function(data) {
+        if (!data || data.error) {
+            document.getElementById('mypageNotLoggedIn').style.display = '';
+            return;
+        }
+        __profile = data;
+        renderProfile(data);
+        document.getElementById('mypageContent').style.display = '';
+    })
+    .catch(function() {
+        document.getElementById('mypageNotLoggedIn').style.display = '';
+    });
+})();
+
+function renderProfile(p) {
+    document.getElementById('mpPhoto').src = p.photo;
+    document.getElementById('mpDisplayName').textContent = p.display_name;
+
+    var roleBadge = document.getElementById('mpRoleBadge');
+    if (p.role === 'member') {
+        roleBadge.textContent = 'Lab Member';
+        roleBadge.className = 'mypage-role-badge mypage-role-member';
+    } else {
+        roleBadge.textContent = 'Guest';
+        roleBadge.className = 'mypage-role-badge mypage-role-guest';
+    }
+
+    var providerText = '';
+    if (p.auth_provider === 'kakao') providerText = 'Kakao';
+    else providerText = 'Local';
+    if (p.kakao_email) providerText += ' (' + p.kakao_email + ')';
+    document.getElementById('mpProvider').textContent = providerText;
+
+    document.getElementById('mpUsername').textContent = p.username;
+    document.getElementById('mpAuthType').textContent = p.auth_provider === 'kakao' ? 'Kakao' : 'Local';
+    document.getElementById('mpMemberName').textContent = p.member_name || '-';
+    document.getElementById('mpRole').textContent = p.role === 'member' ? 'Member' : 'Guest';
+    document.getElementById('mpCreatedAt').textContent = p.created_at ? p.created_at.split('T')[0] : '-';
+
+    document.getElementById('currentUsername').textContent = p.username;
+    document.getElementById('currentDisplayName').textContent = p.display_name;
+
+    // Kakao-only users without password: hide current password field, show hint
+    if (p.auth_provider === 'kakao' && !p.has_password) {
+        document.getElementById('currentPwField').style.display = 'none';
+        document.getElementById('pwKakaoHint').style.display = '';
+    }
+
+    // Kakao-only users: username might be auto-generated, still allow change
+    if (p.username.startsWith('kakao_')) {
+        document.getElementById('newUsername').placeholder = '카카오 계정은 아이디를 설정해보세요';
+    }
+}
+
+function showMypageAlert(id, msg, type) {
+    var el = document.getElementById(id);
+    el.className = 'mypage-alert mypage-alert-' + (type || 'error');
+    el.textContent = msg;
+    el.style.display = 'block';
+    setTimeout(function() { el.style.display = 'none'; }, 5000);
+}
+
+function changeUsername() {
+    var val = document.getElementById('newUsername').value.trim();
+    if (!val) { showMypageAlert('usernameAlert', '새 아이디를 입력해주세요.'); return; }
+    var btn = document.getElementById('btnChangeUsername');
+    btn.disabled = true;
+
+    fetch(API_BASE + '/api/auth/change-username', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ new_username: val })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        btn.disabled = false;
+        if (data.success) {
+            showMypageAlert('usernameAlert', '아이디가 변경되었습니다: ' + data.username, 'success');
+            document.getElementById('currentUsername').textContent = data.username;
+            document.getElementById('mpUsername').textContent = data.username;
+            document.getElementById('newUsername').value = '';
+        } else {
+            showMypageAlert('usernameAlert', data.error || '변경 실패');
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false;
+        showMypageAlert('usernameAlert', '서버 오류: ' + e.message);
+    });
+}
+
+function changeDisplayName() {
+    var val = document.getElementById('newDisplayName').value.trim();
+    if (!val) { showMypageAlert('displayNameAlert', '새 표시 이름을 입력해주세요.'); return; }
+    var btn = document.getElementById('btnChangeDisplayName');
+    btn.disabled = true;
+
+    fetch(API_BASE + '/api/auth/change-displayname', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ new_display_name: val })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        btn.disabled = false;
+        if (data.success) {
+            showMypageAlert('displayNameAlert', '표시 이름이 변경되었습니다: ' + data.display_name, 'success');
+            document.getElementById('currentDisplayName').textContent = data.display_name;
+            document.getElementById('mpDisplayName').textContent = data.display_name;
+            document.getElementById('newDisplayName').value = '';
+            // Update navbar name
+            var navName = document.getElementById('nav-auth-name');
+            if (navName) navName.textContent = data.display_name;
+        } else {
+            showMypageAlert('displayNameAlert', data.error || '변경 실패');
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false;
+        showMypageAlert('displayNameAlert', '서버 오류: ' + e.message);
+    });
+}
+
+function changePassword() {
+    var currentPw = document.getElementById('currentPassword').value;
+    var newPw = document.getElementById('newPassword').value;
+    var newPwConfirm = document.getElementById('newPasswordConfirm').value;
+
+    if (!newPw) { showMypageAlert('passwordAlert', '새 비밀번호를 입력해주세요.'); return; }
+    if (newPw.length < 6) { showMypageAlert('passwordAlert', '비밀번호는 6자 이상이어야 합니다.'); return; }
+    if (newPw !== newPwConfirm) { showMypageAlert('passwordAlert', '새 비밀번호가 일치하지 않습니다.'); return; }
+
+    // If user has password, require current
+    if (__profile && __profile.has_password && !currentPw) {
+        showMypageAlert('passwordAlert', '현재 비밀번호를 입력해주세요.');
+        return;
+    }
+
+    var btn = document.getElementById('btnChangePassword');
+    btn.disabled = true;
+
+    fetch(API_BASE + '/api/auth/change-password', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ current_password: currentPw || null, new_password: newPw })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        btn.disabled = false;
+        if (data.success) {
+            showMypageAlert('passwordAlert', '비밀번호가 변경되었습니다.', 'success');
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('newPasswordConfirm').value = '';
+            // If was kakao-only, now has password
+            if (__profile && !__profile.has_password) {
+                __profile.has_password = true;
+                document.getElementById('currentPwField').style.display = '';
+                document.getElementById('pwKakaoHint').style.display = 'none';
+            }
+        } else {
+            showMypageAlert('passwordAlert', data.error || '변경 실패');
+        }
+    })
+    .catch(function(e) {
+        btn.disabled = false;
+        showMypageAlert('passwordAlert', '서버 오류: ' + e.message);
+    });
+}
+</script>

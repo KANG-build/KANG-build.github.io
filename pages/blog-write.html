@@ -1,0 +1,426 @@
+---
+layout: default
+title: SRC Lab. Blog - Write
+---
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<div class="blog-page">
+ <div class="container">
+
+  <!-- Auth Gate: shown while checking login -->
+  <div id="authGate" style="text-align:center; padding:60px 0;">
+   <div class="write-spinner" style="margin:0 auto 15px;"></div>
+   <p style="color:#888; font-size:15px;">로그인 상태를 확인하고 있습니다...</p>
+  </div>
+
+  <!-- Not Authorized Message -->
+  <div id="authDenied" style="display:none; text-align:center; padding:60px 0;">
+   <span class="glyphicon glyphicon-ban-circle" style="font-size:48px; color:#e74c3c;"></span>
+   <h2 style="margin-top:15px; color:#2c3e50;">접근 권한이 없습니다</h2>
+   <p style="color:#888; font-size:15px;" id="authDeniedMsg">연구실 멤버만 글을 작성할 수 있습니다.</p>
+   <div style="margin-top:20px; display:flex; gap:10px; justify-content:center;">
+    <a href="/pages/login.html?redirect=/pages/blog-write.html" class="btn-blog-write" id="authDeniedLoginBtn" style="display:none;">
+     <span class="glyphicon glyphicon-log-in"></span> 로그인
+    </a>
+    <a href="/pages/blog.html" class="btn-write-cancel" style="display:inline-block; padding:10px 22px;">
+     <span class="glyphicon glyphicon-arrow-left"></span> 블로그로 돌아가기
+    </a>
+   </div>
+  </div>
+
+  <!-- Editor (only shown to authorized members) -->
+  <div id="editorSection" style="display:none;">
+   <div class="write-header">
+    <div class="write-header-left">
+     <img id="editorAuthorPhoto" src="" class="write-author-photo img-circle" alt="">
+     <div>
+      <h2 id="editorTitle" class="write-page-title">새 글 작성</h2>
+      <span id="editorAuthorName" class="write-author-name-display"></span>
+     </div>
+    </div>
+    <div class="write-header-right">
+     <a href="/pages/blog.html" class="btn-write-cancel">취소</a>
+     <button class="btn-write-submit" id="btnSubmit" onclick="submitPost()">
+      <span class="glyphicon glyphicon-send"></span> 발행하기
+     </button>
+    </div>
+   </div>
+
+   <div class="write-form">
+    <div class="write-field">
+     <input type="text" id="postTitle" class="write-title-input" placeholder="제목을 입력하세요" maxlength="200">
+    </div>
+    <div class="write-meta-row">
+     <div class="write-field write-field-half">
+      <label class="write-label">카테고리</label>
+      <select id="postCategory" class="write-select">
+       <option value="Research">Research</option>
+       <option value="Dev Log" selected>Dev Log</option>
+       <option value="Tutorial">Tutorial</option>
+       <option value="News">News</option>
+      </select>
+     </div>
+     <div class="write-field write-field-half">
+      <label class="write-label">태그 <small>(쉼표로 구분)</small></label>
+      <input type="text" id="postTags" class="write-input" placeholder="예: Python, Security, Network">
+     </div>
+    </div>
+    <div class="write-field">
+     <label class="write-label">요약 <small>(목록에 표시될 한줄 요약)</small></label>
+     <input type="text" id="postSummary" class="write-input" placeholder="이 글의 핵심을 한 문장으로 요약해주세요" maxlength="300">
+    </div>
+
+    <!-- Markdown Editor -->
+    <div class="write-field">
+     <label class="write-label">본문 <small>(마크다운 지원 / 이미지: 드래그, 붙여넣기, 또는 버튼 클릭)</small></label>
+     <div class="write-toolbar">
+      <button type="button" onclick="insertMd('**','**')" title="굵게"><b>B</b></button>
+      <button type="button" onclick="insertMd('*','*')" title="기울임"><i>I</i></button>
+      <button type="button" onclick="insertMd('~~','~~')" title="취소선"><s>S</s></button>
+      <span class="toolbar-sep"></span>
+      <button type="button" onclick="insertMd('## ','')" title="제목">H2</button>
+      <button type="button" onclick="insertMd('### ','')" title="소제목">H3</button>
+      <span class="toolbar-sep"></span>
+      <button type="button" onclick="insertMd('- ','')" title="목록">List</button>
+      <button type="button" onclick="insertMd('1. ','')" title="번호 목록">OL</button>
+      <button type="button" onclick="insertMd('> ','')" title="인용">Quote</button>
+      <span class="toolbar-sep"></span>
+      <button type="button" onclick="insertMd('`','`')" title="코드">Code</button>
+      <button type="button" onclick="insertCodeBlock()" title="코드 블록">Block</button>
+      <button type="button" onclick="insertMd('[링크](',')')" title="링크">Link</button>
+      <button type="button" onclick="triggerImageUpload()" title="이미지 업로드" class="toolbar-img-btn">
+       <span class="glyphicon glyphicon-picture"></span> 사진
+      </button>
+      <input type="file" id="imageFileInput" accept="image/*" multiple style="display:none" onchange="handleFileSelect(this.files)">
+      <span class="toolbar-sep"></span>
+      <button type="button" class="toolbar-preview-btn" id="btnTogglePreview" onclick="togglePreview()">
+       <span class="glyphicon glyphicon-eye-open"></span> 미리보기
+      </button>
+     </div>
+     <div class="write-editor-container" id="editorContainer">
+      <textarea id="postContent" class="write-textarea" placeholder="마크다운으로 본문을 작성하세요...
+
+이미지를 넣으려면:
+  - 이미지를 여기에 드래그&드롭 하거나
+  - Ctrl+V로 클립보드 이미지를 붙여넣거나
+  - 툴바의 '사진' 버튼을 클릭하세요"></textarea>
+      <div id="previewPane" class="write-preview">
+       <div class="blog-detail-content" id="previewContent"></div>
+      </div>
+      <!-- Drop overlay -->
+      <div class="write-drop-overlay" id="dropOverlay">
+       <div class="write-drop-overlay-inner">
+        <span class="glyphicon glyphicon-cloud-upload" style="font-size:48px;"></span>
+        <p>이미지를 여기에 놓으세요</p>
+       </div>
+      </div>
+     </div>
+     <!-- Upload progress -->
+     <div class="write-upload-status" id="uploadStatus" style="display:none;">
+      <div class="write-spinner-sm"></div>
+      <span id="uploadStatusText">이미지 업로드 중...</span>
+     </div>
+    </div>
+   </div>
+  </div>
+
+ </div>
+</div>
+
+<!-- Loading overlay -->
+<div class="write-loading-overlay" id="loadingOverlay" style="display:none;">
+ <div class="write-loading-box">
+  <div class="write-spinner"></div>
+  <p id="loadingText">글을 발행하고 있습니다...</p>
+ </div>
+</div>
+
+<!-- Success Modal -->
+<div class="blog-modal-overlay" id="successModal">
+ <div class="blog-modal" style="max-width:500px;">
+  <div class="blog-modal-body" style="padding:40px; text-align:center;">
+   <div style="font-size:60px; margin-bottom:15px;">&#127881;</div>
+   <h2 style="margin-bottom:10px;" id="successTitle">글이 발행되었습니다!</h2>
+   <p style="color:#666; margin-bottom:25px;" id="successDesc">블로그 목록에서 확인하세요.</p>
+   <a href="/pages/blog.html" class="btn-write-submit" style="text-decoration:none; display:inline-block; padding:10px 30px;">
+    블로그로 이동
+   </a>
+  </div>
+ </div>
+</div>
+
+<script>
+var API_BASE = window.location.origin;
+var currentUser = null;
+var editMode = false;
+var editPostId = null;
+
+// ==================== Auth Check ====================
+function checkAuth() {
+    fetch(API_BASE + '/api/auth/me', { credentials: 'same-origin' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        document.getElementById('authGate').style.display = 'none';
+        if (!data.logged_in) {
+            // Not logged in
+            document.getElementById('authDenied').style.display = 'block';
+            document.getElementById('authDeniedMsg').textContent = '글을 작성하려면 로그인이 필요합니다.';
+            document.getElementById('authDeniedLoginBtn').style.display = 'inline-block';
+            return;
+        }
+        if (data.user.role !== 'member') {
+            // Logged in but not a member
+            document.getElementById('authDenied').style.display = 'block';
+            document.getElementById('authDeniedMsg').textContent = '연구실 멤버만 글을 작성할 수 있습니다. 현재 "' + data.user.name + '"(으)로 로그인 중입니다.';
+            return;
+        }
+        // Authorized member
+        currentUser = data.user;
+        document.getElementById('editorSection').style.display = 'block';
+        document.getElementById('editorAuthorPhoto').src = data.user.photo || '/image/people/empty.png';
+        document.getElementById('editorAuthorName').textContent = data.user.name;
+        checkEditMode();
+    })
+    .catch(function(e) {
+        document.getElementById('authGate').style.display = 'none';
+        document.getElementById('authDenied').style.display = 'block';
+        document.getElementById('authDeniedMsg').textContent = '서버에 연결할 수 없습니다: ' + e.message;
+    });
+}
+
+// ==================== Image Upload ====================
+function triggerImageUpload() {
+    document.getElementById('imageFileInput').click();
+}
+
+function handleFileSelect(files) {
+    for (var i = 0; i < files.length; i++) {
+        if (files[i].type.startsWith('image/')) {
+            uploadImage(files[i]);
+        }
+    }
+    document.getElementById('imageFileInput').value = '';
+}
+
+function uploadImage(file) {
+    var status = document.getElementById('uploadStatus');
+    var statusText = document.getElementById('uploadStatusText');
+    status.style.display = 'flex';
+    statusText.textContent = '"' + file.name + '" 업로드 중...';
+
+    var formData = new FormData();
+    formData.append('image', file);
+
+    fetch(API_BASE + '/api/upload', {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: formData
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        status.style.display = 'none';
+        if (data.success && data.url) {
+            var ta = document.getElementById('postContent');
+            var pos = ta.selectionStart;
+            var text = ta.value;
+            var imgMd = '\n![' + file.name + '](' + data.url + ')\n';
+            ta.value = text.substring(0, pos) + imgMd + text.substring(pos);
+            ta.focus();
+            ta.selectionStart = ta.selectionEnd = pos + imgMd.length;
+            updatePreview();
+        } else {
+            alert('업로드 실패: ' + (data.error || '알 수 없는 오류'));
+        }
+    })
+    .catch(function(e) {
+        status.style.display = 'none';
+        alert('업로드 오류: ' + e.message);
+    });
+}
+
+// Drag & Drop
+(function() {
+    var container = document.getElementById('editorContainer');
+    var overlay = document.getElementById('dropOverlay');
+    var dragCounter = 0;
+
+    container.addEventListener('dragenter', function(e) {
+        e.preventDefault();
+        dragCounter++;
+        overlay.classList.add('active');
+    });
+    container.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        dragCounter--;
+        if (dragCounter <= 0) { overlay.classList.remove('active'); dragCounter = 0; }
+    });
+    container.addEventListener('dragover', function(e) {
+        e.preventDefault();
+    });
+    container.addEventListener('drop', function(e) {
+        e.preventDefault();
+        dragCounter = 0;
+        overlay.classList.remove('active');
+        var files = e.dataTransfer.files;
+        for (var i = 0; i < files.length; i++) {
+            if (files[i].type.startsWith('image/')) uploadImage(files[i]);
+        }
+    });
+})();
+
+// Paste from clipboard
+document.getElementById('postContent').addEventListener('paste', function(e) {
+    var clipData = e.clipboardData || e.originalEvent.clipboardData;
+    if (!clipData) return;
+
+    if (clipData.items) {
+        for (var i = 0; i < clipData.items.length; i++) {
+            if (clipData.items[i].type.indexOf('image') !== -1) {
+                e.preventDefault();
+                var file = clipData.items[i].getAsFile();
+                if (file) {
+                    var ext = file.type.split('/')[1] || 'png';
+                    var pastedFile = new File([file], 'pasted-image-' + Date.now() + '.' + ext, { type: file.type });
+                    uploadImage(pastedFile);
+                }
+                return;
+            }
+        }
+    }
+
+    if (clipData.files && clipData.files.length > 0) {
+        for (var j = 0; j < clipData.files.length; j++) {
+            if (clipData.files[j].type.indexOf('image') !== -1) {
+                e.preventDefault();
+                uploadImage(clipData.files[j]);
+                return;
+            }
+        }
+    }
+
+    var html = clipData.getData('text/html');
+    if (html) {
+        var imgMatch = html.match(/<img[^>]+src=["']([^"']+)["']/i);
+        if (imgMatch && imgMatch[1] && !clipData.getData('text/plain')) {
+            e.preventDefault();
+            var ta = document.getElementById('postContent');
+            var pos = ta.selectionStart;
+            var text = ta.value;
+            var imgMd = '\n![image](' + imgMatch[1] + ')\n';
+            ta.value = text.substring(0, pos) + imgMd + text.substring(pos);
+            ta.focus();
+            ta.selectionStart = ta.selectionEnd = pos + imgMd.length;
+            updatePreview();
+            return;
+        }
+    }
+});
+
+// ==================== Markdown Toolbar ====================
+function insertMd(before, after) {
+    var ta = document.getElementById('postContent');
+    var start = ta.selectionStart;
+    var end = ta.selectionEnd;
+    var text = ta.value;
+    var selected = text.substring(start, end);
+    ta.value = text.substring(0, start) + before + selected + after + text.substring(end);
+    ta.focus();
+    ta.selectionStart = start + before.length;
+    ta.selectionEnd = start + before.length + selected.length;
+    updatePreview();
+}
+
+function insertCodeBlock() { insertMd('```\n', '\n```'); }
+
+var previewVisible = true;
+(function() {
+    document.getElementById('postContent').classList.add('half-width');
+    document.getElementById('btnTogglePreview').classList.add('active');
+})();
+
+function togglePreview() {
+    previewVisible = !previewVisible;
+    var preview = document.getElementById('previewPane');
+    var textarea = document.getElementById('postContent');
+    var btn = document.getElementById('btnTogglePreview');
+    if (previewVisible) {
+        preview.style.display = 'block'; textarea.classList.add('half-width'); btn.classList.add('active'); updatePreview();
+    } else {
+        preview.style.display = 'none'; textarea.classList.remove('half-width'); btn.classList.remove('active');
+    }
+}
+
+function updatePreview() {
+    if (!previewVisible) return;
+    document.getElementById('previewContent').innerHTML = marked.parse(document.getElementById('postContent').value);
+}
+
+document.getElementById('postContent').addEventListener('input', updatePreview);
+
+// ==================== Submit ====================
+function submitPost() {
+    var title = document.getElementById('postTitle').value.trim();
+    var content = document.getElementById('postContent').value;
+    if (!title) { alert('제목을 입력해주세요.'); return; }
+    if (!content) { alert('본문을 입력해주세요.'); return; }
+
+    var tagsStr = document.getElementById('postTags').value.trim();
+    var tags = tagsStr ? tagsStr.split(',').map(function(t){return t.trim();}).filter(Boolean) : [];
+
+    var payload = {
+        title: title,
+        category: document.getElementById('postCategory').value || 'Dev Log',
+        tags: tags,
+        summary: document.getElementById('postSummary').value.trim() || title,
+        content: content
+    };
+
+    document.getElementById('loadingOverlay').style.display = 'flex';
+    document.getElementById('btnSubmit').disabled = true;
+
+    var url = editMode ? (API_BASE + '/api/posts/' + editPostId) : (API_BASE + '/api/posts');
+    fetch(url, {
+        method: editMode ? 'PUT' : 'POST',
+        headers: {'Content-Type':'application/json'},
+        credentials: 'same-origin',
+        body: JSON.stringify(payload)
+    })
+    .then(function(r){return r.json();})
+    .then(function(data) {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        if (data.success) {
+            document.getElementById('successTitle').textContent = editMode ? '글이 수정되었습니다!' : '글이 발행되었습니다!';
+            document.getElementById('successModal').classList.add('active');
+        } else {
+            alert('오류: ' + (data.error || '')); document.getElementById('btnSubmit').disabled = false;
+        }
+    })
+    .catch(function(e) {
+        document.getElementById('loadingOverlay').style.display = 'none';
+        alert('서버 오류: ' + e.message); document.getElementById('btnSubmit').disabled = false;
+    });
+}
+
+// ==================== Edit Mode ====================
+function checkEditMode() {
+    var params = new URLSearchParams(window.location.search);
+    var postId = params.get('edit');
+    if (!postId) return;
+    editMode = true; editPostId = postId;
+    document.getElementById('editorTitle').textContent = '글 수정';
+    document.getElementById('btnSubmit').innerHTML = '<span class="glyphicon glyphicon-ok"></span> 수정 완료';
+
+    fetch(API_BASE + '/api/posts/' + postId)
+    .then(function(r){return r.json();})
+    .then(function(post) {
+        document.getElementById('postTitle').value = post.title || '';
+        document.getElementById('postCategory').value = post.category || 'Dev Log';
+        document.getElementById('postTags').value = (post.tags||[]).join(', ');
+        document.getElementById('postSummary').value = post.summary || '';
+        document.getElementById('postContent').value = post.content || '';
+        updatePreview();
+    });
+}
+
+checkAuth();
+</script>
