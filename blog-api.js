@@ -897,7 +897,7 @@ app.use((req, res) => {
 });
 
 // ==================== Start ====================
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // Initialize data files
 [COMMENTS_FILE, USERS_FILE].forEach(f => {
@@ -913,7 +913,7 @@ try {
 }
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`\n Blog API running on http://0.0.0.0:${PORT}`);
-    console.log(` KST Date: ${getKSTDate()}`);
-    console.log(` Auth: JWT httpOnly cookie, bcrypt ${BCRYPT_ROUNDS} rounds`);
+  console.log(`\n Blog API running on http://0.0.0.0:${PORT}`);
+  console.log(` KST Date: ${getKSTDate()}`);
+  console.log(` Auth: JWT httpOnly cookie, bcrypt ${BCRYPT_ROUNDS} rounds`);
 });
