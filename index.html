@@ -15,7 +15,7 @@ title: SRC Lab.
           The Secure and Reliable Computing (SRC) Lab at Chonnam National University specializes in information security. Our current research focuses on key challenges such as cloud and network security, high-performance security systems, security for and with AI (including adversarial AI), and traffic and system analysis. We are passionate about developing innovative security architectures and systems! 😊
         </p>
         <h4><p> 
-          <b><a href="/page/joinus.html"> <span class="glyphicon glyphicon-hand-right" aria-hidden="true"> </span> Are you interested in joining our laboratory? Join us! >> </a></b>
+          <b><a href="{{ '/pages/joinus.html' | relative_url }}"> <span class="glyphicon glyphicon-hand-right" aria-hidden="true"> </span> Are you interested in joining our laboratory? Join us! >> </a></b>
         </p></h4>
       </div>
       <div class="col-sm-2">
@@ -33,28 +33,28 @@ title: SRC Lab.
                         <a>
                           <label for="slide04" class="left"></label>  
                           <label for="slide02" class="right"></label>
-                          <img src="/image/src/logo_blue.png">
+                          <img src="{{ '/image/src/logo_blue.png' | relative_url }}">
                         </a>
                       </li>
                       <li class="slideitem"> <!-- 2 -->
                         <a>
                           <label for="slide01" class="left"></label>
                           <label for="slide03" class="right"></label>
-                          <img src="/image/src/group-aifesta25.jpg"> 
+                          <img src="{{ '/image/src/group-aifesta25.jpg' | relative_url }}"> 
                         </a>
                       </li>
                       <li class="slideitem"> <!-- 3 -->
                         <a>
                           <label for="slide02" class="left"></label>
                           <label for="slide04" class="right"></label>
-                          <img src="/image/src/group-aifesta25-1.jpg"> 
+                          <img src="{{ '/image/src/group-aifesta25-1.jpg' | relative_url }}"> 
                         </a>
                       </li>
                       <li class="slideitem"> <!-- 4 -->
                         <a>
                           <label for="slide03" class="left"></label>
                           <label for="slide01" class="right"></label>
-                          <img src="/image/src/group-oct25.jpg"> 
+                          <img src="{{ '/image/src/group-oct25.jpg' | relative_url }}"> 
                         </a>
                       </li>
                     </ul>
@@ -65,7 +65,7 @@ title: SRC Lab.
     <br>
     <div class="row">
       <div class="jumbotron"; style="background-color:whitesmoke; font-size:large">
-          <h2 class="news"> <a href="/pages/news.html"> <b> News >> </b> </a> </h2>
+          <h2 class="news"> <a href="{{ '/pages/news.html' | relative_url }}"> <b> News >> </b> </a> </h2>
           {% for news in site.data.news limit: 5 %}
           <div class="pub row" style="padding-top:20px; line-height: 1.6;" >
             <div class="col-sm-2" style="margin-right:-50px;margin-left:00px;">
@@ -102,8 +102,8 @@ title: SRC Lab.
     .slidebox .slidelist .slideitem > a {display:block;width:auto;position:relative;}
     .slidebox .slidelist .slideitem > a img {margin:auto; max-width: 90%; max-height: 300px; display:block }
     .slidebox .slidelist .slideitem > a label {position:absolute;top:50%;transform:translateY(-50%);padding:20px;border-radius:50%;cursor:pointer;}
-    .slidebox .slidelist .slideitem > a label.left {left:20px;background:#777 url('/image/slideimg/left-arrow.png') center center / 50% no-repeat; opacity:0.3;}
-    .slidebox .slidelist .slideitem > a label.right {right:20px;background:#777 url('/image/slideimg/right-arrow.png') center center / 50% no-repeat; opacity:0.3}
+    .slidebox .slidelist .slideitem > a label.left {left:20px;background:#777 url('{{ '/image/slideimg/left-arrow.png' | relative_url }}') center center / 50% no-repeat; opacity:0.3;}
+    .slidebox .slidelist .slideitem > a label.right {right:20px;background:#777 url('{{ '/image/slideimg/right-arrow.png' | relative_url }}') center center / 50% no-repeat; opacity:0.3}
 
     [name="slide"] {display:none;}
     #slide01:checked ~ .slidelist .slideitem {transform:translateX(0);    animation:slide01 30s ease-in-out infinite;}

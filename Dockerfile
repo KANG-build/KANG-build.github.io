@@ -19,7 +19,7 @@ RUN gem install bundler && \
 COPY . .
 
 # Build the Jekyll site
-RUN bundle exec jekyll build
+RUN bundle exec jekyll build --baseurl="/kang-build-github-io"
 
 # Expose port for serving (optional)
 EXPOSE 4000

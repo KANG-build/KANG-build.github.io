@@ -25,7 +25,7 @@ title: SRC Lab.
                 {% assign member_id = person.name | remove: ' ' | downcase %}
                 {% if member_id != "joinus!" %}
                 <br>
-                <a href="/pages/blog-member.html?member={{ member_id }}" class="person-blog-link">
+                <a href="{{ '/pages/blog-member.html' | relative_url }}?member={{ member_id }}" class="person-blog-link">
                     <span class="glyphicon glyphicon-edit"></span> Blog
                 </a>
                 {% endif %}

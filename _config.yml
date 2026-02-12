@@ -2,7 +2,7 @@
 title: SRC Lab
 description: "Secure and Reliable Computing Lab at Chonnam National University"
 url: "https://kang-build-github-io.onrender.com"
-baseurl: ""
+baseurl: "/kang-build-github-io"
 
 # Build settings
 markdown: kramdown
