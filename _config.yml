@@ -1,2 +1,34 @@
-url: "https://kang-build-github-io.onrender.com" # Render의 블로그 도메인
+# Site settings
+title: SRC Lab
+description: "Secure and Reliable Computing Lab at Chonnam National University"
+url: "https://kang-build-github-io.onrender.com"
+baseurl: ""
+
+# Build settings
 markdown: kramdown
+source: .
+destination: ./_site
+permalink: /:title/
+
+# Jekyll configuration
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .bundle
+  - README.md
+  - package.json
+  - blog-api.js
+  - logo.graffle
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
