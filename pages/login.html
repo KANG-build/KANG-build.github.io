@@ -130,6 +130,7 @@ title: SRC Lab. Login
 
 <script>
 var API_BASE = window.location.origin;
+var BASE_URL = '{{ site.baseurl }}';
 
 // Check if already logged in & handle Kakao link flow
 (function() {
@@ -168,7 +169,7 @@ var API_BASE = window.location.origin;
     .then(function(r) { return r.json(); })
     .then(function(data) {
         if (data.logged_in) {
-            var redirect = params.get('redirect') || '/pages/blog.html';
+            var redirect = params.get('redirect') || BASE_URL + '/pages/blog.html';
             window.location.href = redirect;
         }
     });
@@ -222,7 +223,7 @@ function doLogin() {
         btn.innerHTML = '<span class="glyphicon glyphicon-log-in"></span> 로그인';
         if (res.data.success) {
             var params = new URLSearchParams(window.location.search);
-            var redirect = params.get('redirect') || '/pages/blog.html';
+            var redirect = params.get('redirect') || BASE_URL + '/pages/blog.html';
             window.location.href = redirect;
         } else {
             showAlert('loginAlert', res.data.error || '로그인에 실패했습니다.');
@@ -269,7 +270,7 @@ function doRegister() {
         btn.innerHTML = '<span class="glyphicon glyphicon-ok"></span> 가입하기';
         if (res.data.success) {
             var params = new URLSearchParams(window.location.search);
-            var redirect = params.get('redirect') || '/pages/blog.html';
+            var redirect = params.get('redirect') || BASE_URL + '/pages/blog.html';
             window.location.href = redirect;
         } else {
             showAlert('registerAlert', res.data.error || '회원가입에 실패했습니다.');
@@ -327,7 +328,7 @@ function selectMember(memberId, el) {
 // ==================== Kakao Login ====================
 function doKakaoLogin() {
     var params = new URLSearchParams(window.location.search);
-    var redirect = params.get('redirect') || '/pages/blog.html';
+    var redirect = params.get('redirect') || BASE_URL + '/pages/blog.html';
     window.location.href = API_BASE + '/api/auth/kakao/login?redirect=' + encodeURIComponent(redirect);
 }
 
@@ -392,7 +393,7 @@ function doKakaoLink() {
         btn.innerHTML = '<span class="glyphicon glyphicon-ok"></span> 멤버 연동';
         if (res.data.success) {
             var params = new URLSearchParams(window.location.search);
-            var redirect = params.get('redirect') || '/pages/blog.html';
+            var redirect = params.get('redirect') || BASE_URL + '/pages/blog.html';
             window.location.href = redirect;
         } else {
             showAlert('kakaoLinkAlert', res.data.error || '연동에 실패했습니다.');
@@ -407,7 +408,7 @@ function doKakaoLink() {
 
 function skipKakaoLink() {
     var params = new URLSearchParams(window.location.search);
-    var redirect = params.get('redirect') || '/pages/blog.html';
+    var redirect = params.get('redirect') || BASE_URL + '/pages/blog.html';
     window.location.href = redirect;
 }
 

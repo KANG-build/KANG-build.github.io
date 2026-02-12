@@ -10,7 +10,7 @@ title: SRC Lab. My Page
   <div id="mypageNotLoggedIn" style="display:none; text-align:center; padding:80px 0;">
    <span class="glyphicon glyphicon-lock" style="font-size:48px; color:#ccc;"></span>
    <h3 style="color:#888; margin-top:16px;">로그인이 필요합니다</h3>
-   <a href="{{ '/pages/login.html' | relative_url }}?redirect=/pages/mypage.html" class="login-btn" style="display:inline-block; width:auto; padding:10px 30px; margin-top:16px; text-decoration:none;">
+   <a href="{{ '/pages/login.html' | relative_url }}?redirect={{ '/pages/mypage.html' | relative_url }}" class="login-btn" style="display:inline-block; width:auto; padding:10px 30px; margin-top:16px; text-decoration:none;">
     <span class="glyphicon glyphicon-log-in"></span> 로그인하기
    </a>
   </div>

@@ -19,7 +19,7 @@ title: SRC Lab. Blog - Write
    <h2 style="margin-top:15px; color:#2c3e50;">접근 권한이 없습니다</h2>
    <p style="color:#888; font-size:15px;" id="authDeniedMsg">연구실 멤버만 글을 작성할 수 있습니다.</p>
    <div style="margin-top:20px; display:flex; gap:10px; justify-content:center;">
-    <a href="{{ '/pages/login.html' | relative_url }}?redirect=/pages/blog-write.html" class="btn-blog-write" id="authDeniedLoginBtn" style="display:none;">
+    <a href="{{ '/pages/login.html' | relative_url }}?redirect={{ '/pages/blog-write.html' | relative_url }}" class="btn-blog-write" id="authDeniedLoginBtn" style="display:none;">
      <span class="glyphicon glyphicon-log-in"></span> 로그인
     </a>
     <a href="{{ '/pages/blog.html' | relative_url }}" class="btn-write-cancel" style="display:inline-block; padding:10px 22px;">
