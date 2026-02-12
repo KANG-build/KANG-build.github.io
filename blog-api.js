@@ -912,8 +912,4 @@ try {
     console.error('Initial Jekyll build failed:', e.message);
 }
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`\n Blog API running on http://0.0.0.0:${PORT}`);
-  console.log(` KST Date: ${getKSTDate()}`);
-  console.log(` Auth: JWT httpOnly cookie, bcrypt ${BCRYPT_ROUNDS} rounds`);
-});
+app.listen(PORT, "0.0.0.0", () => console.log("listening", PORT));
