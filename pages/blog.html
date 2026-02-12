@@ -19,7 +19,7 @@ title: SRC Lab. Blog
      <span class="glyphicon glyphicon-calendar"></span> 달력
     </button>
    </div>
-   <a href="/pages/blog-write.html" class="btn-blog-write" id="btnWritePost" style="display:none;">
+   <a href="{{ '/pages/blog-write.html' | relative_url }}" class="btn-blog-write" id="btnWritePost" style="display:none;">
     <span class="glyphicon glyphicon-pencil"></span> 새 글 작성
    </a>
   </div>
@@ -71,7 +71,7 @@ title: SRC Lab. Blog
         </div>
         <div class="blog-post-tags">{% for tag in post.tags %}<span class="blog-tag">#{{ tag }}</span>{% endfor %}</div>
        </td>
-       <td class="col-author"><a href="/pages/blog-member.html?member={{ post.author_id }}" class="blog-author-link" onclick="event.stopPropagation();">{{ post.author }}</a></td>
+       <td class="col-author"><a href="{{ '/pages/blog-member.html' | relative_url }}?member={{ post.author_id }}" class="blog-author-link" onclick="event.stopPropagation();">{{ post.author }}</a></td>
        <td class="col-date">{{ post.date | slice: 5, 5 }}</td>
        <td class="col-reactions"><span class="reaction-summary" id="reaction-summary-{{ post.id }}"><span class="reaction-mini">&#10084;&#65039; <span class="cnt" data-type="heart">0</span></span></span></td>
       </tr>
@@ -138,6 +138,7 @@ title: SRC Lab. Blog
 
 <script>
 var API_BASE = window.location.origin;
+var BASE_URL = '{{ site.baseurl }}';
 var __currentUser = null; // filled by auth check
 
 // ==================== Auth Check ====================
@@ -466,7 +467,7 @@ function openPost(postId) {
     var actionsHtml = '';
     if (__currentUser && __currentUser.role === 'member') {
         actionsHtml = '<div class="blog-detail-actions">'+
-            '<a href="/pages/blog-write.html?edit='+postId+'" class="btn-post-edit"><span class="glyphicon glyphicon-edit"></span> 수정</a>'+
+            '<a href="'+BASE_URL+'/pages/blog-write.html?edit='+postId+'" class="btn-post-edit"><span class="glyphicon glyphicon-edit"></span> 수정</a>'+
             '<button class="btn-post-delete" onclick="deletePost(\''+postId+'\')"><span class="glyphicon glyphicon-trash"></span> 삭제</button>'+
             '</div>';
     }
@@ -502,7 +503,7 @@ function openPost(postId) {
       '<span class="blog-category-badge cat-'+catSlug+'">'+cat+'</span>'+
       '<h1 class="blog-detail-title">'+t+'</h1>'+
       '<div class="blog-detail-meta">'+
-        '<span class="blog-detail-author"><span class="glyphicon glyphicon-user"></span> <a href="/pages/blog-member.html?member='+ai+'">'+a+'</a></span>'+
+        '<span class="blog-detail-author"><span class="glyphicon glyphicon-user"></span> <a href="'+BASE_URL+'/pages/blog-member.html?member='+ai+'">'+a+'</a></span>'+
         '<span class="blog-detail-date"><span class="glyphicon glyphicon-time"></span> '+d+'</span>'+
       '</div>'+
       '<div class="blog-detail-tags">'+tagsH+'</div>'+

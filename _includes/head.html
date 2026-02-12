@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" type="image/png" href="/image/src/logo_favicon.ico">
+    <link rel="icon" type="image/png" href="{{ '/image/src/logo_favicon.ico' | relative_url }}">
     <title> {{ site.title }} </title>
 
     {% if page.excerpt or site.github.project_tagline %}
@@ -14,9 +14,9 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet"
-          href="/pages/main.css" />
+          href="{{ '/pages/main.css' | relative_url }}" />
     <link rel="stylesheet"
-          href="/pages/blog.css" />
+          href="{{ '/pages/blog.css' | relative_url }}" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

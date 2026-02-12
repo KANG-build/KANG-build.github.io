@@ -2,7 +2,7 @@
 layout: default
 title: SRC Lab. My Page
 ---
-<link rel="stylesheet" href="/pages/blog.css">
+<link rel="stylesheet" href="{{ '/pages/blog.css' | relative_url }}">
 <div class="blog-page">
  <div class="container">
 
@@ -10,7 +10,7 @@ title: SRC Lab. My Page
   <div id="mypageNotLoggedIn" style="display:none; text-align:center; padding:80px 0;">
    <span class="glyphicon glyphicon-lock" style="font-size:48px; color:#ccc;"></span>
    <h3 style="color:#888; margin-top:16px;">로그인이 필요합니다</h3>
-   <a href="/pages/login.html?redirect=/pages/mypage.html" class="login-btn" style="display:inline-block; width:auto; padding:10px 30px; margin-top:16px; text-decoration:none;">
+   <a href="{{ '/pages/login.html' | relative_url }}?redirect={{ '/pages/mypage.html' | relative_url }}" class="login-btn" style="display:inline-block; width:auto; padding:10px 30px; margin-top:16px; text-decoration:none;">
     <span class="glyphicon glyphicon-log-in"></span> 로그인하기
    </a>
   </div>
@@ -21,7 +21,7 @@ title: SRC Lab. My Page
 
     <!-- Profile Card -->
     <div class="mypage-profile-card">
-     <img id="mpPhoto" src="/image/people/empty.png" class="mypage-photo img-circle" alt="">
+     <img id="mpPhoto" src="{{ '/image/people/empty.png' | relative_url }}" class="mypage-photo img-circle" alt="">
      <h2 class="mypage-name" id="mpDisplayName"></h2>
      <span class="mypage-role-badge" id="mpRoleBadge"></span>
      <div class="mypage-provider" id="mpProvider"></div>
