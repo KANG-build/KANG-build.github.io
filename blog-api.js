@@ -102,23 +102,25 @@ const upload = multer({
 });
 
 // ==================== Data Helpers ====================
+const YAML_DUMP_OPTIONS = { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false };
+
 function readPosts() {
     try { return yaml.load(fs.readFileSync(POSTS_FILE, 'utf8')) || []; } catch (e) { return []; }
 }
 function writePosts(posts) {
-    fs.writeFileSync(POSTS_FILE, yaml.dump(posts, { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false }), 'utf8');
+    fs.writeFileSync(POSTS_FILE, yaml.dump(posts, YAML_DUMP_OPTIONS), 'utf8');
 }
 function readMembers() {
     try { return yaml.load(fs.readFileSync(MEMBERS_FILE, 'utf8')) || []; } catch (e) { return []; }
 }
 function writeMembers(members) {
-    fs.writeFileSync(MEMBERS_FILE, yaml.dump(members, { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false }), 'utf8');
+    fs.writeFileSync(MEMBERS_FILE, yaml.dump(members, YAML_DUMP_OPTIONS), 'utf8');
 }
 function readAlumni() {
     try { return yaml.load(fs.readFileSync(ALUMNI_FILE, 'utf8')) || []; } catch (e) { return []; }
 }
 function writeAlumni(alumni) {
-    fs.writeFileSync(ALUMNI_FILE, yaml.dump(alumni, { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false }), 'utf8');
+    fs.writeFileSync(ALUMNI_FILE, yaml.dump(alumni, YAML_DUMP_OPTIONS), 'utf8');
 }
 function readCategories() {
     try { return yaml.load(fs.readFileSync(CATEGORIES_FILE, 'utf8')) || []; } catch (e) { return []; }
@@ -127,7 +129,7 @@ function readComments() {
     try { return yaml.load(fs.readFileSync(COMMENTS_FILE, 'utf8')) || []; } catch (e) { return []; }
 }
 function writeComments(comments) {
-    fs.writeFileSync(COMMENTS_FILE, yaml.dump(comments, { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false }), 'utf8');
+    fs.writeFileSync(COMMENTS_FILE, yaml.dump(comments, YAML_DUMP_OPTIONS), 'utf8');
 }
 function readUsers() {
     try { return yaml.load(fs.readFileSync(USERS_FILE, 'utf8')) || []; } catch (e) { return []; }

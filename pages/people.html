@@ -124,7 +124,7 @@ function checkMemberStatus() {
 function showInstructions() {
     var instructionsDiv = document.createElement('div');
     instructionsDiv.className = 'drag-instructions';
-    instructionsDiv.innerHTML = '<strong>관리자 모드:</strong> 멤버를 드래그하여 People과 Alumni 섹션 간에 이동할 수 있습니다.';
+    instructionsDiv.innerHTML = '<strong>Admin Mode | 관리자 모드:</strong> Drag members between People and Alumni sections | 멤버를 드래그하여 People과 Alumni 섹션 간에 이동할 수 있습니다.';
     
     var container = document.querySelector('.people .container');
     container.insertBefore(instructionsDiv, container.firstChild);
@@ -207,8 +207,10 @@ function handleDrop(e) {
         if (targetSection === 'alumni-section') {
             moveToAlumni(memberName);
         } else if (targetSection === 'people-section') {
-            var role = prompt('Enter role for ' + memberName + ':', 'Member');
-            var email = prompt('Enter email for ' + memberName + ':', '');
+            var role = prompt('Enter role for ' + memberName + ' (e.g., PhD Student, Master Student, Undergraduate Researcher):', 'Member');
+            if (role === null) return; // User cancelled
+            var email = prompt('Enter email for ' + memberName + ' (format: name *at* jnu.ac.kr):', '');
+            if (email === null) return; // User cancelled
             moveToMembers(memberName, role, email);
         }
     }
@@ -217,7 +219,7 @@ function handleDrop(e) {
 }
 
 function moveToAlumni(memberName) {
-    if (!confirm('Move ' + memberName + ' to Alumni?')) {
+    if (!confirm('Move ' + memberName + ' to Alumni?\n\nThis will remove their role and email information.')) {
         return;
     }
 
@@ -234,8 +236,9 @@ function moveToAlumni(memberName) {
     })
     .then(function(res) {
         if (res.data.success) {
-            alert('Successfully moved ' + memberName + ' to Alumni. The page will reload.');
-            window.location.reload();
+            // Show success message and reload after a brief delay to ensure user sees it
+            alert('✓ Successfully moved ' + memberName + ' to Alumni.\n\nThe page will now reload to show the changes.');
+            setTimeout(function() { window.location.reload(); }, 100);
         } else {
             alert('Error: ' + (res.data.error || 'Failed to move member'));
         }
@@ -269,8 +272,9 @@ function moveToMembers(memberName, role, email) {
     })
     .then(function(res) {
         if (res.data.success) {
-            alert('Successfully moved ' + memberName + ' to People. The page will reload.');
-            window.location.reload();
+            // Show success message and reload after a brief delay to ensure user sees it
+            alert('✓ Successfully moved ' + memberName + ' back to People with role: ' + role + '.\n\nThe page will now reload to show the changes.');
+            setTimeout(function() { window.location.reload(); }, 100);
         } else {
             alert('Error: ' + (res.data.error || 'Failed to move member'));
         }
