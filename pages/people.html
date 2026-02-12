@@ -5,9 +5,13 @@ title: SRC Lab.
 <div class="people">
     <div class="container">
         <h1 class="Lecture"> People </h1> <br>
-        <div class="row justify-content-center align-items-stretch">
+        <div id="people-section" class="row justify-content-center align-items-stretch drag-drop-zone">
             {% for person in site.data.people.member %}
-            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5">
+            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5" 
+                 draggable="true" 
+                 data-member-name="{{ person.name }}"
+                 data-member-role="{{ person.role }}"
+                 data-member-email="{{ person.email }}">
                 <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" height="300px" width="auto">
                 
                 {% if person.link %}
@@ -37,9 +41,11 @@ title: SRC Lab.
         <br>
 
         <h2 class="Lecture"> Alumni </h2> <br>
-        <div class="row justify-content-center align-items-stretch">
+        <div id="alumni-section" class="row justify-content-center align-items-stretch drag-drop-zone">
             {% for person in site.data.people.alumni %}
-            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5">
+            <div class="person col-12 col-sm-6 col-md-4 col-lg-3 text-center mb-5" 
+                 draggable="true" 
+                 data-member-name="{{ person.name }}">
                 <img src="{{ person.photo }}" alt="photo" class="person-photo img-circle" width="200px">
                 
                 {% if person.link %}
@@ -55,3 +61,226 @@ title: SRC Lab.
         </div>
     </div>
 </div>
+
+<style>
+.drag-drop-zone {
+    min-height: 100px;
+    transition: background-color 0.3s;
+}
+
+.drag-drop-zone.drag-over {
+    background-color: #f0f8ff;
+    border: 2px dashed #4a90e2;
+    border-radius: 10px;
+}
+
+.person[draggable="true"] {
+    cursor: move;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+.person[draggable="true"]:hover {
+    transform: translateY(-5px);
+}
+
+.person.dragging {
+    opacity: 0.5;
+}
+
+.drag-instructions {
+    background-color: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    color: #856404;
+}
+
+.drag-instructions.hidden {
+    display: none;
+}
+</style>
+
+<script>
+var API_BASE = window.location.origin;
+var draggedElement = null;
+var draggedFromSection = null;
+
+// Check if user is a member (logged in and has member role)
+function checkMemberStatus() {
+    fetch(API_BASE + '/api/auth/me', { credentials: 'same-origin' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+        if (data.logged_in && data.role === 'member') {
+            enableDragAndDrop();
+            showInstructions();
+        }
+    })
+    .catch(function(err) {
+        console.log('Not logged in or not a member');
+    });
+}
+
+function showInstructions() {
+    var instructionsDiv = document.createElement('div');
+    instructionsDiv.className = 'drag-instructions';
+    instructionsDiv.innerHTML = '<strong>관리자 모드:</strong> 멤버를 드래그하여 People과 Alumni 섹션 간에 이동할 수 있습니다.';
+    
+    var container = document.querySelector('.people .container');
+    container.insertBefore(instructionsDiv, container.firstChild);
+}
+
+function enableDragAndDrop() {
+    var peopleSection = document.getElementById('people-section');
+    var alumniSection = document.getElementById('alumni-section');
+    var draggableElements = document.querySelectorAll('.person[draggable="true"]');
+
+    // Disable dragging for "Join us!" element
+    draggableElements.forEach(function(element) {
+        var memberName = element.getAttribute('data-member-name');
+        if (memberName === 'Join us!') {
+            element.setAttribute('draggable', 'false');
+            element.style.cursor = 'default';
+        }
+    });
+
+    // Add drag event listeners to draggable elements
+    draggableElements.forEach(function(element) {
+        if (element.getAttribute('draggable') === 'true') {
+            element.addEventListener('dragstart', handleDragStart);
+            element.addEventListener('dragend', handleDragEnd);
+        }
+    });
+
+    // Add drop zone event listeners
+    [peopleSection, alumniSection].forEach(function(section) {
+        section.addEventListener('dragover', handleDragOver);
+        section.addEventListener('dragleave', handleDragLeave);
+        section.addEventListener('drop', handleDrop);
+    });
+}
+
+function handleDragStart(e) {
+    draggedElement = this;
+    draggedFromSection = this.parentElement.id;
+    this.classList.add('dragging');
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('text/html', this.innerHTML);
+}
+
+function handleDragEnd(e) {
+    this.classList.remove('dragging');
+}
+
+function handleDragOver(e) {
+    if (e.preventDefault) {
+        e.preventDefault();
+    }
+    e.dataTransfer.dropEffect = 'move';
+    this.classList.add('drag-over');
+    return false;
+}
+
+function handleDragLeave(e) {
+    this.classList.remove('drag-over');
+}
+
+function handleDrop(e) {
+    if (e.stopPropagation) {
+        e.stopPropagation();
+    }
+    e.preventDefault();
+
+    this.classList.remove('drag-over');
+
+    var targetSection = this.id;
+    
+    if (draggedElement && draggedFromSection && targetSection && draggedFromSection !== targetSection) {
+        var memberName = draggedElement.getAttribute('data-member-name');
+        
+        if (memberName === 'Join us!') {
+            alert('Cannot move "Join us!" to alumni');
+            return false;
+        }
+
+        // Determine which API to call
+        if (targetSection === 'alumni-section') {
+            moveToAlumni(memberName);
+        } else if (targetSection === 'people-section') {
+            var role = prompt('Enter role for ' + memberName + ':', 'Member');
+            var email = prompt('Enter email for ' + memberName + ':', '');
+            moveToMembers(memberName, role, email);
+        }
+    }
+
+    return false;
+}
+
+function moveToAlumni(memberName) {
+    if (!confirm('Move ' + memberName + ' to Alumni?')) {
+        return;
+    }
+
+    fetch(API_BASE + '/api/members/move-to-alumni', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ memberName: memberName })
+    })
+    .then(function(r) { 
+        return r.json().then(function(d) { 
+            return { status: r.status, data: d }; 
+        }); 
+    })
+    .then(function(res) {
+        if (res.data.success) {
+            alert('Successfully moved ' + memberName + ' to Alumni. The page will reload.');
+            window.location.reload();
+        } else {
+            alert('Error: ' + (res.data.error || 'Failed to move member'));
+        }
+    })
+    .catch(function(e) {
+        alert('Server error: ' + e.message);
+    });
+}
+
+function moveToMembers(memberName, role, email) {
+    if (!role) role = 'Member';
+    
+    if (!confirm('Move ' + memberName + ' back to People section with role "' + role + '"?')) {
+        return;
+    }
+
+    fetch(API_BASE + '/api/members/move-to-members', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({ 
+            memberName: memberName,
+            role: role,
+            email: email || ''
+        })
+    })
+    .then(function(r) { 
+        return r.json().then(function(d) { 
+            return { status: r.status, data: d }; 
+        }); 
+    })
+    .then(function(res) {
+        if (res.data.success) {
+            alert('Successfully moved ' + memberName + ' to People. The page will reload.');
+            window.location.reload();
+        } else {
+            alert('Error: ' + (res.data.error || 'Failed to move member'));
+        }
+    })
+    .catch(function(e) {
+        alert('Server error: ' + e.message);
+    });
+}
+
+// Initialize drag and drop if user is a member
+checkMemberStatus();
+</script>
+

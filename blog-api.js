@@ -15,6 +15,7 @@ app.use(express.json({ limit: '10mb' }));
 
 const POSTS_FILE = path.join(__dirname, '_data', 'blog', 'posts.yml');
 const MEMBERS_FILE = path.join(__dirname, '_data', 'people', 'member.yml');
+const ALUMNI_FILE = path.join(__dirname, '_data', 'people', 'alumni.yml');
 const CATEGORIES_FILE = path.join(__dirname, '_data', 'blog', 'categories.yml');
 const COMMENTS_FILE = path.join(__dirname, '_data', 'blog', 'comments.yml');
 const USERS_FILE = path.join(__dirname, '_data', 'blog', 'users.yml');
@@ -109,6 +110,15 @@ function writePosts(posts) {
 }
 function readMembers() {
     try { return yaml.load(fs.readFileSync(MEMBERS_FILE, 'utf8')) || []; } catch (e) { return []; }
+}
+function writeMembers(members) {
+    fs.writeFileSync(MEMBERS_FILE, yaml.dump(members, { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false }), 'utf8');
+}
+function readAlumni() {
+    try { return yaml.load(fs.readFileSync(ALUMNI_FILE, 'utf8')) || []; } catch (e) { return []; }
+}
+function writeAlumni(alumni) {
+    fs.writeFileSync(ALUMNI_FILE, yaml.dump(alumni, { lineWidth: -1, noRefs: true, quotingType: '"', forceQuotes: false }), 'utf8');
 }
 function readCategories() {
     try { return yaml.load(fs.readFileSync(CATEGORIES_FILE, 'utf8')) || []; } catch (e) { return []; }
@@ -877,6 +887,112 @@ app.delete('/api/comments/:id', authOptional, (req, res) => {
         writeComments(comments);
         res.json({ success: true, deleted: deletedId });
     } catch (e) { console.error(e); res.status(500).json({ error: e.message }); }
+});
+
+// ==================== Member Management API ====================
+app.post('/api/members/move-to-alumni', requireMember, async (req, res) => {
+    try {
+        const { memberName } = req.body;
+        if (!memberName) {
+            return res.status(400).json({ error: 'memberName is required' });
+        }
+
+        // Read current members and alumni
+        const members = readMembers();
+        const alumni = readAlumni();
+
+        // Find the member to move
+        const memberIndex = members.findIndex(m => m.name === memberName);
+        if (memberIndex === -1) {
+            return res.status(404).json({ error: 'Member not found' });
+        }
+
+        // Prevent moving "Join us!" placeholder
+        if (memberName === 'Join us!') {
+            return res.status(400).json({ error: 'Cannot move "Join us!" to alumni' });
+        }
+
+        // Remove from members and add to alumni
+        const memberToMove = members[memberIndex];
+        members.splice(memberIndex, 1);
+
+        // Add to alumni (keep only name and photo for alumni)
+        const alumniEntry = {
+            name: memberToMove.name,
+            photo: memberToMove.photo
+        };
+        if (memberToMove.link) {
+            alumniEntry.link = memberToMove.link;
+        }
+        alumni.push(alumniEntry);
+
+        // Write back to files
+        writeMembers(members);
+        writeAlumni(alumni);
+
+        // Rebuild Jekyll site
+        await rebuildJekyll();
+
+        res.json({ 
+            success: true, 
+            message: `${memberName} moved to alumni`,
+            member: alumniEntry
+        });
+    } catch (e) { 
+        console.error(e); 
+        res.status(500).json({ error: e.message }); 
+    }
+});
+
+app.post('/api/members/move-to-members', requireMember, async (req, res) => {
+    try {
+        const { memberName, role, email } = req.body;
+        if (!memberName) {
+            return res.status(400).json({ error: 'memberName is required' });
+        }
+
+        // Read current members and alumni
+        const members = readMembers();
+        const alumni = readAlumni();
+
+        // Find the alumni member to move
+        const alumniIndex = alumni.findIndex(a => a.name === memberName);
+        if (alumniIndex === -1) {
+            return res.status(404).json({ error: 'Alumni member not found' });
+        }
+
+        // Remove from alumni and add to members
+        const alumniToMove = alumni[alumniIndex];
+        alumni.splice(alumniIndex, 1);
+
+        // Add to members with role and email
+        const memberEntry = {
+            name: alumniToMove.name,
+            photo: alumniToMove.photo,
+            role: role || 'Member',
+            email: email || ''
+        };
+        if (alumniToMove.link) {
+            memberEntry.link = alumniToMove.link;
+        }
+        members.push(memberEntry);
+
+        // Write back to files
+        writeMembers(members);
+        writeAlumni(alumni);
+
+        // Rebuild Jekyll site
+        await rebuildJekyll();
+
+        res.json({ 
+            success: true, 
+            message: `${memberName} moved to members`,
+            member: memberEntry
+        });
+    } catch (e) { 
+        console.error(e); 
+        res.status(500).json({ error: e.message }); 
+    }
 });
 
 // ==================== Static Files ====================
